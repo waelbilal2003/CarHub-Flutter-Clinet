@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>عروض أسعاري - كار هاب</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e0e3e6",
+                        "primary": "#006d37",
+                        "surface-variant": "#e0e3e6",
+                        "on-primary-container": "#00401e",
+                        "on-primary-fixed": "#00210d",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#bccabb",
+                        "tertiary-container": "#96a0b2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-tertiary-container": "#2d3746",
+                        "on-surface-variant": "#3d4a3e",
+                        "primary-fixed": "#6dfe9e",
+                        "secondary-fixed": "#d6e3ff",
+                        "surface-container-low": "#f2f4f7",
+                        "tertiary": "#555f6f",
+                        "on-tertiary-fixed": "#121c2a",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f7f9fc",
+                        "primary-fixed-dim": "#4de085",
+                        "surface-tint": "#006d37",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#005228",
+                        "inverse-primary": "#4de085",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-dim": "#d8dadd",
+                        "surface-container-high": "#e6e8eb",
+                        "surface": "#f7f9fc",
+                        "surface-bright": "#f7f9fc",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#55637d",
+                        "inverse-on-surface": "#eff1f4",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#d9e3f7",
+                        "secondary-container": "#d2e0fe",
+                        "surface-container": "#eceef1",
+                        "outline": "#6d7b6d",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "secondary": "#515f78",
+                        "primary-container": "#00b761"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-gap": "16px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "container-padding": "20px",
+                        "section-margin": "32px",
+                        "stack-sm": "8px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "headline-lg-mobile": ["22px", {"lineHeight": "32px", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "30px", "fontWeight": "600"}],
+                        "headline-xl": ["32px", {"lineHeight": "48px", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Readex Pro', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen relative pb-[80px]">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface-container-lowest shadow-sm">
+<div class="flex flex-row-reverse justify-between items-center px-container-padding py-stack-sm w-full h-16">
+<!-- Trailing Icon -->
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-low transition-colors active:scale-95 transition-transform text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl">notifications</span>
+</button>
+<!-- Headline -->
+<h1 class="font-headline-md text-headline-md font-bold text-primary flex-1 text-center">
+                ورشة كار هاب
+            </h1>
+<!-- Leading Avatar -->
+<div class="w-10 h-10 rounded-full overflow-hidden border border-surface-container-highest">
+<img alt="Workshop Logo" class="w-full h-full object-cover" data-alt="A professional and modern logo for a high-end auto repair workshop named Car Hub, featuring stylized mechanical elements and a sleek emerald green and deep navy blue color palette, set against a pristine white background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh8QEVEMS3aLmUEEaJwzZW2zZv3SyHUZQZmvRv9T0F1mQGDrOtOTm3-z5rU-CvNRBxtmLAlwghM8yjrNt-a7ZE8IQAGomr_USzaEiFnh1Xhpub86jxVOtJ0t_44FLh8J6shkl3cn7DxGvCPD7qIY23r1UewDmiRanxmIItgDk6DkjGC-EZdQXf5wZyaUtdJtVAURL2DyLsfNVzU9OX8Kg9i42DRtk4uop6oWtq4l4RP49bJolq0YYK"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-container-padding py-stack-lg max-w-3xl mx-auto">
+<!-- Screen Header -->
+<div class="mb-stack-lg">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-surface mb-2">عروض أسعاري</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">تتبع حالة عروض الأسعار التي قدمتها للعملاء.</p>
+</div>
+<!-- Segmented Tabs -->
+<div class="flex overflow-x-auto pb-4 -mx-container-padding px-container-padding space-x-2 space-x-reverse hide-scrollbar mb-stack-md">
+<button class="px-5 py-2.5 rounded-full bg-primary text-on-primary font-label-bold text-label-bold whitespace-nowrap shadow-sm active:scale-95 transition-transform">الكل</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-low active:scale-95 transition-all">قيد الانتظار</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-low active:scale-95 transition-all">مقبول</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface-variant font-label-bold text-label-bold whitespace-nowrap hover:bg-surface-container-low active:scale-95 transition-all">مكتمل</button>
+</div>
+<!-- Bids List -->
+<div class="flex flex-col gap-card-gap">
+<!-- Bid Card 1: Accepted -->
+<article class="bg-surface-container-lowest rounded-[16px] p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-highest flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-2xl">directions_car</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[16px] leading-[24px] font-bold text-on-surface mb-1">إصلاح صدام - هوندا أكورد</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                24 أكتوبر 2023
+                            </p>
+</div>
+</div>
+<div class="bg-primary-container/10 border border-primary-container/20 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-bold">مقبول</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container-highest my-1"></div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">قيمة العرض</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">1,200 ر.س</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-bold text-label-bold hover:bg-surface-container-high transition-colors">
+                        التفاصيل
+                    </button>
+</div>
+</article>
+<!-- Bid Card 2: Pending -->
+<article class="bg-surface-container-lowest rounded-[16px] p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-highest flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-2xl">build</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[16px] leading-[24px] font-bold text-on-surface mb-1">تغيير فحمات - تويوتا كامري</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                26 أكتوبر 2023
+                            </p>
+</div>
+</div>
+<div class="bg-surface-container-high border border-outline-variant/30 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm text-tertiary font-bold">قيد الانتظار</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container-highest my-1"></div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">قيمة العرض</span>
+<span class="font-headline-md text-headline-md font-bold text-on-surface">450 ر.س</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-low text-on-surface font-label-bold text-label-bold hover:bg-surface-container-high transition-colors">
+                        تعديل العرض
+                    </button>
+</div>
+</article>
+<!-- Bid Card 3: Completed -->
+<article class="bg-surface-container-lowest rounded-[16px] p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-highest opacity-75 flex flex-col gap-3">
+<div class="flex justify-between items-start">
+<div class="flex gap-3">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-2xl">settings_applications</span>
+</div>
+<div>
+<h3 class="font-headline-md text-[16px] leading-[24px] font-bold text-on-surface mb-1">توضيب جيربوكس - نيسان باترول</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+                                15 أكتوبر 2023
+                            </p>
+</div>
+</div>
+<div class="bg-secondary-container/20 border border-secondary/20 px-3 py-1 rounded-full flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">مكتمل</span>
+</div>
+</div>
+<div class="h-[1px] w-full bg-surface-container-highest my-1"></div>
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant mb-1">قيمة العرض</span>
+<span class="font-headline-md text-headline-md font-bold text-secondary">8,500 ر.س</span>
+</div>
+<button class="px-4 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant text-on-surface font-label-bold text-label-bold hover:bg-surface-container-low transition-colors">
+                        الفاتورة
+                    </button>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(10,25,47,0.05)] block md:hidden">
+<div class="flex flex-row-reverse justify-around items-center w-full px-2 py-3">
+<!-- Item 1 -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 w-[72px]">
+<span class="material-symbols-outlined mb-1">dashboard</span>
+<span class="font-label-sm text-[10px] leading-[14px] truncate w-full text-center">لوحة القيادة</span>
+</button>
+<!-- Item 2 -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 w-[72px]">
+<span class="material-symbols-outlined mb-1">gavel</span>
+<span class="font-label-sm text-[10px] leading-[14px] truncate w-full text-center">المناقصات</span>
+</button>
+<!-- Item 3: Active (My Bids -> عطاءاتي) -->
+<button class="flex flex-col items-center justify-center text-primary font-label-bold bg-primary-container/10 rounded-xl px-4 py-1 active:scale-90 transition-transform w-[72px]">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">request_quote</span>
+<span class="font-label-sm text-[10px] leading-[14px] font-bold truncate w-full text-center">عطاءاتي</span>
+</button>
+<!-- Item 4 -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 w-[72px]">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-sm text-[10px] leading-[14px] truncate w-full text-center">الملف الشخصي</span>
+</button>
+</div>
+</nav>
+</body></html>

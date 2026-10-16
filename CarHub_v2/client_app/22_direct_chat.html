@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CarHub - Chat</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#005228",
+                        "primary-container": "#00b761",
+                        "inverse-on-surface": "#eff1f4",
+                        "on-tertiary-fixed": "#121c2a",
+                        "primary": "#006d37",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "tertiary": "#555f6f",
+                        "secondary-container": "#d2e0fe",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "outline": "#6d7b6d",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#2d3746",
+                        "inverse-primary": "#4de085",
+                        "surface-tint": "#006d37",
+                        "surface-variant": "#e0e3e6",
+                        "outline-variant": "#bccabb",
+                        "on-secondary-container": "#55637d",
+                        "on-primary-container": "#00401e",
+                        "primary-fixed": "#6dfe9e",
+                        "on-primary-fixed": "#00210d",
+                        "tertiary-fixed": "#d9e3f7",
+                        "surface-bright": "#f7f9fc",
+                        "on-background": "#191c1e",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e6",
+                        "primary-fixed-dim": "#4de085",
+                        "surface-dim": "#d8dadd",
+                        "surface-container-high": "#e6e8eb",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-container-low": "#f2f4f7",
+                        "tertiary-container": "#96a0b2",
+                        "error-container": "#ffdad6",
+                        "background": "#f7f9fc",
+                        "surface-container": "#eceef1",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "surface": "#f7f9fc",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "on-surface-variant": "#3d4a3e",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#515f78",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "section-margin": "32px",
+                        "container-padding": "20px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "card-gap": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "body-sm": ["Readex Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Readex Pro', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-low min-h-screen flex flex-col relative text-on-surface">
+<!-- Header -->
+<header class="bg-surface-container-lowest shadow-sm w-full sticky top-0 z-10 px-container-padding py-3 flex items-center justify-between border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="relative">
+<img alt="متجر الأمان" class="w-10 h-10 rounded-full object-cover border border-outline-variant/20 shadow-sm" data-alt="Professional logo of 'متجر الأمان' an auto parts store. The logo features a shield and a gear in a modern, clean design. Emerald and deep navy blue colors on a pristine white background. High resolution, high contrast, corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgW95ti1HaK_sFsGVhbgK61V6LBO7D-hTte6kwiRbsOnZP-0AsQ7Zv4asGP60-kAr8eQNiIInDu_1YlsWHnarYBhM-m9tCW9eM10ZsrteS2h7G0afqMyyGZK0pDN-7hiVgTnXqD-V1I483YRtZv5pkJXtX0i16XCu2lRKJjscm2iAchlFkUHj5DeeUycf7f1ssC1cHUP1KeGwLQ--J0dy50QrC-Alf8U6zDDYCU0BAwHmRLqx691t_"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary rounded-full border-2 border-surface-container-lowest"></span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md text-on-surface">متجر الأمان</h1>
+<p class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+                    متصل الآن
+                </p>
+</div>
+</div>
+<button class="text-on-surface-variant hover:bg-surface-container-low p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</header>
+<!-- Chat Canvas -->
+<main class="flex-1 overflow-y-auto px-container-padding py-stack-lg flex flex-col gap-stack-md pb-24">
+<!-- Date Separator -->
+<div class="flex justify-center my-2">
+<span class="bg-surface-container-highest px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface-variant">اليوم</span>
+</div>
+<!-- User Message (Right-aligned, Navy/Deep Secondary) -->
+<div class="flex justify-start flex-row-reverse mb-4 w-full">
+<div class="flex flex-col items-start max-w-[85%]">
+<div class="bg-on-secondary-fixed-variant text-on-primary rounded-2xl rounded-tr-sm px-4 py-3 shadow-md shadow-on-secondary-fixed-variant/10">
+<p class="font-body-md text-body-md leading-relaxed">
+                        السلام عليكم، هل فحمات فرامل كامري 2022 متوفرة؟
+                    </p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 mr-1 flex items-center gap-1">
+                    10:30 ص
+                    <span class="material-symbols-outlined text-[14px] text-primary">done_all</span>
+</span>
+</div>
+</div>
+<!-- Seller Message (Left-aligned, White) -->
+<div class="flex justify-start mb-4 w-full">
+<div class="flex items-end gap-2 max-w-[85%]">
+<img alt="Store Avatar" class="w-8 h-8 rounded-full object-cover border border-outline-variant/20 shadow-sm shrink-0 mb-5" data-alt="Professional logo of 'متجر الأمان' an auto parts store. The logo features a shield and a gear in a modern, clean design. Emerald and deep navy blue colors on a pristine white background. High resolution, high contrast, corporate modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtksM8Yg4LQozfuVZNCIu6vQDvM0xbv1KH7F_kwp2Ut-SCO0V83Orm35sBKLTX2W-mMCYopIcWg1afALTMlnIFQ3v4Dyt7aYgIH9M5wlGxvSKS-b0cZeyMfxk3Hs-HAfyKB33B9bUejHKTDizyFO05VniYKRFBmvFBA_dvCeD2HgCcyaTlmW2rPW905DJunp46VPDap1vtuPC-7PfcbjaJl3YPnL_MWvRQpIcS4K4NX26YqBnkSRRO"/>
+<div class="flex flex-col items-start">
+<div class="bg-surface-container-lowest text-on-surface rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm border border-outline-variant/20">
+<p class="font-body-md text-body-md leading-relaxed">
+                            وعليكم السلام، نعم متوفرة وسعرها 180 ر.س
+                        </p>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1 ml-1">
+                        10:32 ص
+                    </span>
+</div>
+</div>
+</div>
+</main>
+<!-- Input Bar -->
+<div class="bg-surface-container-lowest border-t border-outline-variant/30 px-container-padding py-3 sticky bottom-0 w-full z-10 shadow-[0_-4px_20px_rgba(10,25,47,0.02)]">
+<div class="flex items-center gap-2">
+<div class="flex-1 relative">
+<input class="w-full bg-surface-container-low border border-outline-variant/50 text-on-surface font-body-md text-body-md rounded-full py-3 px-4 pr-12 focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all placeholder:text-on-surface-variant/60" placeholder="اكتب رسالتك..." type="text"/>
+<button class="absolute right-2 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+</button>
+</div>
+<button class="bg-primary text-on-primary w-12 h-12 rounded-full flex items-center justify-center hover:bg-primary-container transition-colors shadow-md active:scale-95 shrink-0 bg-gradient-to-l from-primary to-[#008c47]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</body></html>

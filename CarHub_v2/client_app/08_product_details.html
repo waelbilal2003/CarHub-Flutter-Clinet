@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تفاصيل المنتج - CarHub</title>
+<!-- Google Fonts: Readex Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#2d3746",
+                      "on-secondary-fixed": "#0d1c32",
+                      "secondary": "#515f78",
+                      "surface-variant": "#e0e3e6",
+                      "background": "#f7f9fc",
+                      "surface-bright": "#f7f9fc",
+                      "on-tertiary": "#ffffff",
+                      "surface-dim": "#d8dadd",
+                      "surface-container-lowest": "#ffffff",
+                      "primary": "#006d37",
+                      "on-surface": "#191c1e",
+                      "secondary-container": "#d2e0fe",
+                      "on-tertiary-fixed-variant": "#3d4757",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#d9e3f7",
+                      "tertiary-container": "#96a0b2",
+                      "secondary-fixed": "#d6e3ff",
+                      "secondary-fixed-dim": "#b9c7e4",
+                      "tertiary": "#555f6f",
+                      "on-primary-fixed-variant": "#005228",
+                      "primary-container": "#00b761",
+                      "inverse-surface": "#2d3133",
+                      "outline-variant": "#bccabb",
+                      "on-secondary-container": "#55637d",
+                      "on-error": "#ffffff",
+                      "on-primary-container": "#00401e",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed": "#121c2a",
+                      "surface-container-highest": "#e0e3e6",
+                      "on-surface-variant": "#3d4a3e",
+                      "on-secondary": "#ffffff",
+                      "outline": "#6d7b6d",
+                      "inverse-primary": "#4de085",
+                      "on-primary-fixed": "#00210d",
+                      "surface-container-high": "#e6e8eb",
+                      "surface": "#f7f9fc",
+                      "tertiary-fixed-dim": "#bdc7da",
+                      "error": "#ba1a1a",
+                      "primary-fixed": "#6dfe9e",
+                      "surface-container-low": "#f2f4f7",
+                      "inverse-on-surface": "#eff1f4",
+                      "error-container": "#ffdad6",
+                      "surface-tint": "#006d37",
+                      "on-secondary-fixed-variant": "#39475f",
+                      "on-background": "#191c1e",
+                      "primary-fixed-dim": "#4de085",
+                      "surface-container": "#eceef1"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "3xl": "1.5rem"
+              },
+              "spacing": {
+                      "section-margin": "32px",
+                      "stack-lg": "24px",
+                      "stack-sm": "8px",
+                      "card-gap": "16px",
+                      "base": "8px",
+                      "stack-md": "16px",
+                      "container-padding": "20px",
+                      "bottom-bar": "140px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Readex Pro"],
+                      "body-lg": ["Readex Pro"],
+                      "label-sm": ["Readex Pro"],
+                      "label-bold": ["Readex Pro"],
+                      "body-sm": ["Readex Pro"],
+                      "headline-xl": ["Readex Pro"],
+                      "body-md": ["Readex Pro"],
+                      "headline-lg-mobile": ["Readex Pro"],
+                      "headline-lg": ["Readex Pro"]
+              },
+              "fontSize": {
+                      "headline-md": ["20px", {"lineHeight": "30px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-xl": ["32px", {"lineHeight": "48px", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["22px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "headline-lg": ["24px", {"lineHeight": "36px", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        /* Custom Utilities */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md selection:bg-primary-container selection:text-on-primary">
+<!-- Top Navigation (Contextual, Floating) -->
+<header class="fixed top-0 left-0 right-0 z-50 px-container-padding py-stack-md flex justify-between items-center w-full max-w-3xl mx-auto">
+<!-- Right side (Back in RTL) -->
+<button aria-label="Back" class="w-10 h-10 rounded-full glass-nav flex items-center justify-center text-on-secondary-fixed shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<!-- Left side (Favorite in RTL) -->
+<button aria-label="Favorite" class="w-10 h-10 rounded-full glass-nav flex items-center justify-center text-on-secondary-fixed shadow-sm active:scale-95 transition-transform">
+<span class="material-symbols-outlined">favorite_border</span>
+</button>
+</header>
+<!-- Main Content Container -->
+<main class="w-full max-w-3xl mx-auto relative pb-bottom-bar min-h-screen flex flex-col">
+<!-- Hero Product Image -->
+<section class="w-full h-[530px] max-h-[500px] bg-surface-container-low relative">
+<img alt="مساعدات أمامية - نيسان" class="w-full h-full object-contain p-8 absolute inset-0 mix-blend-multiply" data-alt="A pristine, high-fidelity studio photograph of a premium automotive shock absorber (Nissan Altima model). The mechanical part is isolated against a very soft, light grey studio backdrop, reflecting a high-end corporate modern aesthetic. The lighting is bright and even, casting subtle, diffused shadows that emphasize the precise industrial engineering, metallic textures, and robust build quality of the spare part. The composition is clean, maintaining a high-tech and reliable vibe suitable for a premium marketplace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCgPMIm59jtJyseDH9GIge9w5bqTLgjGu63ozH1ZwZGk1S6dYVcgnriTPu0DUM40Vg-ifw8UIfn4LYa6GqIbkiqqw_CicSruECpBYTyHK9suZHSFo5vhriGOJAEIHx5REbmuSnz5r6sj4cJLsvLfFAJ9npzWVbxcVd2PUr2Mnx2B3GBBOG3H_5PZpWYXtRBwc-WzXnfc0YIfeIXpoCgupP3GbzrSAHxMtJhPx4OC2eVF037onY12lF"/>
+<!-- Decorative gradient overlay for smooth transition to card -->
+<div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-surface-container-lowest/50 to-transparent pointer-events-none"></div>
+</section>
+<!-- Product Details Card (Layered Elevation) -->
+<section class="bg-surface-container-lowest rounded-t-3xl -mt-8 relative z-20 flex-1 px-container-padding py-stack-lg shadow-[0px_-4px_20px_rgba(10,25,47,0.05)]">
+<!-- Header Info -->
+<div class="mb-section-margin">
+<h2 class="font-headline-xl text-headline-xl text-on-secondary-fixed tracking-tight">150 ر.س</h2>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-secondary-fixed mt-2">مساعدات أمامية - نيسان</h1>
+<!-- Compatibility Badge -->
+<div class="inline-flex items-center gap-1.5 mt-4 bg-primary-fixed/20 text-on-primary-fixed-variant px-3 py-1.5 rounded-full border border-primary-fixed/30">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-bold text-label-bold">متوافق مع سيارتك</span>
+</div>
+</div>
+<!-- Specifications Table (Minimalist Bento-style rows) -->
+<div class="mb-section-margin">
+<h3 class="font-headline-md text-headline-md text-on-secondary-fixed mb-stack-md flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">tune</span>
+                    المواصفات
+                </h3>
+<div class="flex flex-col border border-surface-variant rounded-xl overflow-hidden bg-surface-bright shadow-sm">
+<!-- Spec Row 1 -->
+<div class="flex justify-between items-center p-4 border-b border-surface-variant">
+<span class="text-secondary font-body-sm text-body-sm">رقم القطعة (OE)</span>
+<span class="text-on-secondary-fixed font-label-bold text-label-bold tracking-wide">54302-3TA0A</span>
+</div>
+<!-- Spec Row 2 -->
+<div class="flex justify-between items-center p-4 border-b border-surface-variant">
+<span class="text-secondary font-body-sm text-body-sm">موديل السيارة</span>
+<span class="text-on-secondary-fixed font-label-bold text-label-bold">نيسان ألتيما 2013-2018</span>
+</div>
+<!-- Spec Row 3 -->
+<div class="flex justify-between items-center p-4 border-b border-surface-variant bg-surface-container-low/30">
+<span class="text-secondary font-body-sm text-body-sm">الحالة</span>
+<span class="text-on-secondary-fixed font-label-bold text-label-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span>
+                            جديد
+                        </span>
+</div>
+<!-- Spec Row 4 -->
+<div class="flex justify-between items-center p-4">
+<span class="text-secondary font-body-sm text-body-sm">البائع</span>
+<span class="text-primary font-label-bold text-label-bold underline decoration-primary/30 underline-offset-4 cursor-pointer hover:text-primary-container transition-colors">متجر الأمان</span>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div class="mb-section-margin">
+<h3 class="font-headline-md text-headline-md text-on-secondary-fixed mb-stack-sm">التفاصيل</h3>
+<p class="text-on-surface-variant font-body-md text-body-md leading-relaxed">
+                    مساعدات أمامية أصلية مصممة خصيصاً لسيارات نيسان ألتيما لضمان أقصى درجات الراحة والثبات على الطريق. تتحمل الظروف القاسية وتوفر استجابة مثالية لنظام التعليق.
+                </p>
+</div>
+</section>
+</main>
+<!-- Bottom Action Bar (Fixed) -->
+<button aria-label="AI Assistant" class="fixed bottom-[160px] left-4 z-50 w-14 h-14 bg-primary-container text-on-primary rounded-full flex items-center justify-center shadow-lg shadow-primary-container/40 active:scale-95 transition-transform animate-pulse">
+<span class="material-symbols-outlined text-[28px]">smart_toy</span>
+</button><div class="fixed bottom-0 left-0 w-full z-50 bg-surface-container-lowest border-t border-surface-variant shadow-[0px_-10px_20px_rgba(10,25,47,0.03)] pb-safe">
+<div class="max-w-3xl mx-auto px-container-padding py-4 flex flex-col gap-3">
+<!-- Primary Action -->
+<button class="w-full h-14 bg-primary-container hover:bg-[#00a356] text-on-primary rounded-full flex justify-center items-center gap-2 transition-all active:scale-[0.98] shadow-md shadow-primary-container/20 group">
+<span class="material-symbols-outlined group-hover:-translate-y-0.5 transition-transform">shopping_cart</span>
+<span class="font-label-bold text-label-bold text-[16px]">إضافة للسلة</span>
+</button>
+<!-- Secondary Action -->
+<button class="w-full h-12 border-2 border-outline/30 hover:border-outline text-on-surface rounded-full flex justify-center items-center gap-2 transition-all active:scale-[0.98] bg-transparent">
+<span class="material-symbols-outlined text-secondary">build</span>
+<span class="font-label-bold text-label-bold">طلب تركيب في ورشة</span>
+</button>
+</div>
+</div>
+</body></html>

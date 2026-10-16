@@ -1,0 +1,4057 @@
+{
+  "info": {
+    "_postman_id": "45b0783b-fa29-4bed-9ea9-aadc7ca58177",
+    "name": "CarHub Laravel API END",
+    "description": "Postman collection for CarHub APIs. Phase 0 & Phase 1.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "56483289",
+    "_collection_link": "https://go.postman.co/collection/56483289-45b0783b-fa29-4bed-9ea9-aadc7ca58177?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Auth & Profile (المصادقة والحساب)",
+      "item": [
+        {
+          "name": "1. Register (إنشاء حساب)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \" contractor\",\n    \"email\": \"contractor@example.com\",\n    \"password\": \"Password123!\",\n    \"password_confirmation\": \"Password123!\",\n    \"phone\": \"0954652404\",\n    \"type\": \"contractor\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/register",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "1. Register (إنشاء حساب)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \"israamunawwar2\",\n    \"email\": \"israamunawwar2@example.com\",\n    \"password\": \"Password123!\",\n    \"password_confirmation\": \"Password123!\",\n    \"phone\": \"0954652404\",\n    \"type\": \"merchant\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/register",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:35:08 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إنشاء الحساب بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"israamunawwar2\",\n            \"email\": \"israamunawwar2@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"merchant\",\n            \"status\": null,\n            \"avatar_url\": null,\n            \"avatar_thumb_url\": null,\n            \"created_at\": \"2026-09-03T14:35:06+00:00\"\n        },\n        \"token\": \"4|wWZBkbrRlyeKkSFVChg3IEaoVuaQC9nb9v7Le5St78c5753b\"\n    }\n}"
+            },
+            {
+              "name": "1. Register (إنشاء حساب)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"name\": \" contractor\",\n    \"email\": \"contractor@example.com\",\n    \"password\": \"Password123!\",\n    \"password_confirmation\": \"Password123!\",\n    \"phone\": \"0954652404\",\n    \"type\": \"contractor\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/register",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:06:52 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إنشاء الحساب بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"contractor\",\n            \"email\": \"contractor@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"contractor\",\n            \"status\": null,\n            \"avatar_url\": null,\n            \"avatar_thumb_url\": null,\n            \"created_at\": \"2026-09-03T15:06:52+00:00\"\n        },\n        \"token\": \"7|qEdgVPaRkDIjUHUYs8pL3GD1QI9vGzOAU5kUGRNLb9c25fcd\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "2. Login (تسجيل الدخول)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "if(pm.response.code === 200) {",
+                  "    var jsonData = pm.response.json();",
+                  "    pm.environment.set(\"auth_token\", jsonData.data.token);",
+                  "}"
+                ],
+                "type": "text/javascript",
+                "packages": [],
+                "requests": []
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"email\": \"contractor@example.com\",\n    \"password\": \"Password123!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/login",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "2. Login (تسجيل الدخول)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"israamunawwar2@example.com\",\n    \"password\": \"Password123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:51:24 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تسجيل الدخول بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"israamunawwar2\",\n            \"email\": \"israamunawwar2@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"merchant\",\n            \"status\": null,\n            \"avatar_url\": null,\n            \"avatar_thumb_url\": null,\n            \"created_at\": \"2026-09-03T14:35:06+00:00\"\n        },\n        \"token\": \"5|UebTidZ46GULtmRxQBMz75W8F4VtQs6L1RXsve3z8b666a6a\"\n    }\n}"
+            },
+            {
+              "name": "2. Login (تسجيل الدخول)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"email\": \"contractor@example.com\",\n    \"password\": \"Password123!\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/login",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:07:25 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تسجيل الدخول بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 4,\n            \"name\": \"contractor\",\n            \"email\": \"contractor@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"contractor\",\n            \"status\": null,\n            \"avatar_url\": null,\n            \"avatar_thumb_url\": null,\n            \"created_at\": \"2026-09-03T15:06:52+00:00\"\n        },\n        \"token\": \"8|eZA2u8vnC7rlOMix4EAxsxeIkW8MnyLNy6jRel6W7e61bad9\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "3. Get Profile (الملف الشخصي)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/me",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "me"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "3. Get Profile (الملف الشخصي)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/auth/me",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "me"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:53:04 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"israamunawwar2\",\n            \"email\": \"israamunawwar2@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"merchant\",\n            \"status\": null,\n            \"avatar_url\": null,\n            \"avatar_thumb_url\": null,\n            \"created_at\": \"2026-09-03T14:35:06+00:00\"\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "4. Update Profile (تحديث البيانات والصورة)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "israamunawwar",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "israamunawwar2@example.com",
+                  "type": "text"
+                },
+                {
+                  "key": "phone",
+                  "value": "0954652",
+                  "type": "text"
+                },
+                {
+                  "key": "avatar",
+                  "description": "اختر صورة لتحديث صورتك الشخصية",
+                  "type": "file",
+                  "src": "/C:/Users/EsraaMunawwar/Downloads/Telegram Desktop/photo_2026-01-16_16-38-09.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/profile",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "profile"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "4. Update Profile (تحديث البيانات والصورة)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "israamunawwar",
+                      "type": "text"
+                    },
+                    {
+                      "key": "email",
+                      "value": "israamunawwar2@example.com",
+                      "type": "text"
+                    },
+                    {
+                      "key": "phone",
+                      "value": "0954652",
+                      "type": "text"
+                    },
+                    {
+                      "key": "avatar",
+                      "description": "اختر صورة لتحديث صورتك الشخصية",
+                      "type": "file",
+                      "src": [
+                        "/C:/Users/EsraaMunawwar/Downloads/Telegram Desktop/photo_2026-01-16_16-38-09.jpg"
+                      ]
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/profile",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "profile"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:54:01 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تحديث الملف الشخصي بنجاح\",\n    \"data\": {\n        \"user\": {\n            \"id\": 3,\n            \"name\": \"israamunawwar\",\n            \"email\": \"israamunawwar2@example.com\",\n            \"phone\": \"0954652\",\n            \"type\": \"merchant\",\n            \"status\": null,\n            \"avatar_url\": null,\n            \"avatar_thumb_url\": null,\n            \"created_at\": \"2026-09-03T14:35:06+00:00\"\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "5. Change Password (تغيير كلمة المرور)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"current_password\": \"Password123!\",\n    \"password\": \"israa2006\",\n    \"password_confirmation\": \"israa2006\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/auth/change-password",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "change-password"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "5. Change Password (تغيير كلمة المرور)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"current_password\": \"Password123!\",\n    \"password\": \"israa2006\",\n    \"password_confirmation\": \"israa2006\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/auth/change-password",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "change-password"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:54:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تغيير كلمة المرور بنجاح\",\n    \"data\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "6. Logout (تسجيل الخروج)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/auth/logout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "auth",
+                "logout"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "6. Logout (تسجيل الخروج)",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/auth/logout",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "logout"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:54:46 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تسجيل الخروج بنجاح\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2. User Addresses (عناوين الشحن)",
+      "item": [
+        {
+          "name": "2. Store Address (إضافة عنوان)",
+          "item": [
+            {
+              "name": "Store Address - Home",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \"home\",\n    \"recipient_name\": \"israamunawwar\",\n    \"phone\": \"0501234567\",\n    \"city\": \"دبي\",\n    \"address_line\": \"AL Malleha  \" ,\n    \"is_default\": true\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/addresses",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Store Address - Home",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"home\",\n    \"recipient_name\": \"israamunawwar\",\n    \"phone\": \"0501234567\",\n    \"city\": \"دبي\",\n    \"address_line\": \"AL Malleha  \" ,\n    \"is_default\": true\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}/addresses",
+                      "host": [
+                        "{{base_url}}"
+                      ],
+                      "path": [
+                        "addresses"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.3.16"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 03 Sep 2026 14:57:11 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": true,\n    \"message\": \"تم إضافة العنوان بنجاح\",\n    \"data\": {\n        \"address\": {\n            \"id\": 3,\n            \"title\": \"home\",\n            \"recipient_name\": \"israamunawwar\",\n            \"phone\": \"0501234567\",\n            \"city\": \"دبي\",\n            \"address_line\": \"AL Malleha\",\n            \"is_default\": true,\n            \"created_at\": \"2026-09-03T14:57:10+00:00\"\n        }\n    }\n}"
+                },
+                {
+                  "name": "Store Address - Home",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\": \"home\",\n    \"recipient_name\": \"israamunawwar\",\n    \"phone\": \"0501234567\",\n    \"city\": \"دبي\",\n    \"address_line\": \"AL Malleha  \" ,\n    \"is_default\": true\n}\n",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}/addresses",
+                      "host": [
+                        "{{base_url}}"
+                      ],
+                      "path": [
+                        "addresses"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": null,
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.3.16"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Sat, 12 Sep 2026 13:19:54 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": true,\n    \"message\": \"تم إضافة العنوان بنجاح\",\n    \"data\": {\n        \"address\": {\n            \"id\": 6,\n            \"title\": \"home\",\n            \"recipient_name\": \"israamunawwar\",\n            \"phone\": \"0501234567\",\n            \"city\": \"دبي\",\n            \"address_line\": \"AL Malleha\",\n            \"is_default\": true,\n            \"created_at\": \"2026-09-12T13:19:54+00:00\"\n        }\n    }\n}"
+                }
+              ]
+            },
+            {
+              "name": "Store Address - Work",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{auth_token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\":\"job\",\n    \"recipient_name\":\"israamunawwar\",\n    \"phone\": \"0501234567\",\n    \"city\":\"Damascue\",\n    \"address_line\":\"AL Malleha\",\n    \"is_default\":true\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/addresses",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses"
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Store Address - Work",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json",
+                        "type": "text"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n    \"title\":\"job\",\n    \"recipient_name\":\"israamunawwar\",\n    \"phone\": \"0501234567\",\n    \"city\":\"Damascue\",\n    \"address_line\":\"AL Malleha\",\n    \"is_default\":true\n}",
+                      "options": {
+                        "raw": {
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{base_url}}/addresses",
+                      "host": [
+                        "{{base_url}}"
+                      ],
+                      "path": [
+                        "addresses"
+                      ]
+                    }
+                  },
+                  "status": "Created",
+                  "code": 201,
+                  "_postman_previewlanguage": "Text",
+                  "header": [
+                    {
+                      "key": "Host",
+                      "value": "127.0.0.1:8000"
+                    },
+                    {
+                      "key": "Connection",
+                      "value": "close"
+                    },
+                    {
+                      "key": "X-Powered-By",
+                      "value": "PHP/8.3.16"
+                    },
+                    {
+                      "key": "Cache-Control",
+                      "value": "no-cache, private"
+                    },
+                    {
+                      "key": "Date",
+                      "value": "Thu, 03 Sep 2026 14:57:38 GMT"
+                    },
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    },
+                    {
+                      "key": "Access-Control-Allow-Origin",
+                      "value": "*"
+                    }
+                  ],
+                  "cookie": [],
+                  "body": "{\n    \"success\": true,\n    \"message\": \"تم إضافة العنوان بنجاح\",\n    \"data\": {\n        \"address\": {\n            \"id\": 5,\n            \"title\": \"job\",\n            \"recipient_name\": \"israamunawwar\",\n            \"phone\": \"0501234567\",\n            \"city\": \"Damascue\",\n            \"address_line\": \"AL Malleha\",\n            \"is_default\": true,\n            \"created_at\": \"2026-09-03T14:57:38+00:00\"\n        }\n    }\n}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "1. List Addresses (عرض العناوين)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/addresses",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "addresses"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "1. List Addresses (عرض العناوين)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/addresses",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:56:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"title\": \"home\",\n                \"recipient_name\": \"israamunawwar\",\n                \"phone\": \"0501234567\",\n                \"city\": \"دبي\",\n                \"address_line\": \"AL Malleha\",\n                \"is_default\": true,\n                \"created_at\": \"2026-08-24T14:32:34+00:00\"\n            }\n        ]\n    }\n}"
+            },
+            {
+              "name": "1. List Addresses (عرض العناوين)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/addresses",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:58:04 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 5,\n                \"title\": \"job\",\n                \"recipient_name\": \"israamunawwar\",\n                \"phone\": \"0501234567\",\n                \"city\": \"Damascue\",\n                \"address_line\": \"AL Malleha\",\n                \"is_default\": true,\n                \"created_at\": \"2026-09-03T14:57:38+00:00\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"job\",\n                \"recipient_name\": \"israamunawwar\",\n                \"phone\": \"0501234567\",\n                \"city\": \"Damascue\",\n                \"address_line\": \"AL Malleha\",\n                \"is_default\": false,\n                \"created_at\": \"2026-09-03T14:57:32+00:00\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"home\",\n                \"recipient_name\": \"israamunawwar\",\n                \"phone\": \"0501234567\",\n                \"city\": \"دبي\",\n                \"address_line\": \"AL Malleha\",\n                \"is_default\": false,\n                \"created_at\": \"2026-09-03T14:57:10+00:00\"\n            },\n            {\n                \"id\": 1,\n                \"title\": \"home\",\n                \"recipient_name\": \"israamunawwar\",\n                \"phone\": \"0501234567\",\n                \"city\": \"دبي\",\n                \"address_line\": \"AL Malleha\",\n                \"is_default\": false,\n                \"created_at\": \"2026-08-24T14:32:34+00:00\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "3. Show Address (عرض عنوان محدد)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/addresses/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "addresses",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "3. Show Address (عرض عنوان محدد)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/addresses/4",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses",
+                    "4"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 14:58:48 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"address\": {\n            \"id\": 4,\n            \"user_id\": 2,\n            \"title\": \"job\",\n            \"recipient_name\": \"israamunawwar\",\n            \"phone\": \"0501234567\",\n            \"city\": \"Damascue\",\n            \"address_line\": \"AL Malleha\",\n            \"is_default\": false,\n            \"created_at\": \"2026-09-03T14:57:32.000000Z\",\n            \"updated_at\": \"2026-09-03T14:57:38.000000Z\"\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "4. Update Address (تعديل عنوان)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \" Work- Company\",\n    \"recipient_name\": \"israamunawwar \",\n    \"phone\": \"0501234567\",\n    \"city\": \"Damascue\",\n    \"address_line\": \" Malleha  \",\n    \"is_default\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/addresses/3",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "addresses",
+                "3"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "4. Update Address (تعديل عنوان)",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \" Work- Company\",\n    \"recipient_name\": \"israamunawwar \",\n    \"phone\": \"0501234567\",\n    \"city\": \"Damascue\",\n    \"address_line\": \" Malleha  \",\n    \"is_default\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/addresses/3",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses",
+                    "3"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:00:17 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تحديث العنوان بنجاح\",\n    \"data\": {\n        \"address\": {\n            \"id\": 3,\n            \"title\": \"Work- Company\",\n            \"recipient_name\": \"israamunawwar\",\n            \"phone\": \"0501234567\",\n            \"city\": \"Damascue\",\n            \"address_line\": \"Malleha\",\n            \"is_default\": false,\n            \"created_at\": \"2026-09-03T14:57:10+00:00\"\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "5. Set Default Address (تعيين كافتراضي)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/addresses/1/default",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "addresses",
+                "1",
+                "default"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "5. Set Default Address (تعيين كافتراضي)",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/addresses/4/default",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses",
+                    "4",
+                    "default"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:00:50 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تعيين العنوان كافتراضي بنجاح\",\n    \"data\": {\n        \"address\": {\n            \"id\": 4,\n            \"title\": \"job\",\n            \"recipient_name\": \"israamunawwar\",\n            \"phone\": \"0501234567\",\n            \"city\": \"Damascue\",\n            \"address_line\": \"AL Malleha\",\n            \"is_default\": true,\n            \"created_at\": \"2026-09-03T14:57:32+00:00\"\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "6. Delete Address (حذف العنوان)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/addresses/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "addresses",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "6. Delete Address (حذف العنوان)",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/addresses/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "addresses",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:01:11 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم حذف العنوان بنجاح\",\n    \"data\": null\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "3. Tenders (المناقصات)",
+      "item": [
+        {
+          "name": "List Tenders",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tenders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tenders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Tenders",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/tenders",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "tenders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:15:40 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 2,\n                \"title\": \"مطلوب إسمنت\",\n                \"description\": \"نحتاج 30طن إسمنت\",\n                \"budget\": \"50000.00\",\n                \"deadline\": \"2026-12-31T23:59:59+00:00\",\n                \"status\": \"open\",\n                \"attachments\": [],\n                \"contractor\": {\n                    \"id\": 4,\n                    \"name\": \"contractor\",\n                    \"avatar_url\": null\n                },\n                \"created_at\": \"2026-09-03T15:08:40+00:00\"\n            },\n            {\n                \"id\": 1,\n                \"title\": \"مطلوب إسمنت وحديد\",\n                \"description\": \"نحتاج 50 طن إسمنت\",\n                \"budget\": \"50000.00\",\n                \"deadline\": \"2026-12-31T23:59:59+00:00\",\n                \"status\": \"open\",\n                \"attachments\": [],\n                \"contractor\": {\n                    \"id\": 4,\n                    \"name\": \"contractor\",\n                    \"avatar_url\": null\n                },\n                \"created_at\": \"2026-09-03T15:07:43+00:00\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/tenders?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/tenders?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/tenders?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/tenders\",\n            \"per_page\": 15,\n            \"to\": 2,\n            \"total\": 2\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Tender",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "مطلوب إسمنت ",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "نحتاج 30طن إسمنت",
+                  "type": "text"
+                },
+                {
+                  "key": "budget",
+                  "value": "50000",
+                  "type": "text"
+                },
+                {
+                  "key": "deadline",
+                  "value": "2026-12-31 23:59:59",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/tenders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tenders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Tender",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "مطلوب إسمنت وحديد",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "نحتاج 50 طن إسمنت",
+                      "type": "text"
+                    },
+                    {
+                      "key": "budget",
+                      "value": "50000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "deadline",
+                      "value": "2026-12-31 23:59:59",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/tenders",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "tenders"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:07:43 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إنشاء المناقصة بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"مطلوب إسمنت وحديد\",\n        \"description\": \"نحتاج 50 طن إسمنت\",\n        \"budget\": \"50000.00\",\n        \"deadline\": \"2026-12-31T23:59:59+00:00\",\n        \"status\": null,\n        \"attachments\": [],\n        \"contractor\": {\n            \"id\": 4,\n            \"name\": \"contractor\",\n            \"avatar_url\": null\n        },\n        \"created_at\": \"2026-09-03T15:07:43+00:00\"\n    }\n}"
+            },
+            {
+              "name": "Create Tender",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "مطلوب إسمنت ",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "نحتاج 30طن إسمنت",
+                      "type": "text"
+                    },
+                    {
+                      "key": "budget",
+                      "value": "50000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "deadline",
+                      "value": "2026-12-31 23:59:59",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/tenders",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "tenders"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:08:40 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إنشاء المناقصة بنجاح\",\n    \"data\": {\n        \"id\": 2,\n        \"title\": \"مطلوب إسمنت\",\n        \"description\": \"نحتاج 30طن إسمنت\",\n        \"budget\": \"50000.00\",\n        \"deadline\": \"2026-12-31T23:59:59+00:00\",\n        \"status\": null,\n        \"attachments\": [],\n        \"contractor\": {\n            \"id\": 4,\n            \"name\": \"contractor\",\n            \"avatar_url\": null\n        },\n        \"created_at\": \"2026-09-03T15:08:40+00:00\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Show Tender",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/tenders/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "tenders",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Show Tender",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/tenders/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "tenders",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:16:21 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تفاصيل المناقصة\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"مطلوب إسمنت وحديد\",\n        \"description\": \"نحتاج 50 طن إسمنت\",\n        \"budget\": \"50000.00\",\n        \"deadline\": \"2026-12-31T23:59:59+00:00\",\n        \"status\": \"open\",\n        \"attachments\": [],\n        \"contractor\": {\n            \"id\": 4,\n            \"name\": \"contractor\",\n            \"avatar_url\": null\n        },\n        \"created_at\": \"2026-09-03T15:07:43+00:00\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "4. Bids (عروض الأسعار)",
+      "item": [
+        {
+          "name": "List Bids (عرض كل العروض)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bids",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bids"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Bids (عرض كل العروض)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/bids",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bids"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:43:54 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 2,\n                \"tender_id\": 2,\n                \"price\": \"69000.00\",\n                \"proposal\": null,\n                \"technical_offer\": null,\n                \"financial_offer\": null,\n                \"status\": \"submitted\",\n                \"admin_notes\": null,\n                \"submitted_at\": \"2026-09-03T08:20:50+00:00\",\n                \"attachments\": [],\n                \"merchant\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n                },\n                \"created_at\": \"2026-09-03T15:20:50+00:00\"\n            },\n            {\n                \"id\": 1,\n                \"tender_id\": 1,\n                \"price\": \"48000.00\",\n                \"proposal\": null,\n                \"technical_offer\": null,\n                \"financial_offer\": null,\n                \"status\": \"submitted\",\n                \"admin_notes\": null,\n                \"submitted_at\": \"2026-09-03T08:20:09+00:00\",\n                \"attachments\": [],\n                \"merchant\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n                },\n                \"created_at\": \"2026-09-03T15:20:09+00:00\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/bids\",\n            \"per_page\": 15,\n            \"to\": 2,\n            \"total\": 2\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Filter Bids by Tender (فلترة العروض حسب مناقصة محددة)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bids?tender_id=1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bids"
+              ],
+              "query": [
+                {
+                  "key": "tender_id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Filter Bids by Tender (فلترة العروض حسب مناقصة محددة)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/bids?tender_id=1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bids"
+                  ],
+                  "query": [
+                    {
+                      "key": "tender_id",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:44:17 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"tender_id\": 1,\n                \"price\": \"48000.00\",\n                \"proposal\": null,\n                \"technical_offer\": null,\n                \"financial_offer\": null,\n                \"status\": \"submitted\",\n                \"admin_notes\": null,\n                \"submitted_at\": \"2026-09-03T08:20:09+00:00\",\n                \"attachments\": [],\n                \"merchant\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n                },\n                \"created_at\": \"2026-09-03T15:20:09+00:00\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/bids\",\n            \"per_page\": 15,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Filter Bids by Merchant (فلترة العروض حسب مورد محدد)",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bids?merchant_id=2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bids"
+              ],
+              "query": [
+                {
+                  "key": "merchant_id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Filter Bids by Merchant (فلترة العروض حسب مورد محدد)",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/bids?merchant_id=2",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bids"
+                  ],
+                  "query": [
+                    {
+                      "key": "merchant_id",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:44:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 2,\n                \"tender_id\": 2,\n                \"price\": \"69000.00\",\n                \"proposal\": null,\n                \"technical_offer\": null,\n                \"financial_offer\": null,\n                \"status\": \"submitted\",\n                \"admin_notes\": null,\n                \"submitted_at\": \"2026-09-03T08:20:50+00:00\",\n                \"attachments\": [],\n                \"merchant\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n                },\n                \"created_at\": \"2026-09-03T15:20:50+00:00\"\n            },\n            {\n                \"id\": 1,\n                \"tender_id\": 1,\n                \"price\": \"48000.00\",\n                \"proposal\": null,\n                \"technical_offer\": null,\n                \"financial_offer\": null,\n                \"status\": \"submitted\",\n                \"admin_notes\": null,\n                \"submitted_at\": \"2026-09-03T08:20:09+00:00\",\n                \"attachments\": [],\n                \"merchant\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n                },\n                \"created_at\": \"2026-09-03T15:20:09+00:00\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/bids?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/bids\",\n            \"per_page\": 15,\n            \"to\": 2,\n            \"total\": 2\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Submit Bid",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "tender_id",
+                  "value": "1",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "48000",
+                  "type": "text"
+                },
+                {
+                  "key": "notes",
+                  "value": "مستعدون للتوريد الفوري",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/bids",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bids"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Submit Bid",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "tender_id",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price",
+                      "value": "48000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "notes",
+                      "value": "مستعدون للتوريد الفوري",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/bids",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bids"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:20:09 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تقديم العرض بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"tender_id\": \"1\",\n        \"price\": \"48000.00\",\n        \"proposal\": null,\n        \"technical_offer\": null,\n        \"financial_offer\": null,\n        \"status\": null,\n        \"admin_notes\": null,\n        \"submitted_at\": null,\n        \"attachments\": [],\n        \"merchant\": {\n            \"id\": 2,\n            \"name\": \"israamunawwar\",\n            \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n        },\n        \"created_at\": \"2026-09-03T15:20:09+00:00\"\n    }\n}"
+            },
+            {
+              "name": "Submit Bid",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "tender_id",
+                      "value": "2",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price",
+                      "value": "69000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "notes",
+                      "value": "مستعدون للتوريد الفوري",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/bids",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bids"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:20:50 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تقديم العرض بنجاح\",\n    \"data\": {\n        \"id\": 2,\n        \"tender_id\": \"2\",\n        \"price\": \"69000.00\",\n        \"proposal\": null,\n        \"technical_offer\": null,\n        \"financial_offer\": null,\n        \"status\": null,\n        \"admin_notes\": null,\n        \"submitted_at\": null,\n        \"attachments\": [],\n        \"merchant\": {\n            \"id\": 2,\n            \"name\": \"israamunawwar\",\n            \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n        },\n        \"created_at\": \"2026-09-03T15:20:50+00:00\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Accept Bid",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/bids/1/accept",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "bids",
+                "1",
+                "accept"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Accept Bid",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/bids/1/accept",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "bids",
+                    "1",
+                    "accept"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:48:02 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم قبول العرض بنجاح. تم إغلاق المناقصة ورفض العروض الأخرى.\",\n    \"data\": {\n        \"id\": 1,\n        \"tender_id\": 1,\n        \"price\": \"48000.00\",\n        \"proposal\": null,\n        \"technical_offer\": null,\n        \"financial_offer\": null,\n        \"status\": \"accepted\",\n        \"admin_notes\": null,\n        \"submitted_at\": \"2026-09-03T08:20:09+00:00\",\n        \"attachments\": [],\n        \"merchant\": {\n            \"id\": 2,\n            \"name\": \"israamunawwar\",\n            \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n        },\n        \"created_at\": \"2026-09-03T15:20:09+00:00\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "5. Messages (المحادثات)",
+      "item": [
+        {
+          "name": "List Conversations",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/messages",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "messages"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Conversations",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/messages",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "messages"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:52:45 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"sender\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\"\n                },\n                \"receiver\": {\n                    \"id\": 4,\n                    \"name\": \"contractor\",\n                    \"avatar_url\": null\n                },\n                \"last_message_at\": \"2026-09-03T15:52:18+00:00\",\n                \"created_at\": \"2026-09-03T15:52:18+00:00\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/messages?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/messages?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/messages?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/messages\",\n            \"per_page\": 20,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Send Message",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "receiver_id",
+                  "value": "2",
+                  "type": "text"
+                },
+                {
+                  "key": "content",
+                  "value": "هل الإسمنت متوفر لديكم؟",
+                  "type": "text"
+                },
+                {
+                  "key": "tender_id",
+                  "value": "1",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/messages",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "messages"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Send Message",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "receiver_id",
+                      "value": "2",
+                      "type": "text"
+                    },
+                    {
+                      "key": "content",
+                      "value": "هل الإسمنت متوفر لديكم؟",
+                      "type": "text"
+                    },
+                    {
+                      "key": "tender_id",
+                      "value": "1",
+                      "type": "text"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/messages",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "messages"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:52:18 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إرسال الرسالة بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"conversation_id\": 1,\n        \"tender_id\": \"1\",\n        \"body\": \"هل الإسمنت متوفر لديكم؟\",\n        \"read_at\": null,\n        \"sender\": {\n            \"id\": 4,\n            \"name\": \"contractor\",\n            \"avatar_url\": null\n        },\n        \"created_at\": \"2026-09-03T15:52:18+00:00\",\n        \"attachments\": []\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Show Chat",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/messages/2",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "messages",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Show Chat",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/messages/2",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "messages",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "Text",
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 03 Sep 2026 15:53:10 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Success\",\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"conversation_id\": 1,\n                \"tender_id\": 1,\n                \"body\": \"هل الإسمنت متوفر لديكم؟\",\n                \"read_at\": null,\n                \"sender\": {\n                    \"id\": 4,\n                    \"name\": \"contractor\",\n                    \"avatar_url\": null\n                },\n                \"created_at\": \"2026-09-03T15:52:18+00:00\",\n                \"attachments\": []\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/messages/2?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/messages/2?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/messages/2?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/messages/2\",\n            \"per_page\": 50,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "6. Products & Catalog",
+      "item": [
+        {
+          "name": "Browse Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Browse Products",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/products",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 13:05:16 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"title\": \"إطارات ميشلان\",\n                \"description\": \"إطارات عالية الجودة للسيارات الرياضية\",\n                \"price\": \"1200.00\",\n                \"stock\": 50,\n                \"status\": \"active\",\n                \"status_label\": \"نشط\",\n                \"merchant\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"email\": \"israamunawwar@example.com\",\n                    \"phone\": \"0954652404\",\n                    \"type\": \"merchant\",\n                    \"status\": null,\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n                    \"avatar_thumb_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n                    \"created_at\": \"2026-08-24T12:07:33+00:00\"\n                },\n                \"category\": null,\n                \"brand\": null,\n                \"images\": [\n                    {\n                        \"id\": 1,\n                        \"image_url\": \"http://127.0.0.1:8000/storage/products/7jrezIeDXGP6Qq2i5BgXXFlnolsv8NWHklvl7VDt.png\",\n                        \"is_primary\": true,\n                        \"sort_order\": 0\n                    }\n                ],\n                \"created_at\": \"2026-09-12T13:02:20.000000Z\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/products?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/products?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/products?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/products\",\n            \"per_page\": 15,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Show Product",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/products/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "1"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Show Product",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/products/1",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "1"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 14:28:04 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"إطارات ميشلان\",\n        \"description\": \"إطارات عالية الجودة للسيارات الرياضية\",\n        \"price\": \"1200.00\",\n        \"stock\": 46,\n        \"status\": \"active\",\n        \"status_label\": \"نشط\",\n        \"merchant\": {\n            \"id\": 2,\n            \"name\": \"israamunawwar\",\n            \"email\": \"israamunawwar@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"merchant\",\n            \"status\": null,\n            \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n            \"avatar_thumb_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n            \"created_at\": \"2026-08-24T12:07:33+00:00\"\n        },\n        \"category\": null,\n        \"brand\": null,\n        \"images\": [\n            {\n                \"id\": 1,\n                \"image_url\": \"http://127.0.0.1:8000/storage/products/7jrezIeDXGP6Qq2i5BgXXFlnolsv8NWHklvl7VDt.png\",\n                \"is_primary\": true,\n                \"sort_order\": 0\n            }\n        ],\n        \"reviews\": [\n            {\n                \"id\": 1,\n                \"rating\": 5,\n                \"comment\": \"منتج ممتاز جداً\",\n                \"user\": {\n                    \"id\": 2,\n                    \"name\": \"israamunawwar\",\n                    \"email\": \"israamunawwar@example.com\",\n                    \"phone\": \"0954652404\",\n                    \"type\": \"merchant\",\n                    \"status\": null,\n                    \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n                    \"avatar_thumb_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n                    \"created_at\": \"2026-08-24T12:07:33+00:00\"\n                },\n                \"created_at\": \"2026-09-12T14:27:49.000000Z\"\n            }\n        ],\n        \"created_at\": \"2026-09-12T13:02:20.000000Z\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "7. Shopping Cart & Wishlist",
+      "item": [
+        {
+          "name": "View Cart",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/cart",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cart"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "View Cart",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/cart",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cart"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 14:27:27 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"id\": 2,\n        \"user_id\": 2,\n        \"items\": [],\n        \"total_amount\": 0,\n        \"created_at\": \"2026-09-12T14:27:27.000000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add to Cart",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"product_id\": 1,\n    \"quantity\": 2\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/cart/items",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cart",
+                "items"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add to Cart",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"product_id\": 1,\n    \"quantity\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/cart/items",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "cart",
+                    "items"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 13:14:28 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إضافة المنتج للسلة بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"quantity\": 4,\n        \"product\": {\n            \"id\": 1,\n            \"title\": \"إطارات ميشلان\",\n            \"description\": \"إطارات عالية الجودة للسيارات الرياضية\",\n            \"price\": \"1200.00\",\n            \"stock\": 50,\n            \"status\": \"active\",\n            \"status_label\": \"نشط\",\n            \"created_at\": \"2026-09-12T13:02:20.000000Z\"\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add Review",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"rating\": 5,\n    \"comment\": \"منتج ممتاز جداً\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/products/1/reviews",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "products",
+                "1",
+                "reviews"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Review",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"rating\": 5,\n    \"comment\": \"منتج ممتاز جداً\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/products/1/reviews",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "products",
+                    "1",
+                    "reviews"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 14:27:49 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إضافة التقييم بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"rating\": 5,\n        \"comment\": \"منتج ممتاز جداً\",\n        \"user\": {\n            \"id\": 2,\n            \"name\": \"israamunawwar\",\n            \"email\": \"israamunawwar@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"merchant\",\n            \"status\": null,\n            \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n            \"avatar_thumb_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n            \"created_at\": \"2026-08-24T12:07:33+00:00\"\n        },\n        \"created_at\": \"2026-09-12T14:27:49.000000Z\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "8. Orders & Checkout",
+      "item": [
+        {
+          "name": "Checkout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"address_id\": 1,\n    \"notes\": \"الرجاء التوصيل في الصباح\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/checkout",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "checkout"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Checkout",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"address_id\": 6,\n    \"notes\": \"الرجاء التوصيل في الصباح\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/checkout",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "checkout"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 13:20:18 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إتمام الشراء بنجاح\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"order_number\": \"ORD-R6IUNIVWSN\",\n            \"total_amount\": \"4800.00\",\n            \"status\": \"pending\",\n            \"status_label\": \"قيد الانتظار\",\n            \"shipping_address\": \"home - israamunawwar, دبي, AL Malleha (0501234567)\",\n            \"notes\": \"الرجاء التوصيل في الصباح\",\n            \"merchant\": {\n                \"id\": 2,\n                \"name\": \"israamunawwar\",\n                \"email\": \"israamunawwar@example.com\",\n                \"phone\": \"0954652404\",\n                \"type\": \"merchant\",\n                \"status\": null,\n                \"avatar_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n                \"avatar_thumb_url\": \"http://localhost:8000/storage/2/photo_2026-01-16_16-38-09.jpg\",\n                \"created_at\": \"2026-08-24T12:07:33+00:00\"\n            },\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"quantity\": 4,\n                    \"unit_price\": \"1200.00\",\n                    \"subtotal\": \"4800.00\",\n                    \"product\": {\n                        \"id\": 1,\n                        \"title\": \"إطارات ميشلان\",\n                        \"description\": \"إطارات عالية الجودة للسيارات الرياضية\",\n                        \"price\": \"1200.00\",\n                        \"stock\": 46,\n                        \"status\": \"active\",\n                        \"status_label\": \"نشط\",\n                        \"created_at\": \"2026-09-12T13:02:20.000000Z\"\n                    }\n                }\n            ],\n            \"created_at\": \"2026-09-12T13:20:18.000000Z\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "My Orders",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/orders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "My Orders",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/orders",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 14:25:33 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"data\": [],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/orders?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/orders?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": null,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/orders?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/orders\",\n            \"per_page\": 15,\n            \"to\": null,\n            \"total\": 0\n        }\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "9. Merchant Dashboard",
+      "item": [
+        {
+          "name": "Add Product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "إطارات ميشلان",
+                  "type": "text"
+                },
+                {
+                  "key": "description",
+                  "value": "إطارات عالية الجودة للسيارات الرياضية",
+                  "type": "text"
+                },
+                {
+                  "key": "price",
+                  "value": "1200",
+                  "type": "text"
+                },
+                {
+                  "key": "stock",
+                  "value": "50",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/merchant/products",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "merchant",
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Product",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "إطارات ميشلان",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "إطارات عالية الجودة للسيارات الرياضية",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price",
+                      "value": "1200",
+                      "type": "text"
+                    },
+                    {
+                      "key": "stock",
+                      "value": "50",
+                      "type": "text"
+                    },
+                    {
+                      "key": "images[]",
+                      "type": "file",
+                      "uuid": "7ea86164-4d67-407b-9913-b04cbed3fc11",
+                      "src": "/C:/Users/EsraaMunawwar/Pictures/Saved Pictures/dtc.png"
+                    },
+                    {
+                      "key": "",
+                      "type": "file",
+                      "uuid": "ff8d514b-2cd3-4fdb-a7b9-4d83f729f758",
+                      "value": null,
+                      "disabled": true
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/merchant/products",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "merchant",
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 13:02:20 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم إضافة المنتج بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"إطارات ميشلان\",\n        \"description\": \"إطارات عالية الجودة للسيارات الرياضية\",\n        \"price\": \"1200.00\",\n        \"stock\": 50,\n        \"status\": \"active\",\n        \"status_label\": \"نشط\",\n        \"category\": null,\n        \"brand\": null,\n        \"images\": [\n            {\n                \"id\": 1,\n                \"image_url\": \"http://127.0.0.1:8000/storage/products/7jrezIeDXGP6Qq2i5BgXXFlnolsv8NWHklvl7VDt.png\",\n                \"is_primary\": true,\n                \"sort_order\": 0\n            }\n        ],\n        \"created_at\": \"2026-09-12T13:02:20.000000Z\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Merchant Orders",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/merchant/orders",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "merchant",
+                "orders"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Merchant Orders",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{base_url}}/merchant/orders",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "merchant",
+                    "orders"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 13:22:14 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"data\": [\n            {\n                \"id\": 1,\n                \"order_number\": \"ORD-R6IUNIVWSN\",\n                \"total_amount\": \"4800.00\",\n                \"status\": \"pending\",\n                \"status_label\": \"قيد الانتظار\",\n                \"shipping_address\": \"home - israamunawwar, دبي, AL Malleha (0501234567)\",\n                \"notes\": \"الرجاء التوصيل في الصباح\",\n                \"buyer\": {\n                    \"id\": 4,\n                    \"name\": \"contractor\",\n                    \"email\": \"contractor@example.com\",\n                    \"phone\": \"0954652404\",\n                    \"type\": \"contractor\",\n                    \"status\": null,\n                    \"avatar_url\": null,\n                    \"avatar_thumb_url\": null,\n                    \"created_at\": \"2026-09-03T15:06:52+00:00\"\n                },\n                \"items\": [\n                    {\n                        \"id\": 1,\n                        \"quantity\": 4,\n                        \"unit_price\": \"1200.00\",\n                        \"subtotal\": \"4800.00\",\n                        \"product\": {\n                            \"id\": 1,\n                            \"title\": \"إطارات ميشلان\",\n                            \"description\": \"إطارات عالية الجودة للسيارات الرياضية\",\n                            \"price\": \"1200.00\",\n                            \"stock\": 46,\n                            \"status\": \"active\",\n                            \"status_label\": \"نشط\",\n                            \"created_at\": \"2026-09-12T13:02:20.000000Z\"\n                        }\n                    }\n                ],\n                \"created_at\": \"2026-09-12T13:20:18.000000Z\"\n            }\n        ],\n        \"links\": {\n            \"first\": \"http://127.0.0.1:8000/api/v1/merchant/orders?page=1\",\n            \"last\": \"http://127.0.0.1:8000/api/v1/merchant/orders?page=1\",\n            \"prev\": null,\n            \"next\": null\n        },\n        \"meta\": {\n            \"current_page\": 1,\n            \"from\": 1,\n            \"last_page\": 1,\n            \"links\": [\n                {\n                    \"url\": null,\n                    \"label\": \"&laquo; Previous\",\n                    \"page\": null,\n                    \"active\": false\n                },\n                {\n                    \"url\": \"http://127.0.0.1:8000/api/v1/merchant/orders?page=1\",\n                    \"label\": \"1\",\n                    \"page\": 1,\n                    \"active\": true\n                },\n                {\n                    \"url\": null,\n                    \"label\": \"Next &raquo;\",\n                    \"page\": null,\n                    \"active\": false\n                }\n            ],\n            \"path\": \"http://127.0.0.1:8000/api/v1/merchant/orders\",\n            \"per_page\": 15,\n            \"to\": 1,\n            \"total\": 1\n        }\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{auth_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"status\": \"processing\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/merchant/orders/1/status",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "merchant",
+                "orders",
+                "1",
+                "status"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update Order Status",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"status\": \"processing\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{base_url}}/merchant/orders/1/status",
+                  "host": [
+                    "{{base_url}}"
+                  ],
+                  "path": [
+                    "merchant",
+                    "orders",
+                    "1",
+                    "status"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Host",
+                  "value": "127.0.0.1:8000"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "X-Powered-By",
+                  "value": "PHP/8.3.16"
+                },
+                {
+                  "key": "Cache-Control",
+                  "value": "no-cache, private"
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 12 Sep 2026 13:23:04 GMT"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Access-Control-Allow-Origin",
+                  "value": "*"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"تم تحديث حالة الطلب بنجاح\",\n    \"data\": {\n        \"id\": 1,\n        \"order_number\": \"ORD-R6IUNIVWSN\",\n        \"total_amount\": \"4800.00\",\n        \"status\": \"processing\",\n        \"status_label\": \"قيد التجهيز\",\n        \"shipping_address\": \"home - israamunawwar, دبي, AL Malleha (0501234567)\",\n        \"notes\": \"الرجاء التوصيل في الصباح\",\n        \"buyer\": {\n            \"id\": 4,\n            \"name\": \"contractor\",\n            \"email\": \"contractor@example.com\",\n            \"phone\": \"0954652404\",\n            \"type\": \"contractor\",\n            \"status\": null,\n            \"avatar_url\": null,\n            \"avatar_thumb_url\": null,\n            \"created_at\": \"2026-09-03T15:06:52+00:00\"\n        },\n        \"items\": [\n            {\n                \"id\": 1,\n                \"quantity\": 4,\n                \"unit_price\": \"1200.00\",\n                \"subtotal\": \"4800.00\",\n                \"product\": {\n                    \"id\": 1,\n                    \"title\": \"إطارات ميشلان\",\n                    \"description\": \"إطارات عالية الجودة للسيارات الرياضية\",\n                    \"price\": \"1200.00\",\n                    \"stock\": 46,\n                    \"status\": \"active\",\n                    \"status_label\": \"نشط\",\n                    \"created_at\": \"2026-09-12T13:02:20.000000Z\"\n                }\n            }\n        ],\n        \"created_at\": \"2026-09-12T13:20:18.000000Z\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000/api/v1"
+    },
+    {
+      "key": "auth_token",
+      "value": ""
+    }
+  ]
+}

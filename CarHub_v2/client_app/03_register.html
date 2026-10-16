@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إنشاء حساب - CarHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#d6e3ff",
+                        "tertiary": "#555f6f",
+                        "surface-tint": "#006d37",
+                        "on-primary-container": "#00401e",
+                        "on-primary-fixed": "#00210d",
+                        "primary-fixed-dim": "#4de085",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e6e8eb",
+                        "surface-dim": "#d8dadd",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "surface-container": "#eceef1",
+                        "on-primary-fixed-variant": "#005228",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "inverse-surface": "#2d3133",
+                        "inverse-on-surface": "#eff1f4",
+                        "outline": "#6d7b6d",
+                        "primary": "#006d37",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#bccabb",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "secondary": "#515f78",
+                        "primary-fixed": "#6dfe9e",
+                        "on-tertiary-container": "#2d3746",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed": "#d9e3f7",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#0d1c32",
+                        "on-secondary-container": "#55637d",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e0e3e6",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fc",
+                        "inverse-primary": "#4de085",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#e0e3e6",
+                        "tertiary-container": "#96a0b2",
+                        "secondary-container": "#d2e0fe",
+                        "on-tertiary-fixed": "#121c2a",
+                        "surface-container-low": "#f2f4f7",
+                        "on-background": "#191c1e",
+                        "surface": "#f7f9fc",
+                        "background": "#f7f9fc",
+                        "primary-container": "#00b761",
+                        "on-surface-variant": "#3d4a3e",
+                        "secondary-fixed-dim": "#b9c7e4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "24px",
+                        "section-margin": "32px",
+                        "base": "8px",
+                        "card-gap": "16px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "container-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "body-sm": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Readex Pro', sans-serif;
+        }
+        
+        /* Floating label styles */
+        .floating-input:focus + .floating-label,
+        .floating-input:not(:placeholder-shown) + .floating-label {
+            transform: translateY(-50%) scale(0.85);
+            top: 0;
+            background-color: theme('colors.surface-container-lowest');
+            padding: 0 4px;
+            color: theme('colors.primary');
+        }
+        
+        .floating-select:focus + .floating-label,
+        .floating-select:valid + .floating-label {
+             transform: translateY(-50%) scale(0.85);
+            top: 0;
+            background-color: theme('colors.surface-container-lowest');
+            padding: 0 4px;
+            color: theme('colors.primary');
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen flex flex-col justify-center items-center py-section-margin px-container-padding">
+<!-- Main Container Card -->
+<div class="w-full max-w-[480px] bg-surface-container-lowest rounded-[16px] shadow-[0px_4px_20px_rgba(10,25,47,0.05)] p-stack-lg flex flex-col gap-stack-lg border border-surface-variant">
+<!-- Header -->
+<div class="text-center flex flex-col gap-stack-sm">
+<h1 class="font-headline-xl text-headline-xl text-primary-container tracking-tight">CarHub</h1>
+<h2 class="font-headline-md text-headline-md text-on-surface">إنشاء حساب جديد</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">انضم إلى منصة قطع الغيار والمزادات الرائدة</p>
+</div>
+<!-- Form -->
+<form class="flex flex-col gap-stack-md w-full">
+<!-- Name Input -->
+<div class="relative w-full">
+<input class="floating-input w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors h-[52px]" id="name" placeholder=" " required="" type="text"/>
+<label class="floating-label absolute right-4 top-1/2 -translate-y-1/2 font-body-md text-body-md text-on-surface-variant transition-all duration-200 pointer-events-none origin-right" for="name">الاسم</label>
+</div>
+<!-- Phone/Email Input -->
+<div class="relative w-full">
+<input class="floating-input w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors h-[52px]" id="contact" placeholder=" " required="" type="text"/>
+<label class="floating-label absolute right-4 top-1/2 -translate-y-1/2 font-body-md text-body-md text-on-surface-variant transition-all duration-200 pointer-events-none origin-right" for="contact">الهاتف / البريد الإلكتروني</label>
+</div>
+<!-- City Select -->
+<div class="relative w-full">
+<select class="floating-select w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors appearance-none h-[52px] cursor-pointer pr-10" id="city" required="">
+<option disabled="" hidden="" selected="" value=""></option>
+<option value="riyadh">الرياض</option>
+<option value="jeddah">جدة</option>
+<option value="dammam">الدمام</option>
+<option value="mecca">مكة المكرمة</option>
+<option value="medina">المدينة المنورة</option>
+</select>
+<label class="floating-label absolute right-4 top-1/2 -translate-y-1/2 font-body-md text-body-md text-on-surface-variant transition-all duration-200 pointer-events-none origin-right" for="city">المدينة</label>
+<div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">expand_more</span>
+</div>
+</div>
+<!-- Password Input -->
+<div class="relative w-full">
+<input class="floating-input w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors h-[52px]" id="password" placeholder=" " required="" type="password"/>
+<label class="floating-label absolute right-4 top-1/2 -translate-y-1/2 font-body-md text-body-md text-on-surface-variant transition-all duration-200 pointer-events-none origin-right" for="password">كلمة المرور</label>
+<button class="absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">visibility_off</span>
+</button>
+</div>
+<!-- Confirm Password Input -->
+<div class="relative w-full">
+<input class="floating-input w-full bg-surface-container-low border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors h-[52px]" id="confirm_password" placeholder=" " required="" type="password"/>
+<label class="floating-label absolute right-4 top-1/2 -translate-y-1/2 font-body-md text-body-md text-on-surface-variant transition-all duration-200 pointer-events-none origin-right" for="confirm_password">تأكيد كلمة المرور</label>
+</div>
+<!-- Submit Button -->
+<button class="w-full bg-gradient-to-r from-primary-container to-[#009e53] hover:from-[#009e53] hover:to-[#008746] text-on-primary font-label-bold text-label-bold py-[14px] rounded-full shadow-[0px_4px_10px_rgba(0,183,97,0.2)] hover:shadow-[0px_6px_14px_rgba(0,183,97,0.3)] transition-all active:scale-[0.98] mt-stack-sm flex items-center justify-center gap-2 h-[52px]" type="submit">
+                إنشاء الحساب
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+</form>
+<!-- Footer Links -->
+<div class="text-center flex flex-col gap-stack-sm pt-stack-sm border-t border-surface-variant">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                لديك حساب بالفعل؟ 
+                <a class="text-primary-container font-label-bold hover:underline" href="#">تسجيل الدخول</a>
+</p>
+<p class="font-body-sm text-[12px] text-outline mt-2">
+                بالنقر على إنشاء الحساب، فإنك توافق على 
+                <a class="hover:text-primary transition-colors underline" href="#">الشروط والأحكام</a>
+                و
+                <a class="hover:text-primary transition-colors underline" href="#">سياسة الخصوصية</a>
+</p>
+</div>
+</div>
+</body></html>

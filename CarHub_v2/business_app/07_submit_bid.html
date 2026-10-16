@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تقديم عرض سعر</title>
+<!-- Google Fonts: Readex Pro for Arabic/English -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-highest": "#e0e3e6",
+                        "primary": "#006d37",
+                        "surface-variant": "#e0e3e6",
+                        "on-primary-container": "#00401e",
+                        "on-primary-fixed": "#00210d",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#bccabb",
+                        "tertiary-container": "#96a0b2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-tertiary-container": "#2d3746",
+                        "on-surface-variant": "#3d4a3e",
+                        "primary-fixed": "#6dfe9e",
+                        "secondary-fixed": "#d6e3ff",
+                        "surface-container-low": "#f2f4f7",
+                        "tertiary": "#555f6f",
+                        "on-tertiary-fixed": "#121c2a",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f7f9fc",
+                        "primary-fixed-dim": "#4de085",
+                        "surface-tint": "#006d37",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#005228",
+                        "inverse-primary": "#4de085",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-dim": "#d8dadd",
+                        "surface-container-high": "#e6e8eb",
+                        "surface": "#f7f9fc",
+                        "surface-bright": "#f7f9fc",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#55637d",
+                        "inverse-on-surface": "#eff1f4",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#d9e3f7",
+                        "secondary-container": "#d2e0fe",
+                        "surface-container": "#eceef1",
+                        "outline": "#6d7b6d",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "secondary": "#515f78",
+                        "primary-container": "#00b761"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "card-gap": "16px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "container-padding": "20px",
+                        "section-margin": "32px",
+                        "stack-sm": "8px",
+                        "base": "8px"
+                    },
+                    fontFamily: {
+                        "body-sm": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"]
+                    },
+                    fontSize: {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Utilities */
+        .glass-gradient {
+            background: linear-gradient(90deg, rgba(0,183,97,1) 0%, rgba(0,109,55,1) 100%);
+        }
+        .text-soft-shadow {
+            text-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+        }
+        
+        /* Hide scrollbar for clean UI but allow scrolling */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #bccabb;
+            border-radius: 4px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary">
+<!-- Transactional TopAppBar (Suppressing global nav shell per instructions) -->
+<header class="sticky top-0 w-full bg-surface-container-lowest shadow-sm z-50 flex items-center justify-between px-container-padding py-4">
+<!-- Back Button (Arrow points right in RTL) -->
+<button aria-label="العودة" class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-highest transition-colors active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface flex-1 text-center">
+            تقديم عرض سعر
+        </h1>
+<!-- Placeholder for symmetry -->
+<div class="w-10 h-10"></div>
+</header>
+<!-- Main Content Area -->
+<main class="px-container-padding py-stack-lg pb-32 max-w-2xl mx-auto">
+<!-- Tender Summary Card (Bento Style) -->
+<div class="bg-surface-container-lowest rounded-[16px] p-stack-md mb-stack-lg shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-high transition-transform duration-300 hover:-translate-y-1">
+<div class="flex gap-stack-md">
+<!-- Vehicle Image -->
+<div class="w-24 h-24 shrink-0 rounded-xl overflow-hidden bg-surface-container-low relative shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-resolution photograph of the front bumper of a white 2023 Toyota Camry showing moderate collision damage. The vehicle is parked inside a brightly lit, pristine, and modern automotive repair workshop with high-key lighting. The scene is clean, organized, and professional, reflecting a premium service environment. The color palette emphasizes crisp whites, metallic silvers, and deep greys, creating a trustworthy and high-tech automotive aesthetic. The focus is sharp on the damaged grille area." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7wFAENVNnhen1CAhevC44GpmR6BEjNOqHO7q4TMlrhGHyLzA4hdK1SHqpB1YFg6S88iBJYkIZ_FB5tkiqnpVmI-AX7Cp2MjIEVf4Zxr3nFLWYH6wjdFuTudxCseose4xYHvILUsP137WxWghEYE_6_ykip1vlY0czYESJQYcnGbocSgoABT1FwgUdYnj86sfvEOPz18RXB6gnDhRFGUYB4WIODYY6QVfmlDg63sVTjOPwN8EXqpWH"/>
+</div>
+<!-- Tender Details -->
+<div class="flex flex-col justify-between flex-1">
+<div>
+<div class="flex items-start justify-between mb-1">
+<h2 class="font-body-lg text-body-lg font-bold text-on-surface leading-tight">تويوتا كامري 2023</h2>
+<span class="inline-flex items-center justify-center px-2 py-0.5 rounded-md bg-surface text-on-surface-variant border border-outline-variant font-label-sm text-label-sm shadow-sm whitespace-nowrap">
+                                هيكل خارجي
+                            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">
+                            إصلاح صدمة أمامية وتغيير الصدام والشبك الأمامي مع رش بوية مطابقة للون الأصلي.
+                        </p>
+</div>
+<div class="flex items-center gap-4 mt-3 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span>الرياض، الصناعية القديمة</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">time_auto</span>
+<span>ينتهي بعد 4 ساعات</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Submission Form -->
+<form class="space-y-stack-lg" onsubmit="event.preventDefault();">
+<!-- Estimated Price -->
+<div class="group">
+<label class="block font-label-bold text-label-bold text-on-surface mb-stack-sm text-soft-shadow transition-colors group-focus-within:text-primary">
+                    السعر التقديري (ر.س)
+                </label>
+<div class="relative flex items-center">
+<span class="absolute right-4 text-outline group-focus-within:text-primary transition-colors">
+<span class="material-symbols-outlined">payments</span>
+</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-xl py-3.5 pr-12 pl-4 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all shadow-sm placeholder:text-tertiary-container" placeholder="أدخل المبلغ الشامل للضريبة..." required="" type="number"/>
+</div>
+</div>
+<!-- Repair Duration -->
+<div class="group">
+<label class="block font-label-bold text-label-bold text-on-surface mb-stack-sm text-soft-shadow transition-colors group-focus-within:text-primary">
+                    مدة الإصلاح المتوقعة
+                </label>
+<div class="relative flex items-center">
+<span class="absolute right-4 text-outline group-focus-within:text-primary transition-colors pointer-events-none">
+<span class="material-symbols-outlined">schedule</span>
+</span>
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-xl py-3.5 pr-12 pl-10 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all shadow-sm cursor-pointer">
+<option disabled="" selected="" value="">اختر المدة الزمنية...</option>
+<option value="1-2">يوم إلى يومين</option>
+<option value="3-5">3 إلى 5 أيام</option>
+<option value="7">أسبوع فأكثر</option>
+</select>
+<span class="absolute left-4 text-outline pointer-events-none">
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</span>
+</div>
+</div>
+<!-- Warranty Period -->
+<div class="group">
+<label class="block font-label-bold text-label-bold text-on-surface mb-stack-sm text-soft-shadow transition-colors group-focus-within:text-primary">
+                    فترة الضمان
+                </label>
+<div class="relative flex items-center">
+<span class="absolute right-4 text-outline group-focus-within:text-primary transition-colors pointer-events-none">
+<span class="material-symbols-outlined">verified</span>
+</span>
+<select class="w-full appearance-none bg-surface-container-low border border-outline-variant rounded-xl py-3.5 pr-12 pl-10 text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all shadow-sm cursor-pointer">
+<option value="0">بدون ضمان</option>
+<option selected="" value="1">شهر واحد (شغل يد)</option>
+<option value="3">3 أشهر</option>
+<option value="6">6 أشهر</option>
+</select>
+<span class="absolute left-4 text-outline pointer-events-none">
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+</span>
+</div>
+</div>
+<!-- Message to Customer -->
+<div class="group">
+<label class="block font-label-bold text-label-bold text-on-surface mb-stack-sm text-soft-shadow transition-colors group-focus-within:text-primary">
+                    رسالة للعميل (اختياري)
+                </label>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low border border-outline-variant rounded-xl p-4 min-h-[120px] text-on-surface font-body-md text-body-md focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary focus:bg-surface-container-lowest transition-all shadow-sm resize-none placeholder:text-tertiary-container" placeholder="أضف تفاصيل تطمئن العميل، مثل جودة القطع المستخدمة أو توفير سيارة بديلة..."></textarea>
+</div>
+</div>
+</form>
+</main>
+<!-- Fixed Bottom Action Bar -->
+<div class="fixed bottom-0 w-full bg-surface-container-lowest/90 backdrop-blur-md border-t border-surface-container-high px-container-padding py-4 z-50 shadow-[0px_-4px_20px_rgba(10,25,47,0.05)]">
+<div class="max-w-2xl mx-auto">
+<button class="w-full glass-gradient text-on-primary font-label-bold text-body-lg py-4 rounded-full shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] transition-all flex items-center justify-center gap-3">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">send</span>
+<span>تقديم العرض</span>
+</button>
+</div>
+</div>
+</body></html>

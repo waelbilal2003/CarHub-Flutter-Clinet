@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>فاتورة ضريبية - CarHub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#6dfe9e",
+                        "surface-container-highest": "#e0e3e6",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "background": "#f7f9fc",
+                        "on-secondary-container": "#55637d",
+                        "on-surface-variant": "#3d4a3e",
+                        "on-primary-fixed": "#00210d",
+                        "surface-bright": "#f7f9fc",
+                        "on-primary": "#ffffff",
+                        "surface-tint": "#006d37",
+                        "tertiary": "#555f6f",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed": "#d9e3f7",
+                        "inverse-on-surface": "#eff1f4",
+                        "secondary-fixed": "#d6e3ff",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#e0e3e6",
+                        "primary": "#006d37",
+                        "inverse-primary": "#4de085",
+                        "surface-container-high": "#e6e8eb",
+                        "outline": "#6d7b6d",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "secondary": "#515f78",
+                        "on-background": "#191c1e",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#d2e0fe",
+                        "surface-container-low": "#f2f4f7",
+                        "surface": "#f7f9fc",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed-variant": "#005228",
+                        "primary-fixed-dim": "#4de085",
+                        "surface-container": "#eceef1",
+                        "outline-variant": "#bccabb",
+                        "primary-container": "#00b761",
+                        "on-primary-container": "#00401e",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d8dadd",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#121c2a",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#96a0b2",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#2d3746"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "section-margin": "32px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "base": "8px",
+                        "card-gap": "16px",
+                        "stack-lg": "24px",
+                        "container-padding": "20px"
+                    },
+                    fontFamily: {
+                        "body-lg": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "body-sm": ["Readex Pro"],
+                        "body-md": ["Readex Pro"]
+                    },
+                    fontSize: {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Readex Pro', sans-serif; }
+        @media print {
+            body { background-color: #ffffff; }
+            .print-hidden { display: none !important; }
+            .print-shadow-none { box-shadow: none !important; }
+            .print-p-0 { padding: 0 !important; }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen">
+<div class="max-w-4xl mx-auto p-container-padding py-stack-lg md:py-section-margin flex flex-col gap-stack-lg">
+<div class="flex justify-between items-center print-hidden">
+<button class="flex items-center gap-2 text-secondary hover:text-primary transition-colors cursor-pointer group">
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+<span class="font-label-bold text-label-bold">العودة للوحة التحكم</span>
+</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-6 md:p-12 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] flex flex-col gap-stack-lg print-shadow-none print-p-0">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-stack-md border-b border-outline-variant/30 pb-6">
+<div class="flex flex-col gap-2">
+<div class="font-headline-xl text-headline-xl text-on-secondary-fixed tracking-tight flex items-center gap-2">
+<span class="text-primary">Car</span>Hub
+                    </div>
+<h1 class="font-headline-md text-headline-md text-on-surface">فاتورة ضريبية مبسطة</h1>
+</div>
+<div class="flex flex-col gap-1 text-right bg-surface-container-low p-4 rounded-lg md:bg-transparent md:p-0 md:rounded-none w-full md:w-auto">
+<div class="flex justify-between md:justify-end gap-4">
+<span class="font-label-sm text-label-sm text-secondary">رقم الفاتورة:</span>
+<span class="font-label-bold text-label-bold text-on-surface">#INV-2024-88</span>
+</div>
+<div class="flex justify-between md:justify-end gap-4">
+<span class="font-label-sm text-label-sm text-secondary">تاريخ الإصدار:</span>
+<span class="font-body-sm text-body-sm text-on-surface">12 أكتوبر 2023</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-lg">
+<div class="flex flex-col gap-2 p-4 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary">البائع:</span>
+<strong class="font-headline-sm text-headline-sm text-on-surface">متجر الأمان لقطع الغيار</strong>
+<div class="font-body-sm text-body-sm text-secondary flex flex-col gap-1">
+<span>الرياض, المنطقة الصناعية, المملكة العربية السعودية</span>
+<span>الرقم الضريبي: 300123456700003</span>
+<span>هاتف: 0501234567</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 p-4 bg-surface-container-low rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary">المشتري:</span>
+<strong class="font-headline-sm text-headline-sm text-on-surface">أحمد محمد</strong>
+<div class="font-body-sm text-body-sm text-secondary flex flex-col gap-1">
+<span>جدة, حي الشاطئ, المملكة العربية السعودية</span>
+<span>رقم الطلب: ORD-8892</span>
+<span>طريقة الدفع: بطاقة إئتمان</span>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto rounded-lg border border-outline-variant/30">
+<table class="w-full text-right border-collapse">
+<thead class="bg-surface-container text-on-surface-variant font-label-bold text-label-bold">
+<tr>
+<th class="py-4 px-4 whitespace-nowrap w-1/2">وصف المنتج</th>
+<th class="py-4 px-4 whitespace-nowrap text-center">الكمية</th>
+<th class="py-4 px-4 whitespace-nowrap text-center">سعر الوحدة</th>
+<th class="py-4 px-4 whitespace-nowrap text-left">المجموع</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface divide-y divide-outline-variant/30">
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-4">مساعدات أمامية - نيسان باترول 2022</td>
+<td class="py-4 px-4 text-center">2</td>
+<td class="py-4 px-4 text-center">750 ر.س</td>
+<td class="py-4 px-4 text-left font-label-bold">1,500 ر.س</td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors">
+<td class="py-4 px-4">فحمات سيراميك - طقم كامل</td>
+<td class="py-4 px-4 text-center">1</td>
+<td class="py-4 px-4 text-center">370 ر.س</td>
+<td class="py-4 px-4 text-left font-label-bold">370 ر.س</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex flex-col md:flex-row justify-between items-end gap-stack-lg mt-4">
+<div class="w-full md:w-1/3 flex items-center justify-center p-4">
+<div class="w-32 h-32 opacity-20" data-alt="A clean, minimalist QR code graphic designed in a dark navy or emerald color, set against a pure white background, suitable for scanning on a professional printed document." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD0-N9W01gLlGc7AvBjLeqAkgtksN7KLUkcMRmlJbwbSMIOJKHP9_iC7AOi9-vFSu1JQHS_KTKjPKoA45FbYpYqBZlXOEiCKpXsZWMeg3YjX-yqVEnVCMjrCKf-Jsp0XjvA8Cv5vW60WP7E88u7HjZLqLiLcoki1-CP11G51HZp9JddD9HrIe8OkhI2g8R5_-MZ5zoRS_yQ4xYf-T8VJwD5U0Wmolad1BqNcMqCo0uCk3-mg0xgmkT8')"></div>
+</div>
+<div class="w-full md:w-1/2 lg:w-1/3 bg-surface-container-low rounded-xl p-6 flex flex-col gap-4">
+<div class="flex justify-between items-center text-secondary">
+<span class="font-body-sm text-body-sm">المجموع الفرعي:</span>
+<span class="font-body-md text-body-md">1,870 ر.س</span>
+</div>
+<div class="flex justify-between items-center text-secondary">
+<span class="font-body-sm text-body-sm">ضريبة القيمة المضافة (15%):</span>
+<span class="font-body-md text-body-md">280 ر.س</span>
+</div>
+<div class="h-px w-full bg-outline-variant/50"></div>
+<div class="flex justify-between items-center">
+<strong class="font-headline-md text-headline-md text-on-surface">الإجمالي:</strong>
+<strong class="font-headline-lg text-headline-lg text-primary">2,150 ر.س</strong>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center border-t border-outline-variant/30 pt-6 print-hidden">
+<p class="font-label-sm text-label-sm text-secondary">نشكركم على ثقتكم في CarHub. لخدمة العملاء يرجى التواصل على support@carhub.sa</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row justify-end gap-stack-md mt-2 print-hidden">
+<button class="flex items-center justify-center gap-2 border border-outline text-primary font-label-bold text-label-bold px-6 py-3 rounded-full hover:bg-surface-container transition-colors w-full sm:w-auto cursor-pointer">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">share</span>
+                مشاركة الفاتورة
+            </button>
+<button class="flex items-center justify-center gap-2 bg-gradient-to-r from-primary-container to-primary text-on-primary-container font-label-bold text-label-bold px-8 py-3 rounded-full hover:opacity-90 transition-opacity shadow-md w-full sm:w-auto cursor-pointer" onclick="window.print()">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">print</span>
+                طباعة الفاتورة
+            </button>
+</div>
+</div>
+</body></html>

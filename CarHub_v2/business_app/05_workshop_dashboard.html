@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ورشة كارهاب - لوحة القيادة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e0e3e6",
+                        "primary": "#006d37",
+                        "surface-variant": "#e0e3e6",
+                        "on-primary-container": "#00401e",
+                        "on-primary-fixed": "#00210d",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#bccabb",
+                        "tertiary-container": "#96a0b2",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-tertiary-container": "#2d3746",
+                        "on-surface-variant": "#3d4a3e",
+                        "primary-fixed": "#6dfe9e",
+                        "secondary-fixed": "#d6e3ff",
+                        "surface-container-low": "#f2f4f7",
+                        "tertiary": "#555f6f",
+                        "on-tertiary-fixed": "#121c2a",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "background": "#f7f9fc",
+                        "primary-fixed-dim": "#4de085",
+                        "surface-tint": "#006d37",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "on-background": "#191c1e",
+                        "on-primary-fixed-variant": "#005228",
+                        "inverse-primary": "#4de085",
+                        "on-secondary-fixed": "#0d1c32",
+                        "surface-dim": "#d8dadd",
+                        "surface-container-high": "#e6e8eb",
+                        "surface": "#f7f9fc",
+                        "surface-bright": "#f7f9fc",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#55637d",
+                        "inverse-on-surface": "#eff1f4",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed": "#d9e3f7",
+                        "secondary-container": "#d2e0fe",
+                        "surface-container": "#eceef1",
+                        "outline": "#6d7b6d",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "secondary": "#515f78",
+                        "primary-container": "#00b761"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-gap": "16px",
+                        "stack-lg": "24px",
+                        "stack-md": "16px",
+                        "container-padding": "20px",
+                        "section-margin": "32px",
+                        "stack-sm": "8px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface-container-lowest dark:bg-surface-container-lowest shadow-sm z-40">
+<div class="flex flex-row-reverse justify-between items-center px-container-padding py-stack-sm w-full">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Workshop Logo" class="w-full h-full object-cover" data-alt="A macro, ultra-detailed shot of an abstract, futuristic car engine part glowing with subtle emerald and silver highlights against a crisp white background, representing mechanical precision and automotive excellence in a bright studio setting. The lighting is pristine and shadowless." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzXDgiFSeI8Pko8LfLKOw1qUjHTSfQhgtebp53xz8q43Sky0lzj62wGfEpO2esCYVAEyqYJRZPKckgtqhIVp620BXudCudEOTFllWDKBLIxn8YungiO3d_GZpfaNrMCh1PrVoQZvb99OPjHl-x0A5D8M5ebo7kQoLlDHeLtEqX3WtFZjHV2XlCseECsfo8iwrZHnY3OVchUQ50vgq6O1H-hXX4kV5kGRLxkII_wS96chkaP2MH8vEG"/>
+</div>
+</div>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">
+                ورشة كارهاب
+            </div>
+<button class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 transition-transform relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface-container-lowest"></span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="px-container-padding py-section-margin max-w-7xl mx-auto space-y-stack-lg">
+<!-- Welcome Section -->
+<section class="mb-section-margin">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">
+                مرحباً بك في لوحة تحكم الورشة
+            </h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                إليك نظرة عامة على نشاطك اليوم.
+            </p>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-card-gap">
+<!-- Stat Card 1: Nearby Tenders -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-high relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/10 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">مناقصات قريبة</p>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">42</h2>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="explore">explore</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-primary relative z-10">
+<span class="material-symbols-outlined text-sm" data-icon="trending_up">trending_up</span>
+<span class="font-label-bold text-label-bold">فرص جديدة</span>
+</div>
+</div>
+<!-- Stat Card 2: Active Bids -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-high relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-tertiary-container/10 rounded-full blur-xl group-hover:bg-tertiary-container/20 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">عروض نشطة</p>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">15</h2>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-2xl" data-icon="gavel">gavel</span>
+</div>
+</div>
+</div>
+<!-- Stat Card 3: Won Jobs -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-high relative overflow-hidden group">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-primary-fixed/20 rounded-full blur-xl group-hover:bg-primary-fixed/30 transition-colors"></div>
+<div class="flex justify-between items-start mb-4 relative z-10">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant mb-1">عمليات إصلاح ناجحة</p>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">128</h2>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary-fixed/20 flex items-center justify-center text-primary-fixed-dim">
+<span class="material-symbols-outlined text-2xl" data-icon="handyman">handyman</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Tenders Preview -->
+<section class="mt-section-margin">
+<div class="flex justify-between items-center mb-stack-md">
+<h3 class="font-headline-md text-headline-md text-on-surface">أحدث المناقصات المتاحة</h3>
+<button class="text-primary font-label-bold text-label-bold hover:underline flex items-center gap-1">
+                    عرض الكل
+                    <span class="material-symbols-outlined text-sm" data-icon="chevron_left">chevron_left</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-card-gap">
+<!-- Tender Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-highest hover:border-primary/30 transition-colors flex flex-col sm:flex-row gap-4">
+<div class="w-full sm:w-32 h-32 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="A clean, bright studio shot of a modern car suspension system, featuring sleek metallic shocks and deep black springs, set against a pristine white background. The lighting highlights the precision engineering and high-quality materials, evoking a sense of automotive reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCZEjWjnx6hwlK_ZTpWlWrSn0_KyOififRylOUEXBycwI0jIgbkzjZ8Le-O_1VMYq-D-mMYIh7gQ2UR28SUStemqIcUcKageITlkWdF6eRk_U8Uuv9Lzy6aF_DD5iULrQ12rNPYes67NlrPLyrgHeO5qnckzrhj7zsph1TTEf3YApwAs5X-2mK99d3gyJpIYlcFhG2wv7aw7KmihlhlR9XNfdKaR9R1lxWFttNATrtzjNMI-Z3lCpP"/>
+<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-1 rounded font-label-sm text-label-sm text-on-surface">
+                            جديد
+                        </div>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-md text-headline-md text-on-surface">تويوتا كامري 2023</h4>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded text-[10px] font-label-bold border border-primary/20">نظام التعليق</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">
+                                مطلوب استبدال ممتصات الصدمات الأمامية وفحص شامل لنظام التعليق.
+                            </p>
+</div>
+<div class="flex justify-between items-center mt-2 pt-3 border-t border-surface-container-highest">
+<div class="flex items-center gap-1 text-error text-sm font-label-bold">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                ينتهي خلال ساعتين
+                            </div>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-4 py-1.5 rounded-full hover:bg-primary-fixed-dim transition-colors shadow-sm">
+                                تقديم عرض
+                            </button>
+</div>
+</div>
+</div>
+<!-- Tender Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-highest hover:border-primary/30 transition-colors flex flex-col sm:flex-row gap-4">
+<div class="w-full sm:w-32 h-32 rounded-lg bg-surface-container-highest overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A macro, beautifully lit studio photograph of a gleaming silver car engine block, isolated on a bright white background. The intricate mechanical details and metallic textures are emphasized by soft, diffused lighting, conveying a premium automotive repair aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOJkk8VNTaqMV7pm8JIrrBgi8vHgRjL1Pyty6x0dtd68htjHIF7myRL2-4vYhTxOipLhEkkl2ySpjqgj96I-xKIyjMRBZMb2mEy0zLnLX2znHRIir9IrzXaZ0DhamVn_2WUDj4E4VYXewy2OaMFIJEQREpf8r_-srFOUvaLccRKOxheAiryR0a6Ure_IRnZNmxaFaxtZlJ035cxMPrQqCYlwFWLVaHrfkvrCUDsuRBLW-C0tQTIFa1"/>
+</div>
+<div class="flex flex-col flex-grow justify-between">
+<div>
+<div class="flex justify-between items-start mb-1">
+<h4 class="font-headline-md text-headline-md text-on-surface">هيونداي إلنترا 2021</h4>
+<span class="bg-tertiary-container/20 text-on-tertiary-container px-2 py-0.5 rounded text-[10px] font-label-bold border border-tertiary-container/30">المحرك</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-2">
+                                فحص تسريب الزيت وتغيير طرمبة الزيت مع عمل صيانة دورية كاملة.
+                            </p>
+</div>
+<div class="flex justify-between items-center mt-2 pt-3 border-t border-surface-container-highest">
+<div class="flex items-center gap-1 text-on-surface-variant text-sm font-label-bold">
+<span class="material-symbols-outlined text-[16px]" data-icon="schedule">schedule</span>
+                                ينتهي غداً
+                            </div>
+<button class="bg-primary text-on-primary font-label-bold text-label-bold px-4 py-1.5 rounded-full hover:bg-primary-fixed-dim transition-colors shadow-sm">
+                                تقديم عرض
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface-container-lowest dark:bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(10,25,47,0.05)]">
+<div class="flex flex-row-reverse justify-around items-center w-full px-2 py-3">
+<!-- Active: لوحة القيادة -->
+<a class="flex flex-col items-center justify-center text-primary font-label-bold bg-primary-container/10 rounded-xl px-4 py-1 hover:text-primary transition-all active:scale-90" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm">لوحة القيادة</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="gavel">gavel</span>
+<span class="font-label-sm text-label-sm mt-0.5">المناقصات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="request_quote">request_quote</span>
+<span class="font-label-sm text-label-sm mt-0.5">عطاءاتي</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 px-4 py-1" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-0.5">الملف الشخصي</span>
+</a>
+</div>
+</nav>
+</body></html>

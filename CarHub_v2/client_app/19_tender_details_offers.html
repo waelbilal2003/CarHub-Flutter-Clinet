@@ -1,0 +1,271 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>تفاصيل المناقصة والعروض - CarHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "error-container": "#ffdad6",
+                        "surface": "#f7f9fc",
+                        "on-secondary-container": "#55637d",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e6",
+                        "surface-tint": "#006d37",
+                        "inverse-surface": "#2d3133",
+                        "error": "#ba1a1a",
+                        "on-surface": "#191c1e",
+                        "tertiary-container": "#96a0b2",
+                        "on-error-container": "#93000a",
+                        "secondary": "#515f78",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#3d4a3e",
+                        "tertiary-fixed": "#d9e3f7",
+                        "inverse-primary": "#4de085",
+                        "surface-bright": "#f7f9fc",
+                        "on-secondary-fixed": "#0d1c32",
+                        "outline-variant": "#bccabb",
+                        "secondary-container": "#d2e0fe",
+                        "primary-container": "#00b761",
+                        "surface-container": "#eceef1",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#00210d",
+                        "on-primary-fixed-variant": "#005228",
+                        "primary": "#006d37",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#121c2a",
+                        "surface-container-highest": "#e0e3e6",
+                        "surface-dim": "#d8dadd",
+                        "secondary-fixed": "#d6e3ff",
+                        "surface-container-high": "#e6e8eb",
+                        "primary-fixed-dim": "#4de085",
+                        "on-tertiary-container": "#2d3746",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "inverse-on-surface": "#eff1f4",
+                        "surface-container-low": "#f2f4f7",
+                        "on-background": "#191c1e",
+                        "primary-fixed": "#6dfe9e",
+                        "on-primary-container": "#00401e",
+                        "tertiary": "#555f6f",
+                        "background": "#f7f9fc",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "outline": "#6d7b6d",
+                        "secondary-fixed-dim": "#b9c7e4"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "card-gap": "16px",
+                        "stack-md": "16px",
+                        "stack-sm": "8px",
+                        "container-padding": "20px",
+                        "stack-lg": "24px",
+                        "base": "8px",
+                        "section-margin": "32px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Readex Pro"],
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "body-sm": ["Readex Pro"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Readex Pro', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col md:pb-0 pb-24">
+<!-- TopAppBar -->
+<header class="bg-surface-container dark:bg-surface-container-highest w-full top-0 sticky bg-gradient-to-r from-on-secondary-fixed to-on-primary-fixed-variant shadow-md flex flex-row-reverse justify-between items-center px-container-padding py-4 w-full z-40">
+<div class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-primary-container dark:text-primary-fixed">location_on</span>
+<span class="text-headline-md font-headline-md text-primary dark:text-primary-fixed font-bold text-headline-lg font-headline-lg">CarHub</span>
+</div>
+<div class="text-headline-md font-headline-md text-primary dark:text-primary-fixed">
+<div class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden cursor-pointer active:scale-95 transition-transform hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-5xl mx-auto px-container-padding pt-stack-lg pb-stack-lg flex flex-col gap-section-margin">
+<!-- Header -->
+<div class="flex items-center gap-3">
+<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container-low text-on-surface hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+<h1 class="text-headline-xl font-headline-xl text-on-surface hidden md:block">تفاصيل المناقصة</h1>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-on-surface md:hidden">تفاصيل المناقصة</h1>
+</div>
+<!-- Tender Summary Card -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-variant">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+<div>
+<h2 class="text-headline-md font-headline-md text-on-surface mb-2">إصلاح صدام أمامي - تويوتا كامري</h2>
+<div class="flex items-center gap-2 text-on-surface-variant text-body-sm font-body-sm">
+<span class="material-symbols-outlined text-base">calendar_today</span>
+<span>تاريخ النشر: 12 أكتوبر 2023</span>
+</div>
+</div>
+<div class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full border border-primary-container/20 flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span class="text-label-bold font-label-bold">نشطة</span>
+</div>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed mb-6">
+                حاجة لإصلاح صدام أمامي لسيارة تويوتا كامري موديل 2022. يوجد خدوش عميقة وكسر بسيط في الجانب الأيمن. يفضل ورشة في شمال الرياض مع ضمان على جودة الطلاء.
+            </p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-surface text-on-surface-variant border border-outline-variant px-3 py-1 rounded-full text-label-sm font-label-sm">هيكل خارجي</span>
+<span class="bg-surface text-on-surface-variant border border-outline-variant px-3 py-1 rounded-full text-label-sm font-label-sm">سمكرة</span>
+<span class="bg-surface text-on-surface-variant border border-outline-variant px-3 py-1 rounded-full text-label-sm font-label-sm">دهان</span>
+</div>
+</div>
+<!-- Offers Section -->
+<div>
+<div class="flex items-center justify-between mb-stack-md">
+<h3 class="text-headline-md font-headline-md text-on-surface">العروض المستلمة (8)</h3>
+<button class="text-body-sm font-body-sm text-primary hover:underline flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    فرز
+                </button>
+</div>
+<!-- Bidding Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-card-gap">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-variant flex flex-col gap-4 hover:shadow-lg transition-shadow relative overflow-hidden group">
+<!-- Accent top line -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-l from-primary-container to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">build</span>
+</div>
+<div>
+<h4 class="text-label-bold font-label-bold text-on-surface">ورشة النجوم للمحركات</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-amber-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm font-label-sm">4.8 (124 تقييم)</span>
+</div>
+</div>
+</div>
+<div class="text-left">
+<span class="text-headline-md font-headline-md text-primary-container block">1,200 ر.س</span>
+</div>
+</div>
+<div class="bg-surface rounded-lg p-3 border border-outline-variant/30 text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>مدة الإنجاز: يومين</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base mt-0.5">info</span>
+<span>شامل قطع الغيار الأصلية والضمان</span>
+</div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full bg-surface-container-high hover:bg-surface-variant text-on-surface py-2 rounded-full text-label-bold font-label-bold transition-colors active:scale-95 border border-outline-variant/50">
+                            عرض التفاصيل
+                        </button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-variant flex flex-col gap-4 hover:shadow-lg transition-shadow relative overflow-hidden group">
+<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-l from-primary-container to-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="flex justify-between items-start">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-secondary text-2xl" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div>
+<h4 class="text-label-bold font-label-bold text-on-surface">مركز الإبداع للسمكرة</h4>
+<div class="flex items-center gap-1 text-on-surface-variant mt-1">
+<span class="material-symbols-outlined text-amber-500 text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-label-sm font-label-sm">4.5 (89 تقييم)</span>
+</div>
+</div>
+</div>
+<div class="text-left">
+<span class="text-headline-md font-headline-md text-primary-container block">1,450 ر.س</span>
+</div>
+</div>
+<div class="bg-surface rounded-lg p-3 border border-outline-variant/30 text-body-sm font-body-sm text-on-surface-variant flex flex-col gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base">schedule</span>
+<span>مدة الإنجاز: يوم واحد</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-base mt-0.5">info</span>
+<span>خدمة التلميع مجاناً بعد الإصلاح</span>
+</div>
+</div>
+<div class="mt-auto pt-2">
+<button class="w-full bg-surface-container-high hover:bg-surface-variant text-on-surface py-2 rounded-full text-label-bold font-label-bold transition-colors active:scale-95 border border-outline-variant/50">
+                            عرض التفاصيل
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-surface-container-lowest dark:bg-surface-dim shadow-[0px_4px_20px_rgba(10,25,47,0.1)] shadow-lg fixed bottom-4 left-4 right-4 z-50 flex flex-row-reverse justify-around items-center h-16 rounded-full fixed bottom-4 left-4 right-4 rounded-full z-50">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="text-label-sm font-label-sm mt-1">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">storefront</span>
+<span class="text-label-sm font-label-sm mt-1">السوق</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="text-label-sm font-label-sm mt-1">المناقصات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 px-2 py-1 rounded-lg relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chat_bubble</span>
+<span class="text-label-sm font-label-sm mt-1">الرسائل</span>
+<span class="absolute top-0 right-1 w-2.5 h-2.5 bg-error rounded-full border-2 border-surface-container-lowest"></span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 transition-transform duration-200 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="text-label-sm font-label-sm mt-1">حسابي</span>
+</button>
+</nav>
+</body></html>

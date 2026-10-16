@@ -1,0 +1,256 @@
+<!DOCTYPE html><html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>CarHub - قائمة المناقصات</title>
+<!-- Google Fonts: Readex Pro -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        body {
+            font-family: 'Readex Pro', sans-serif;
+        }
+    </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#ffdad6",
+                      "surface": "#f7f9fc",
+                      "on-secondary-container": "#55637d",
+                      "on-error": "#ffffff",
+                      "surface-variant": "#e0e3e6",
+                      "surface-tint": "#006d37",
+                      "inverse-surface": "#2d3133",
+                      "error": "#ba1a1a",
+                      "on-surface": "#191c1e",
+                      "tertiary-container": "#96a0b2",
+                      "on-error-container": "#93000a",
+                      "secondary": "#515f78",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#3d4a3e",
+                      "tertiary-fixed": "#d9e3f7",
+                      "inverse-primary": "#4de085",
+                      "surface-bright": "#f7f9fc",
+                      "on-secondary-fixed": "#0d1c32",
+                      "outline-variant": "#bccabb",
+                      "secondary-container": "#d2e0fe",
+                      "primary-container": "#00b761",
+                      "surface-container": "#eceef1",
+                      "on-primary": "#ffffff",
+                      "on-primary-fixed": "#00210d",
+                      "on-primary-fixed-variant": "#005228",
+                      "primary": "#006d37",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-fixed": "#121c2a",
+                      "surface-container-highest": "#e0e3e6",
+                      "surface-dim": "#d8dadd",
+                      "secondary-fixed": "#d6e3ff",
+                      "surface-container-high": "#e6e8eb",
+                      "primary-fixed-dim": "#4de085",
+                      "on-tertiary-container": "#2d3746",
+                      "tertiary-fixed-dim": "#bdc7da",
+                      "inverse-on-surface": "#eff1f4",
+                      "surface-container-low": "#f2f4f7",
+                      "on-background": "#191c1e",
+                      "primary-fixed": "#6dfe9e",
+                      "on-primary-container": "#00401e",
+                      "tertiary": "#555f6f",
+                      "background": "#f7f9fc",
+                      "on-tertiary-fixed-variant": "#3d4757",
+                      "on-secondary-fixed-variant": "#39475f",
+                      "outline": "#6d7b6d",
+                      "secondary-fixed-dim": "#b9c7e4"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px",
+                      "card": "16px"
+              },
+              "spacing": {
+                      "card-gap": "16px",
+                      "stack-md": "16px",
+                      "stack-sm": "8px",
+                      "container-padding": "20px",
+                      "stack-lg": "24px",
+                      "base": "8px",
+                      "section-margin": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Readex Pro"],
+                      "headline-lg-mobile": ["Readex Pro"],
+                      "label-sm": ["Readex Pro"],
+                      "body-md": ["Readex Pro"],
+                      "headline-xl": ["Readex Pro"],
+                      "label-bold": ["Readex Pro"],
+                      "body-lg": ["Readex Pro"],
+                      "headline-md": ["Readex Pro"],
+                      "body-sm": ["Readex Pro"]
+              },
+              "fontSize": {
+                      "headline-lg": ["24px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["22px", {"lineHeight": "32px", "fontWeight": "700"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["32px", {"lineHeight": "48px", "fontWeight": "700"}],
+                      "label-bold": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-md": ["20px", {"lineHeight": "30px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#F5F7FA] text-on-surface min-h-screen pb-24">
+<!-- TopAppBar (from JSON) -->
+<header class="w-full top-0 sticky bg-surface-container dark:bg-surface-container-highest shadow-md z-40">
+<div class="bg-gradient-to-r from-[#0A192F] to-[#112240] h-1 w-full"></div>
+<div class="flex flex-row-reverse justify-between items-center px-container-padding py-4 w-full">
+<div class="flex items-center gap-2 cursor-pointer active:scale-95 transition-transform hover:opacity-80">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed" data-icon="location_on">location_on</span>
+<span class="text-headline-lg font-headline-lg md:text-headline-lg text-[#0A192F] dark:text-primary-fixed">CarHub</span>
+</div>
+<div class="cursor-pointer active:scale-95 transition-transform hover:opacity-80">
+<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden flex items-center justify-center">
+<img alt="Profile Avatar" class="object-cover w-full h-full" data-alt="A close up, high quality studio portrait of an Arabic male mechanic smiling confidently, bright lighting, high tech garage background, professional automotive service context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUdAdAlTM7a2_WrRErz6yJFYsJVRREObOwAsuSzZ-CaIcKp_X3Hh4aWig05sS1_49nGBAKr_QfGZt7JEvxbQHAvQzMbcwh4uTrinLWuF0eTlC4z49dyjotGNVQNWxVY-ZjsWgOegeCXDlefm7fhwg5J0Fdii-aS4wW3uFGg8S9hodjAyNz4q2_tyeSoIiJtbU3cqWFsaM9F08ZNuT3wbI_XpWXJCZe9mTZ_dDqRQm8bEbkHEfo019d">
+</div>
+</div>
+</div>
+<div class="px-container-padding pb-4 text-right">
+<h1 class="text-headline-lg font-headline-lg text-[#0A192F]">المناقصات</h1>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="px-container-padding py-stack-md max-w-4xl mx-auto space-y-stack-lg">
+<!-- Segmented Control -->
+<div class="bg-surface-container-lowest p-1 rounded-full flex shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-variant">
+<button class="flex-1 py-2 text-center rounded-full bg-[#0A192F] text-on-primary text-label-bold font-label-bold transition-colors">
+                مناقصاتي
+            </button>
+<button class="flex-1 py-2 text-center rounded-full text-secondary text-label-bold font-label-bold hover:bg-surface-variant transition-colors">
+                المناقصات النشطة
+            </button>
+</div>
+<!-- Tenders List -->
+<div class="space-y-stack-md">
+<!-- Tender Card 1 -->
+<div class="bg-surface-container-lowest rounded-card p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-variant flex flex-col gap-4 transition-transform hover:scale-[1.01]">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-body-lg font-body-lg text-[#0A192F] font-bold mb-1">إصلاح صدام أمامي وشبك</h2>
+<div class="flex items-center gap-2 text-secondary text-body-sm font-body-sm">
+<span class="px-2 py-0.5 bg-surface-container rounded-full border border-surface-variant">تويوتا كامري 2022</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> الرياض</span>
+</div>
+</div>
+<span class="bg-surface-container px-3 py-1 rounded-full text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> باقي 3 أيام
+                    </span>
+</div>
+<div class="flex gap-2">
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-surface-variant">
+<img alt="Damage 1" class="object-cover w-full h-full" data-alt="Close up shot of a damaged white Toyota Camry front bumper in a bright automotive workshop, clean modern lighting, high detail showing scratches." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeYriA7l-x3TiCI3XQWq3aJ2NYsMYcwn4iZtsLgK372Xf_UHOBXWTLOg-Z9X_iMvOzaxmp7X1L75ttlManJ2zxrtq5NfmxLLG2RW5uoAcQgBPGUP2st5RMdwNkI_G6b_znzVHDPlLg-L61ZlDf1HssWa8Kv3cipO4bwaiiLgKdntk65rF3ooiCwe0NPm4SefGUUCYXBY-BTmjLTmMAyu8GezFLH2yCv0cALMTsXaxTgtCPZyIEAOWk">
+</div>
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-surface-variant">
+<img alt="Damage 2" class="object-cover w-full h-full" data-alt="Close up shot of a broken grill on a white car, automotive repair context, bright industrial workshop lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjA0Yv5Iiso3Gyv2ASsgE65OHfejVKOOZDnDQ0tK4VCpfcncr9U600A9JkLarKZOPdPB2OBeSPBGxSbgoonT0XClPDiasr7pb-02L3FPcwsYKsoJpBoM7T9CeAZLdLvC8cHYri1XcGCATVg13Q1jUYvGyzhBv7zTRvV6joy6rru9ltcci3lrkb38AHn7Wv00RpsurWRzFHIvn6F4lLq_40-zmgySD_JO-4f_OgGy89vPCspDfj273x">
+</div>
+</div>
+<div class="flex justify-between items-center mt-2 pt-4 border-t border-surface-variant">
+<span class="bg-primary-container/10 text-primary px-3 py-1 rounded-full text-label-bold font-label-bold flex items-center gap-1">
+                        12 عرض
+                    </span>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full text-label-bold font-label-bold hover:opacity-90 transition-opacity">
+                        التفاصيل
+                    </button>
+</div>
+</div>
+<!-- Tender Card 2 -->
+<div class="bg-surface-container-lowest rounded-card p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-variant flex flex-col gap-4 transition-transform hover:scale-[1.01]">
+<div class="flex justify-between items-start">
+<div>
+<h2 class="text-body-lg font-body-lg text-[#0A192F] font-bold mb-1">سمكرة باب أيمن خلفي</h2>
+<div class="flex items-center gap-2 text-secondary text-body-sm font-body-sm">
+<span class="px-2 py-0.5 bg-surface-container rounded-full border border-surface-variant">هونداي إلنترا 2020</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> جدة</span>
+</div>
+</div>
+<span class="bg-surface-container px-3 py-1 rounded-full text-label-sm font-label-sm text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> باقي 1 يوم
+                    </span>
+</div>
+<div class="flex gap-2">
+<div class="w-16 h-16 rounded-lg overflow-hidden border border-surface-variant">
+<img alt="Damage 1" class="object-cover w-full h-full" data-alt="Dented rear right door of a silver Hyundai Elantra, well lit garage environment, clear focus on the body damage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTUGiADYc1Dh4kLWd9QeW-Rsua7RPEIE6dR9sPsXyvkKUHyLV9-fLw1GoW0HoLkU7Gl74uGV_yde5l0Z9OKJMAGv1vItfyfSk1lyClnS6qI0C7-syWpJDTN74mqttRR2kM3oJ_qkNzC7ybRCq0hwUy-O93na5pbL4Uom7u0MlOk4DCq1Um5awFCVOYsNd4kQStRg4q8-jSMwRIXOroa2_IuQkvxmfbNXSNJPWaDuEpsrHIVNQOYNA4">
+</div>
+</div>
+<div class="flex justify-between items-center mt-2 pt-4 border-t border-surface-variant">
+<span class="bg-primary-container/10 text-primary px-3 py-1 rounded-full text-label-bold font-label-bold flex items-center gap-1">
+                        5 عروض
+                    </span>
+<button class="bg-primary-container text-on-primary px-6 py-2 rounded-full text-label-bold font-label-bold hover:opacity-90 transition-opacity">
+                        التفاصيل
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (from JSON) -->
+<nav class="fixed bottom-4 left-4 right-4 z-50 flex flex-row-reverse justify-around items-center h-16 bg-surface-container-lowest dark:bg-surface-dim shadow-lg rounded-full px-2 md:hidden" style="box-shadow: 0px 4px 20px rgba(10,25,47,0.1)">
+<!-- الرئيسية (Home) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 duration-200 p-2 rounded-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="text-label-sm font-label-sm">الرئيسية</span>
+</a>
+<!-- السوق (Storefront) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 duration-200 p-2 rounded-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="storefront">storefront</span>
+<span class="text-label-sm font-label-sm">السوق</span>
+</a>
+<!-- المناقصات (Tenders) - ACTIVE STATE -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="gavel" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="text-label-sm font-label-sm font-bold">المناقصات</span>
+</a>
+<!-- الرسائل (Messages) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 duration-200 p-2 rounded-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="chat_bubble">chat_bubble</span>
+<span class="text-label-sm font-label-sm">الرسائل</span>
+</a>
+<!-- حسابي (Profile) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors active:scale-90 duration-200 p-2 rounded-full" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">حسابي</span>
+</a>
+</nav>
+</body></html>

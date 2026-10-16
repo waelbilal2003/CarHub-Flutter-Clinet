@@ -1,0 +1,59 @@
+name: carhub
+description: "CarHub — كل ما تحتاجه لسيارتك في مكان واحد"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # إدارة الحالة
+  flutter_riverpod: ^2.5.1
+
+  # التنقّل
+  go_router: ^14.2.0
+
+  # الشبكة
+  dio: ^5.5.0
+
+  # التخزين الآمن للتوكن
+  flutter_secure_storage: ^9.2.2
+
+  # رفع صورة الملف الشخصي
+  image_picker: ^1.1.2
+
+  # أدوات مساعدة
+  intl: any                 # للتنسيق والترجمة
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+# إصدارات 0.8.13+16 وما بعدها من image_picker_android تحتوي خطأً في
+# build.gradle.kts (يستخدم `kotlin { compilerOptions {...} } }` دون تطبيق
+# إضافة Kotlin في نفس الملف)، فيفشل بناء Android بخطأ "Unresolved reference:
+# compilerOptions". نثبّت 0.8.13+15 (آخر إصدار قبل هذا الخلل، ضمن نفس نطاق
+# ^0.8.13 الذي يطلبه image_picker) لحين نشر إصلاح رسمي.
+dependency_overrides:
+  image_picker_android: 0.8.13+15
+
+flutter:
+  uses-material-design: true
+  # دعم الأصول (الصور)
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  # خط Readex Pro (متغيّر Variable Font — ملف واحد يغطي كل الأوزان
+  # 400/500/600/700 عبر محور wght، بلا اعتماد على شبكة الإنترنت).
+  fonts:
+    - family: Readex Pro
+      fonts:
+        - asset: assets/fonts/ReadexPro-Variable.ttf

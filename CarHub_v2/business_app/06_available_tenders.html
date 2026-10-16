@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>المناقصات المتاحة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-highest": "#e0e3e6",
+                      "primary": "#006d37",
+                      "surface-variant": "#e0e3e6",
+                      "on-primary-container": "#00401e",
+                      "on-primary-fixed": "#00210d",
+                      "on-tertiary": "#ffffff",
+                      "on-surface": "#191c1e",
+                      "on-primary": "#ffffff",
+                      "outline-variant": "#bccabb",
+                      "tertiary-container": "#96a0b2",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-fixed-variant": "#39475f",
+                      "on-tertiary-container": "#2d3746",
+                      "on-surface-variant": "#3d4a3e",
+                      "primary-fixed": "#6dfe9e",
+                      "secondary-fixed": "#d6e3ff",
+                      "surface-container-low": "#f2f4f7",
+                      "tertiary": "#555f6f",
+                      "on-tertiary-fixed": "#121c2a",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "background": "#f7f9fc",
+                      "primary-fixed-dim": "#4de085",
+                      "surface-tint": "#006d37",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "on-tertiary-fixed-variant": "#3d4757",
+                      "on-background": "#191c1e",
+                      "on-primary-fixed-variant": "#005228",
+                      "inverse-primary": "#4de085",
+                      "on-secondary-fixed": "#0d1c32",
+                      "surface-dim": "#d8dadd",
+                      "surface-container-high": "#e6e8eb",
+                      "surface": "#f7f9fc",
+                      "surface-bright": "#f7f9fc",
+                      "on-error": "#ffffff",
+                      "on-secondary-container": "#55637d",
+                      "inverse-on-surface": "#eff1f4",
+                      "secondary-fixed-dim": "#b9c7e4",
+                      "inverse-surface": "#2d3133",
+                      "tertiary-fixed": "#d9e3f7",
+                      "secondary-container": "#d2e0fe",
+                      "surface-container": "#eceef1",
+                      "outline": "#6d7b6d",
+                      "tertiary-fixed-dim": "#bdc7da",
+                      "secondary": "#515f78",
+                      "primary-container": "#00b761"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "card-gap": "16px",
+                      "stack-lg": "24px",
+                      "stack-md": "16px",
+                      "container-padding": "20px",
+                      "section-margin": "32px",
+                      "stack-sm": "8px",
+                      "base": "8px"
+              },
+              "fontFamily": {
+                      "body-sm": [
+                              "Readex Pro"
+                      ],
+                      "label-bold": [
+                              "Readex Pro"
+                      ],
+                      "label-sm": [
+                              "Readex Pro"
+                      ],
+                      "headline-lg-mobile": [
+                              "Readex Pro"
+                      ],
+                      "body-md": [
+                              "Readex Pro"
+                      ],
+                      "headline-md": [
+                              "Readex Pro"
+                      ],
+                      "headline-xl": [
+                              "Readex Pro"
+                      ],
+                      "headline-lg": [
+                              "Readex Pro"
+                      ],
+                      "body-lg": [
+                              "Readex Pro"
+                      ]
+              },
+              "fontSize": {
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-bold": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "22px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "headline-md": [
+                              "20px",
+                              {
+                                      "lineHeight": "30px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "32px",
+                              {
+                                      "lineHeight": "48px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-lg": [
+                              "24px",
+                              {
+                                      "lineHeight": "36px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Readex Pro', sans-serif;
+            background-color: #f7f9fc;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .btn-gradient {
+            background: linear-gradient(90deg, #00b761 0%, #00a055 100%);
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(90deg, #00a055 0%, #008a4a 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface-container-lowest dark:bg-surface-container-lowest shadow-sm z-40">
+<div class="flex flex-row-reverse justify-between items-center px-container-padding py-stack-sm w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">ورشة كار هاب</span>
+</div>
+<button class="p-2 rounded-full hover:bg-surface-container-low transition-colors active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 w-full max-w-3xl mx-auto px-container-padding py-stack-md flex flex-col gap-stack-lg">
+<!-- Header Section -->
+<div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile md:font-headline-lg md:text-headline-lg text-on-background mb-2">المناقصات المتاحة</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">تصفح وقدم عروضك على أحدث طلبات الإصلاح في منطقتك.</p>
+</div>
+<!-- Search & Filter -->
+<div class="flex gap-stack-sm flex-col md:flex-row">
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-tertiary-container">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3 pr-10 pl-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm text-on-surface placeholder:text-tertiary-container transition-all" placeholder="ابحث عن سيارة، نوع العطل..." type="text"/>
+</div>
+<div class="relative min-w-[120px]">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-tertiary-container">location_on</span>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg py-3 pr-10 pl-4 appearance-none focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm text-on-surface cursor-pointer">
+<option value="">المدينة</option>
+<option selected="" value="riyadh">الرياض</option>
+<option value="jeddah">جدة</option>
+<option value="dammam">الدمام</option>
+</select>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-tertiary-container pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Tender Cards List -->
+<div class="flex flex-col gap-card-gap">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-high hover:border-primary-container/30 transition-all flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex gap-2 flex-wrap items-center">
+<span class="bg-error/10 text-error px-2 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                                باقي 5 ساعات
+                            </span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant">
+                                سمكرة ودهان
+                            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background line-clamp-2">إصلاح صدام وكشافات - تويوتا كامري 2023</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>الرياض - حي الملز</span>
+</div>
+</div>
+<!-- Thumbnails -->
+<div class="flex flex-col gap-1 w-20 shrink-0">
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant bg-surface-container">
+<img alt="Car damage 1" class="w-full h-full object-cover" data-alt="Close up photograph of a damaged front bumper of a white Toyota Camry 2023. The bumper has a significant dent and deep scratches on the right side. The lighting is bright daylight, showing the details clearly. The scene is set in an urban environment in Saudi Arabia, suggesting a professional car repair context. Premium automotive repair photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb1tmGg_lMv8qGWxbvvedw0AlSQqIofpgMyX2MYXZ2J7-LoxjzN2LHa22oKAo-xdfe8z78INKwoNV4NoIJg9RFYCFwZlrkPOQ1N2Gx2Eqoex7LbOPZttb7ObA1QBCNuq9lqAXk7fk-h3HdXRzbtB0EF4FlB4urH2FqlaCaHoIa61D868QS-XM_qV8rlaDVqu4M4GFpCPANBn1_fcxy4SwB3el03Xd5VnPpw4k7fLRPSBWYFaIebch0"/>
+</div>
+<div class="flex gap-1">
+<div class="aspect-square w-1/2 rounded-md overflow-hidden border border-outline-variant bg-surface-container relative">
+<img alt="Car damage 2" class="w-full h-full object-cover" data-alt="Detailed shot of a broken fog light on a white Toyota Camry 2023. The glass is cracked and the housing is slightly pushed in. The image is well-lit, highlighting the specific area needing repair. Automotive assessment photography style, clear and focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSDXoyNKX1471VAAlYdTcpBfmKkOXk1OzqHmrtvZv0FEPaU69V7ztRHdxSDySDf_2EE4xbQeYn-mfP4NdjFPRkbCvyvAszKJoO6929kE7ZKlnHOii0RtPPdNRtN4KrqeQAf8Q7HSvYj0rXZzgPkIqGTABXpmfXe6-IlAu5dzTpLEa136AYIhnWbZ-5llk5KiSESzJL24BAwFtvz1VCIPkUbQTXoFkt8zRPJE7UGBv0G-32o5N9sw6k"/>
+</div>
+<div class="aspect-square w-1/2 rounded-md overflow-hidden border border-outline-variant bg-surface-container flex items-center justify-center relative bg-surface-container-high">
+<span class="font-label-bold text-label-sm text-on-surface-variant">+2</span>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container-high flex justify-between items-center">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+<span>الطلبات: </span><span class="font-bold text-on-background">3 عروض</span>
+</div>
+<button class="btn-gradient text-on-primary font-label-bold text-label-bold px-6 py-2 rounded-full shadow-sm hover:shadow-md transition-all active:scale-95">عرض التفاصيل</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-high hover:border-primary-container/30 transition-all flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex gap-2 flex-wrap items-center">
+<span class="bg-surface-container-high text-on-surface-variant px-2 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                                باقي يومين
+                            </span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant">
+                                ميكانيكا
+                            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background line-clamp-2">تغيير فحمات وهوبات أمامية - هيونداي سوناتا 2021</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>الرياض - صناعية النسيم</span>
+</div>
+</div>
+<!-- Thumbnails -->
+<div class="flex flex-col gap-1 w-20 shrink-0">
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant bg-surface-container">
+<img alt="Car damage 1" class="w-full h-full object-cover" data-alt="Close up shot of a worn out brake rotor and brake pads on a Hyundai Sonata 2021. The wheel is removed, exposing the rusty and scored brake disc. Bright shop lighting highlights the wear and tear. Professional automotive diagnostic photography, clear and detailed." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAODBTPEKnwKVzXGrGrrAoePNN6Fm8POx1pQ9FtyK7V3sekYNxJqNjHN8MDt6rBSX6rzIv5DgGOIB69zAE7Qe2viDZZUFNXUO1Omc8BIIIhxgrgaaCZQmvuCviWqsbbTNLH0g8kPryodoPD5AqATAqFYB5RMZu5FNpgKoa3WazPQEsw39QpcEt_L7YiRKqQIWkw_01-YPo7m_mQZm907hFGZY1gGhqvnI_Q4s_w-Hh4uFzkKHU2u9aG"/>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container-high flex justify-between items-center">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+<span>الطلبات: </span><span class="font-bold text-on-background">1 عرض</span>
+</div>
+<button class="bg-surface-container-low text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border border-primary-container/30 hover:bg-primary-container/10 transition-all active:scale-95">عرض التفاصيل</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] border border-surface-container-high hover:border-primary-container/30 transition-all flex flex-col gap-4">
+<div class="flex justify-between items-start gap-4">
+<div class="flex-1 flex flex-col gap-2">
+<div class="flex gap-2 flex-wrap items-center">
+<span class="bg-error/10 text-error px-2 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+                                باقي 1 ساعة
+                            </span>
+<span class="bg-surface-container text-on-surface-variant px-2 py-1 rounded-full font-label-sm text-label-sm flex items-center gap-1 border border-outline-variant">
+                                كهرباء
+                            </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background line-clamp-2">فحص وبرمجة كمبيوتر - لكزس ES 2019</h2>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>الرياض - حي العليا</span>
+</div>
+</div>
+<!-- Thumbnails -->
+<div class="flex flex-col gap-1 w-20 shrink-0">
+<div class="aspect-square rounded-lg overflow-hidden border border-outline-variant bg-surface-container flex items-center justify-center bg-surface-container-low">
+<span class="material-symbols-outlined text-tertiary-container text-3xl">no_photography</span>
+</div>
+</div>
+</div>
+<div class="pt-3 border-t border-surface-container-high flex justify-between items-center">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+<span>الطلبات: </span><span class="font-bold text-on-background">5 عروض</span>
+</div>
+<button class="bg-surface-container-low text-primary font-label-bold text-label-bold px-6 py-2 rounded-full border border-primary-container/30 hover:bg-primary-container/10 transition-all active:scale-95">عرض التفاصيل</button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(10,25,47,0.05)]">
+<div class="flex flex-row-reverse justify-around items-center w-full px-2 py-3">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-transform w-16">
+<span class="material-symbols-outlined text-2xl mb-1">dashboard</span>
+<span class="font-label-sm text-label-sm">لوحة القيادة</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-label-bold bg-primary-container/10 rounded-xl px-4 py-1 hover:text-primary transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="font-label-sm text-label-sm">المناقصات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-transform w-16">
+<span class="material-symbols-outlined text-2xl mb-1">request_quote</span>
+<span class="font-label-sm text-label-sm">عطاءاتي</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-transform w-16">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-label-sm text-label-sm">الملف الشخصي</span>
+</button>
+</div>
+</nav>
+<!-- Desktop Nav Placeholder (Hidden on mobile, just for layout consistency if window resized) -->
+<nav class="hidden md:flex fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(10,25,47,0.05)]">
+<div class="flex flex-row-reverse justify-center gap-8 items-center w-full px-2 py-3 max-w-3xl mx-auto">
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-transform px-4">
+<span class="material-symbols-outlined text-2xl mb-1">dashboard</span>
+<span class="font-label-sm text-label-sm">لوحة القيادة</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary font-label-bold bg-primary-container/10 rounded-xl px-6 py-2 hover:text-primary transition-all active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-2xl mb-1" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="font-label-sm text-label-sm">المناقصات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-transform px-4">
+<span class="material-symbols-outlined text-2xl mb-1">request_quote</span>
+<span class="font-label-sm text-label-sm">عطاءاتي</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-all active:scale-90 transition-transform px-4">
+<span class="material-symbols-outlined text-2xl mb-1">person</span>
+<span class="font-label-sm text-label-sm">الملف الشخصي</span>
+</button>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>البحث ورقم الشاسيه - CarHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "surface-tint": "#006d37",
+                        "secondary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#55637d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-container": "#2d3746",
+                        "surface-container": "#eceef1",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "error-container": "#ffdad6",
+                        "outline": "#6d7b6d",
+                        "surface-dim": "#d8dadd",
+                        "primary": "#006d37",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#4de085",
+                        "inverse-on-surface": "#eff1f4",
+                        "surface-container-highest": "#e0e3e6",
+                        "surface-container-low": "#f2f4f7",
+                        "outline-variant": "#bccabb",
+                        "primary-fixed": "#6dfe9e",
+                        "primary-container": "#00b761",
+                        "tertiary-container": "#96a0b2",
+                        "tertiary": "#555f6f",
+                        "surface-bright": "#f7f9fc",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "surface-variant": "#e0e3e6",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#0d1c32",
+                        "on-secondary": "#ffffff",
+                        "on-primary-container": "#00401e",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "on-tertiary-fixed": "#121c2a",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#515f78",
+                        "inverse-primary": "#4de085",
+                        "tertiary-fixed": "#d9e3f7",
+                        "on-surface-variant": "#3d4a3e",
+                        "surface-container-high": "#e6e8eb",
+                        "background": "#f7f9fc",
+                        "surface": "#f7f9fc",
+                        "on-background": "#191c1e",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#d2e0fe",
+                        "on-primary-fixed": "#00210d",
+                        "on-primary-fixed-variant": "#005228"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-gap": "16px",
+                        "stack-sm": "8px",
+                        "stack-lg": "24px",
+                        "section-margin": "32px",
+                        "stack-md": "16px",
+                        "container-padding": "20px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Readex Pro"],
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"],
+                        "headline-md": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "body-sm": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Readex Pro', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface pb-24 min-h-screen">
+<!-- TopAppBar -->
+<header class="bg-surface w-full top-0 sticky shadow-sm z-40">
+<div class="flex items-center px-container-padding py-stack-sm w-full">
+<button class="text-on-surface-variant hover:bg-surface-container-low transition-colors active:scale-95 duration-150 p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<h1 class="font-headline-md text-headline-md-mobile text-on-surface mx-auto pr-8">البحث ورقم الشاسيه</h1>
+</div>
+</header>
+<main class="px-container-padding pt-stack-md">
+<!-- Main Search -->
+<div class="relative mb-stack-lg">
+<div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface text-sm rounded-lg focus:ring-primary-container focus:border-primary-container block pl-10 pr-10 p-3 h-12 shadow-[0px_4px_20px_rgba(10,25,47,0.02)]" placeholder="ابحث عن قطع غيار..." type="text"/>
+<button class="absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-symbols-outlined text-outline" data-icon="tune">tune</span>
+</button>
+</div>
+<!-- VIN Lookup -->
+<section class="mb-section-margin">
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface mb-stack-sm">البحث بواسطة رقم الشاسيه (VIN)</h2>
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] flex flex-col gap-3">
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">أدخل رقم الشاسيه المكون من 17 حرفاً ورقم للحصول على قطع غيار متوافقة 100%.</p>
+<div class="flex gap-2 w-full">
+<input class="flex-1 bg-surface border border-outline-variant text-on-surface text-sm rounded-lg focus:ring-primary-container focus:border-primary-container block px-3 uppercase" placeholder="أدخل رقم الشاسيه..." type="text"/>
+<button class="bg-primary-container text-on-primary font-label-bold text-label-bold px-4 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-fixed-dim transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+<div class="relative flex items-center py-2">
+<div class="flex-grow border-t border-outline-variant"></div>
+<span class="flex-shrink-0 mx-4 text-outline font-body-sm text-body-sm">أو</span>
+<div class="flex-grow border-t border-outline-variant"></div>
+</div>
+<button class="w-full border border-primary-container text-primary-container font-label-bold text-label-bold px-4 py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-container/10 transition-colors active:scale-95">
+<span class="material-symbols-outlined" data-icon="barcode_scanner">barcode_scanner</span>
+                    مسح رقم الشاسيه
+                </button>
+</div>
+</section>
+<!-- Categories -->
+<section class="mb-section-margin">
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface mb-stack-sm">التصنيفات</h2>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(10,25,47,0.05)] overflow-hidden divide-y divide-outline-variant/30">
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">المحرك</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_left">chevron_left</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="tire_repair">tire_repair</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">الفرامل</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_left">chevron_left</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="battery_charging_full">battery_charging_full</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">الكهرباء</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_left">chevron_left</span>
+</a>
+<a class="flex items-center justify-between p-4 hover:bg-surface-container-low transition-colors group" href="#">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="directions_car">directions_car</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface group-hover:text-primary transition-colors">الهيكل</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_left">chevron_left</span>
+</a>
+</div>
+</section>
+<!-- Popular Searches -->
+<section class="mb-section-margin">
+<h2 class="font-headline-md text-headline-md-mobile text-on-surface mb-stack-sm">الأكثر بحثاً</h2>
+<div class="grid grid-cols-2 gap-4">
+<a class="bg-surface-container-lowest rounded-xl p-3 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] hover:bg-surface-container-low transition-colors flex flex-col items-center gap-2 text-center" href="#">
+<img class="w-16 h-16 object-contain rounded-lg bg-surface" data-alt="A clean, highly detailed product photography shot of ceramic brake pads for a modern sedan, resting on a clean white surface with subtle ambient lighting. The style is premium automotive e-commerce, high resolution, crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1DU0mckLGadfUfTEwZJvKXGSSgTDXdmKD3hLUzazKhzT4p3rL_y8OLkbaXhGlhqbgeh1MMEZw4b5M8F8o-FquQUoAjTX1Er-UkQ7A5qQZASVe9Tl6A76XBX0_nJcOAFDnnU5fHgmLVY4_TfqgAGGfc7y_QKOx-S1fVQF5zhD6sxTcqHNopnqWRI9Xk7owDDTKEXdpMZpB736GDzgXB55CUBsRVcYY5nKiJOZ2DGPZ9eudvdfYRRSZ"/>
+<span class="font-body-sm text-body-sm text-on-surface">فحمات فرامل كامري</span>
+</a>
+<a class="bg-surface-container-lowest rounded-xl p-3 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] hover:bg-surface-container-low transition-colors flex flex-col items-center gap-2 text-center" href="#">
+<img class="w-16 h-16 object-contain rounded-lg bg-surface" data-alt="A clean, highly detailed product photography shot of a brand new engine air filter for a Japanese SUV, resting on a clean white surface with subtle ambient lighting. The style is premium automotive e-commerce, high resolution, crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFr-CRFOQqhpyoO89OhpP0flzvIDsCErA0JC1Fyeas0ELLXzbXB50u-idYsvdzVnrM0QLI9w8HdXyVT83QjGuzRVJMI5SwTjN4OvUz1nfO7obRNtTczBsxLxlESrOY2OIgPJWRgulGrvcAaJauaLS_XBoO03Quv-IZLCHJlOXVHdxTUBU7CDh5fiQ4txBvI1le9eXL5EiETS30KmZSVajTagMhZXFBkD1YAnHjO3fOtVC057zk4Nri"/>
+<span class="font-body-sm text-body-sm text-on-surface">فلاتر نيسان</span>
+</a>
+<a class="bg-surface-container-lowest rounded-xl p-3 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] hover:bg-surface-container-low transition-colors flex flex-col items-center gap-2 text-center" href="#">
+<img class="w-16 h-16 object-contain rounded-lg bg-surface" data-alt="A clean, highly detailed product photography shot of a modern car headlight assembly, glowing slightly, resting on a clean white surface with subtle ambient lighting. The style is premium automotive e-commerce, high resolution, crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBl4eOu9dpfwqZjyxN0qHnm6e2XFxj5Mko7sudDrFgA2cMNpKSwdalAg5QXyGSy7QE9VVQdfCdEpwb6dWs1Iu2bWD8-hEbdbk4tTxXJYz-pyLEfmmu4eYK1E-FTsPjaODDLiB_PpxKt--LNAf4Qx7EoTk7acCRT3QbzynPw11JA2oc7lpAFJhbhbGiqiZUiu9u8ZOZkDlqEiR0kRSeBkBkFj1MColOPpptjV5SlV0B_dVYZt5cyrCvw"/>
+<span class="font-body-sm text-body-sm text-on-surface">شمعات أمامية</span>
+</a>
+<a class="bg-surface-container-lowest rounded-xl p-3 shadow-[0px_4px_20px_rgba(10,25,47,0.05)] hover:bg-surface-container-low transition-colors flex flex-col items-center gap-2 text-center" href="#">
+<img class="w-16 h-16 object-contain rounded-lg bg-surface" data-alt="A clean, highly detailed product photography shot of high performance spark plugs in a set of four, resting on a clean white surface with subtle ambient lighting. The style is premium automotive e-commerce, high resolution, crisp focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHojD97leRE7cicOHfPrzTjtu5n_VkI3M2Uhmpy9IQR9Ys1gHwD9ZPZQIMUbCOoRZs9ciLqzD8hE-dPOuhJ47GrEEOgdY4bS4WUG45VWueEMHJpk9oR-dgiBaGYEy5bzMv6s2voIM_BnjrTdsDCsmgKbqnHebTNko-mledV9Cqrv4jkK__V3rlGaCQnX27G-c4ruF0VtLE89b2rCqNsqthJ0_xcuEjfyrswj-Po2J1l_O1nqRHKw6d"/>
+<span class="font-body-sm text-body-sm text-on-surface">بواجي رياضية</span>
+</a>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-inverse-surface fixed bottom-0 w-full z-50 rounded-t-xl border-t border-outline-variant dark:border-none shadow-[0px_-4px_20px_rgba(10,25,47,0.05)] shadow-lg md:hidden">
+<div class="flex flex-row-reverse justify-around items-center w-full px-4 pb-6 pt-2">
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high transition-all active:scale-90 transition-transform duration-200 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-sm text-label-sm mt-1">الرئيسية</span>
+</button>
+<button class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed-dim bg-primary-container/10 rounded-xl px-3 py-1 hover:bg-surface-container-high transition-all active:scale-90 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="storefront" data-weight="fill" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label-sm text-label-sm mt-1">السوق</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high transition-all active:scale-90 transition-transform duration-200 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="gavel">gavel</span>
+<span class="font-label-sm text-label-sm mt-1">المناقصات</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high transition-all active:scale-90 transition-transform duration-200 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-label-sm text-label-sm mt-1">الرسائل</span>
+</button>
+<button class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high transition-all active:scale-90 transition-transform duration-200 rounded-xl px-3 py-1">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-label-sm text-label-sm mt-1">حسابي</span>
+</button>
+</div>
+</nav>
+</body></html>

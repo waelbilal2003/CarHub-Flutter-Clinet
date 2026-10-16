@@ -1,0 +1,304 @@
+<!DOCTYPE html><html dir="rtl" lang="ar"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>متجر الأمان لقطع الغيار - CarHub</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#2d3746",
+                        "on-secondary-fixed": "#0d1c32",
+                        "secondary": "#515f78",
+                        "surface-variant": "#e0e3e6",
+                        "background": "#f7f9fc",
+                        "surface-bright": "#f7f9fc",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#d8dadd",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#006d37",
+                        "on-surface": "#191c1e",
+                        "secondary-container": "#d2e0fe",
+                        "on-tertiary-fixed-variant": "#3d4757",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#d9e3f7",
+                        "tertiary-container": "#96a0b2",
+                        "secondary-fixed": "#d6e3ff",
+                        "secondary-fixed-dim": "#b9c7e4",
+                        "tertiary": "#555f6f",
+                        "on-primary-fixed-variant": "#005228",
+                        "primary-container": "#00b761",
+                        "inverse-surface": "#2d3133",
+                        "outline-variant": "#bccabb",
+                        "on-secondary-container": "#55637d",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#00401e",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-fixed": "#121c2a",
+                        "surface-container-highest": "#e0e3e6",
+                        "on-surface-variant": "#3d4a3e",
+                        "on-secondary": "#ffffff",
+                        "outline": "#6d7b6d",
+                        "inverse-primary": "#4de085",
+                        "on-primary-fixed": "#00210d",
+                        "surface-container-high": "#e6e8eb",
+                        "surface": "#f7f9fc",
+                        "tertiary-fixed-dim": "#bdc7da",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#6dfe9e",
+                        "surface-container-low": "#f2f4f7",
+                        "inverse-on-surface": "#eff1f4",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#006d37",
+                        "on-secondary-fixed-variant": "#39475f",
+                        "on-background": "#191c1e",
+                        "primary-fixed-dim": "#4de085",
+                        "surface-container": "#eceef1"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-margin": "32px",
+                        "stack-lg": "24px",
+                        "stack-sm": "8px",
+                        "card-gap": "16px",
+                        "base": "8px",
+                        "stack-md": "16px",
+                        "container-padding": "20px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Readex Pro"],
+                        "body-lg": ["Readex Pro"],
+                        "label-sm": ["Readex Pro"],
+                        "label-bold": ["Readex Pro"],
+                        "body-sm": ["Readex Pro"],
+                        "headline-xl": ["Readex Pro"],
+                        "body-md": ["Readex Pro"],
+                        "headline-lg-mobile": ["Readex Pro"],
+                        "headline-lg": ["Readex Pro"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["20px", { "lineHeight": "30px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "label-bold": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-xl": ["32px", { "lineHeight": "48px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["22px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["24px", { "lineHeight": "36px", "fontWeight": "700" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Readex Pro', sans-serif; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background pb-32">
+<!-- Header / Merchant Banner -->
+<header class="relative w-full pb-6 bg-gradient-to-b from-[#0A192F] to-[#1A2C46]">
+<!-- TopAppBar Placeholder (Hidden on this specific merchant page due to semantic shell mandate for destination pages vs focused screens, though a back button might be appropriate, we'll follow standard merchant presentation here) -->
+<div class="flex flex-row-reverse justify-between items-center px-container-padding py-stack-sm w-full top-0 sticky z-10">
+<button class="w-10 h-10 rounded-full bg-surface/20 flex items-center justify-center text-on-tertiary backdrop-blur-md active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back_ios_new</span>
+</button>
+<div class="flex gap-2">
+<button class="w-10 h-10 rounded-full bg-surface/20 flex items-center justify-center text-on-tertiary backdrop-blur-md active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button class="w-10 h-10 rounded-full bg-surface/20 flex items-center justify-center text-on-tertiary backdrop-blur-md active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">more_vert</span>
+</button>
+</div>
+</div>
+<div class="px-container-padding pt-4">
+<div class="flex flex-col items-center gap-4 text-on-tertiary">
+<div class="relative">
+<div class="w-24 h-24 rounded-full bg-surface-container-lowest p-1 shadow-lg">
+<img class="w-full h-full rounded-full object-cover" data-alt="A professional logo for an automotive spare parts store, featuring a gear or mechanical motif, set against a pristine white background. High-tech and clean aesthetic, fitting for a premium marketplace. Deep navy and emerald accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWt_vdWWnTavNZWx3FGjxOyuAH5RZy6MocvTEw5xsCm7BlFVII-8iBUIqkp3WKR4HEWlzwYgHEnRHSE8PSAMvIvcMD_tP4QjcWYo_3fbpObzVM1FJPca4rjfIhxBxT2f3iYvEaYJr6uCjxce0ISkKEVL5KNmshE8lMozrOMXiWjKhwH3CTW8ziL3PKVPWhHgf0gi79FKDn3HFj5NaIXAl8qi-OTNxfSGcFKhQYpZQreANvczsDL_3V">
+</div>
+<div class="absolute bottom-0 right-0 bg-primary-container text-on-tertiary rounded-full p-1 border-2 border-[#1A2C46]">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="text-center">
+<h1 class="font-headline-xl text-headline-xl mb-1 flex items-center justify-center gap-2">
+                        متجر الأمان لقطع الغيار
+                    </h1>
+<div class="flex items-center justify-center gap-2 font-body-md text-body-md text-secondary-fixed-dim">
+<span class="flex items-center gap-1 bg-surface/20 px-3 py-1 rounded-full backdrop-blur-sm">
+<span class="material-symbols-outlined text-[#FFD700] text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-tertiary">4.8</span>
+<span class="text-xs opacity-80">(124 تقييم)</span>
+</span>
+<span class="bg-surface/20 px-3 py-1 rounded-full backdrop-blur-sm text-sm">
+                            عضو منذ 2021
+                        </span>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Tabs -->
+<div class="bg-surface-container-lowest shadow-sm sticky top-0 z-20">
+<div class="flex justify-around border-b border-surface-variant">
+<button class="flex-1 py-4 text-center font-label-bold text-label-bold text-primary border-b-2 border-primary relative">
+                المنتجات
+            </button>
+<button class="flex-1 py-4 text-center font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors">
+                عن المتجر
+            </button>
+<button class="flex-1 py-4 text-center font-label-bold text-label-bold text-on-surface-variant hover:text-primary transition-colors">
+                التقييمات
+            </button>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="px-container-padding py-stack-lg max-w-7xl mx-auto">
+<!-- Filters / Sort (Optional context for marketplace) -->
+<div class="flex justify-between items-center mb-card-gap">
+<h2 class="font-headline-md text-headline-md text-on-surface">جميع المنتجات (45)</h2>
+<button class="flex items-center gap-1 font-body-sm text-body-sm text-secondary px-3 py-2 bg-surface-container rounded-lg hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">filter_list</span>
+                تصفية
+            </button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-card-gap">
+<!-- Product Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(10,25,47,0.05)] overflow-hidden flex flex-col group cursor-pointer border border-surface-variant/50 hover:border-primary/30 transition-colors">
+<div class="relative h-40 bg-surface-container-low p-4 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A pristine, highly detailed automotive brake pad set, presented on a soft white background. The metal shines with a clean, industrial precision. Studio lighting highlights the texture of the friction material. Premium, high-tech automotive aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDo4_xtrDgl5SyRLMPMPwDjq_FapwDKcVmLaq1Zp2PlgufwTDGXc0ji8vdQ5wIJWDhteUmPwrnmr0qLdKZTr5GTkyqJ0fuukzLKntQp1PJIA2fPVPicwWz9L9ls2hLe-VA7G5jz3J220BVLF6WXOw9D0n_8rvlaioynIN-_FvlQ44mV5h1fUtstw7IlE9xxLQArxSMfzDJr6IIi2V9ZvHLO_Xpl4Nq0WSteHbLTd_JbHRZfwK8X28_1">
+<div class="absolute top-2 right-2 bg-primary-container text-on-primary-container font-label-sm text-label-sm px-2 py-1 rounded-md opacity-90">
+                        جديد
+                    </div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-label-sm text-label-sm text-secondary mb-1">فرامل وأقراص</span>
+<h3 class="font-label-bold text-label-bold text-on-surface mb-2 line-clamp-2 leading-tight">طقم تيل فرامل أمامي سيراميك - تويوتا كامري</h3>
+<div class="flex items-center gap-1 mb-3 text-secondary font-body-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 0;">directions_car</span>
+<span>متوافق مع 5 سيارات</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<div class="font-headline-md text-headline-md text-primary font-bold">250 <span class="text-sm font-normal">ر.س</span></div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(10,25,47,0.05)] overflow-hidden flex flex-col group cursor-pointer border border-surface-variant/50 hover:border-primary/30 transition-colors">
+<div class="relative h-40 bg-surface-container-low p-4 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A sleek automotive air filter, crisp white pleats contrasting with black rubber edges, presented on a minimalist soft grey background. Clean, efficient, and precise. Premium high-tech lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPSItSNUEWhksD8jK3GVRsqTsjYmuq0Vx8XWQFia0v3EVKybc7GaAiAp7QS_z_Cx3hHB80CmnGDlHXWOTL8pmurRHpH_IfI683IfbOdzHE2YRz3kMzVioMr7yOOgRA_Dw-C4BmieI6zT55XN_ga2QvK767NeLhcRJXGiocsdMYM6Ba13M3zwgmpCT3omB_q2rM_qQ4mvBnm-0ULZBlFvY0mt83EWdUFDRz_-Gx1HV3vfswDR-L5cIa">
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-label-sm text-label-sm text-secondary mb-1">فلاتر</span>
+<h3 class="font-label-bold text-label-bold text-on-surface mb-2 line-clamp-2 leading-tight">فلتر هواء مكينة أصلي - هيونداي سوناتا 2020</h3>
+<div class="flex items-center gap-1 mb-3 text-secondary font-body-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 0;">directions_car</span>
+<span>مخصص</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<div class="font-headline-md text-headline-md text-primary font-bold">85 <span class="text-sm font-normal">ر.س</span></div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(10,25,47,0.05)] overflow-hidden flex flex-col group cursor-pointer border border-surface-variant/50 hover:border-primary/30 transition-colors">
+<div class="relative h-40 bg-surface-container-low p-4 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A gleaming metallic spark plug, showcasing precise threading and clean ceramic insulation. Shot against a smooth, bright studio background to emphasize mechanical perfection and high-quality manufacturing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0471xXRKeCGVSv0L5Ek2r446DvKn8dYZMsnSWvmSJjn7hjnDhuQsnODLYS-nLWTYsV4B7v04RA_VEZNUPPsvS71qpuXFBep7HFAg0h0H4GSDNirS-sc3_ac2FCLc9YE8zHiGOERCO2mZakInvEJ-7TNhgBxZ9GvthOgW6sqgqTVgahN8ObywFfX-JNQJhtYcQnkaOL6fqaL3oc6jgzecqfq-SfQNJzZM62DflDl8LnCDV8zNKFJgh">
+<div class="absolute top-2 right-2 bg-error text-on-error font-label-sm text-label-sm px-2 py-1 rounded-md opacity-90">
+                        خصم 15%
+                    </div>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-label-sm text-label-sm text-secondary mb-1">كهرباء وإشعال</span>
+<h3 class="font-label-bold text-label-bold text-on-surface mb-2 line-clamp-2 leading-tight">طقم بواجي ليزر إيريديوم - NGK</h3>
+<div class="flex items-center gap-1 mb-3 text-secondary font-body-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 0;">directions_car</span>
+<span>متوافق مع 12 سيارة</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<div>
+<div class="font-headline-md text-headline-md text-primary font-bold">180 <span class="text-sm font-normal">ر.س</span></div>
+<div class="text-xs text-secondary line-through">212 ر.س</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl shadow-[0px_4px_20px_rgba(10,25,47,0.05)] overflow-hidden flex flex-col group cursor-pointer border border-surface-variant/50 hover:border-primary/30 transition-colors">
+<div class="relative h-40 bg-surface-container-low p-4 flex items-center justify-center">
+<img class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-300" data-alt="A robust automotive suspension strut or shock absorber, heavy metal construction with clean black and silver finishes. Isolated on a light grey background, conveying durability, strength, and premium mechanical quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfBXtl-rYFBtNgGju557FiM_J3Yn1gk_bvbyZg5DbhbGAOs2uworgADD1WZyELnlMhjdhnmT5_F3Ydr1-gTtw5PqkpKpe8FJFj1U7QZWtIa0vk7XJ6uiqyoIuHwup7w-chWnZcba6Hu0FRLHDxSe-m-u7bM4U5bLyKnOUT6vW-yPBHJ0B2YXr1E5iiS9MLbOsuIqifPN1mftBtudfihS1qsOjCGEIR-EKuL2NVCXxpNxm9z63y279G">
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<span class="font-label-sm text-label-sm text-secondary mb-1">نظام التعليق</span>
+<h3 class="font-label-bold text-label-bold text-on-surface mb-2 line-clamp-2 leading-tight">مساعد أمامي يمين KYB - نيسان ألتيما</h3>
+<div class="flex items-center gap-1 mb-3 text-secondary font-body-sm text-[11px]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 0;">warning</span>
+<span class="text-on-error-container">باقي 2 قطعة فقط</span>
+</div>
+<div class="mt-auto flex justify-between items-end">
+<div class="font-headline-md text-headline-md text-primary font-bold">420 <span class="text-sm font-normal">ر.س</span></div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:bg-primary hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading More Indicator -->
+<div class="mt-stack-lg flex justify-center">
+<div class="w-10 h-10 border-4 border-surface-variant border-t-primary rounded-full animate-spin"></div>
+</div>
+</main>
+<!-- BottomNavBar (Shared Component) -->
+<!-- Note: While a merchant page is a 'destination' within the marketplace context, it often represents a deep link. 
+         However, per instructions, we map to "السوق" (Marketplace/Storefront) as the active semantic intent if rendering the nav. -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex flex-row-reverse justify-around items-center px-4 py-3 pb-safe bg-surface dark:bg-surface-container-lowest shadow-[0px_-4px_20px_rgba(10,25,47,0.05)] rounded-t-xl md:hidden">
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-tertiary-fixed-variant hover:opacity-80 transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-sm text-label-sm">الرئيسية</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full px-4 py-1 hover:opacity-80 transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label-sm text-label-sm">السوق</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-tertiary-fixed-variant hover:opacity-80 transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">gavel</span>
+<span class="font-label-sm text-label-sm">المناقصات</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-tertiary-fixed-variant hover:opacity-80 transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">chat</span>
+<span class="font-label-sm text-label-sm">الرسائل</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-secondary-container dark:text-on-tertiary-fixed-variant hover:opacity-80 transition-opacity active:scale-90 transition-all duration-150" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-sm text-label-sm">حسابي</span>
+</a>
+</nav>
+</body></html>
