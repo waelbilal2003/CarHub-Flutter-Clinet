@@ -26,6 +26,9 @@ class ProductRemoteDataSource {
     int? brandId,
     double? minPrice,
     double? maxPrice,
+    String? carMake,
+    String? carModel,
+    int? year,
   }) async {
     final res = await _client.dio.get(
       ApiEndpoints.products,
@@ -36,6 +39,10 @@ class ProductRemoteDataSource {
         if (brandId != null) 'brand_id': brandId,
         if (minPrice != null) 'min_price': minPrice,
         if (maxPrice != null) 'max_price': maxPrice,
+        // فلتر التوافق: الخادم يطبّقه فقط عند وجود الماركة والموديل معاً.
+        if (carMake != null && carMake.isNotEmpty) 'car_make': carMake,
+        if (carModel != null && carModel.isNotEmpty) 'car_model': carModel,
+        if (year != null) 'year': year,
       },
     );
     final envelope = ApiEnvelope.from(res.data);

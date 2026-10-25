@@ -6,6 +6,8 @@ abstract interface class TenderRepository {
   Future<Tender> show(int id);
   Future<Tender> create({
     required String title,
+    required String category,
+    required String city,
     required String description,
     required double budget,
     required String deadline,

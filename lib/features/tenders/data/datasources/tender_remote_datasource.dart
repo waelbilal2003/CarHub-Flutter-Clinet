@@ -32,14 +32,20 @@ class TenderRemoteDataSource {
   }
 
   /// [deadline] يجب أن يُرسل بصيغة "yyyy-MM-dd HH:mm:ss" كما في المجموعة.
+  /// [category] و[city] مطلوبان في `StoreTenderRequest` الحالي في الـ Backend
+  /// (category ∈ TenderCategory: mechanic | electric | paint_body).
   Future<Tender> create({
     required String title,
+    required String category,
+    required String city,
     required String description,
     required double budget,
     required String deadline,
   }) async {
     final formData = FormData.fromMap({
       'title': title,
+      'category': category,
+      'city': city,
       'description': description,
       'budget': budget.toString(),
       'deadline': deadline,

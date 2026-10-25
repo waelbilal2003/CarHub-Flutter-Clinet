@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../../core/router/app_routes.dart';
 import '../../core/theme/app_colors.dart';
-import '../../features/ai_assistant/presentation/screens/ai_assistant_screen.dart';
 
 /// الزر العائم لفتح المساعد الذكي — يظهر في كل شاشات تطبيق العميل عبر
 /// [ClientScaffold]. مطابق لمرجع HTML (13_my_orders.html): دائرة 56px
 /// خضراء بأيقونة روبوت، ظل ناعم، ونبض خفيف مستمر (animate-pulse).
 ///
-/// منطق الذكاء الاصطناعي غير مبني بعد — الضغط يفتح شاشة مبدئية فقط.
+/// الضغط يفتح شاشة المساعد ([AppRoutes.aiAssistant]).
 class FloatingAiButton extends StatefulWidget {
   const FloatingAiButton({super.key});
 
@@ -34,13 +36,9 @@ class _FloatingAiButtonState extends State<FloatingAiButton>
     super.dispose();
   }
 
+  /// شاشة كاملة كما في 23_ai_assistant (رأس كحلي وزر رجوع)، لا ورقة سفلية.
   void _openAssistant(BuildContext context) {
-    showModalBottomSheet(
-      context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (_) => const AiAssistantScreen(),
-    );
+    context.push(AppRoutes.aiAssistant);
   }
 
   @override

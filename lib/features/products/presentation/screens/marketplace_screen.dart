@@ -29,8 +29,22 @@ import '../widgets/product_grid_card.dart';
 ///     الآن يعني أزراراً بلا تصنيفات. يُفعَّل فور تعبئة الجدول.
 ///  2. «الموقع الحالي» و«الإشعارات» في الرأس بلا مسار في الـ Backend،
 ///     فاستبدلناهما باسم المستخدم الحقيقي وبالسلة مع عدّاد حقيقي.
+///
+/// يقبل بحثاً وفلتر توافق مبدئيين (من بطاقة open_marketplace_search في
+/// المساعد الذكي عبر [AppRoutes.marketplaceSearch])؛ يُطبَّقان مرة عند الفتح.
 class MarketplaceScreen extends ConsumerStatefulWidget {
-  const MarketplaceScreen({super.key});
+  final String? initialSearch;
+  final String? initialCarMake;
+  final String? initialCarModel;
+  final int? initialYear;
+
+  const MarketplaceScreen({
+    super.key,
+    this.initialSearch,
+    this.initialCarMake,
+    this.initialCarModel,
+    this.initialYear,
+  });
 
   @override
   ConsumerState<MarketplaceScreen> createState() => _MarketplaceScreenState();
@@ -43,6 +57,7 @@ class _MarketplaceScreenState extends ConsumerState<MarketplaceScreen> {
   @override
   void initState() {
     super.initState();
+    _applyInitialFilters();
     // تمرير لا نهائي: نطلب الصفحة التالية قبل بلوغ النهاية بـ 300 بكسل
     // حتى لا يرى المستخدم فراغاً أثناء الجلب.
     _scrollController.addListener(() {
@@ -50,6 +65,28 @@ class _MarketplaceScreenState extends ConsumerState<MarketplaceScreen> {
       if (position.pixels >= position.maxScrollExtent - 300) {
         ref.read(productListProvider.notifier).loadMore();
       }
+    });
+  }
+
+  /// عند الفتح من المساعد: نضبط البحث وفلتر السيارة. بلا معاملات (التنقّل
+  /// العادي) لا نلمس الحالة الحالية.
+  void _applyInitialFilters() {
+    final hasSearch = widget.initialSearch != null;
+    final make = widget.initialCarMake;
+    final model = widget.initialCarModel;
+    final hasCar =
+        make != null && make.isNotEmpty && model != null && model.isNotEmpty;
+    if (!hasSearch && !hasCar) return;
+
+    _searchController.text = widget.initialSearch ?? '';
+    // التعديل بعد أول إطار: لا يجوز تغيير مزوّد أثناء بناء الشجرة.
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      ref.read(productSearchQueryProvider.notifier).state =
+          widget.initialSearch ?? '';
+      ref.read(productCarFilterProvider.notifier).state = hasCar
+          ? CarFilter(make: make, model: model, year: widget.initialYear)
+          : null;
     });
   }
 
@@ -120,6 +157,18 @@ class _MarketplaceScreenState extends ConsumerState<MarketplaceScreen> {
                     .read(productSearchQueryProvider.notifier)
                     .state = value,
               ),
+              if (ref.watch(productCarFilterProvider) case final car?) ...[
+                const SizedBox(height: AppDimensions.spaceS),
+                Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: InputChip(
+                    avatar: const Icon(Icons.directions_car_outlined, size: 18),
+                    label: Text('متوافق مع: ${car.label}'),
+                    onDeleted: () =>
+                        ref.read(productCarFilterProvider.notifier).state = null,
+                  ),
+                ),
+              ],
               const SizedBox(height: AppDimensions.spaceL),
               const _PromoBanner(),
               const SizedBox(height: AppDimensions.spaceL),

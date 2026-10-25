@@ -29,6 +29,8 @@ class ApiTenderRepository implements TenderRepository {
   @override
   Future<Tender> create({
     required String title,
+    required String category,
+    required String city,
     required String description,
     required double budget,
     required String deadline,
@@ -36,6 +38,8 @@ class ApiTenderRepository implements TenderRepository {
     try {
       return await _remote.create(
         title: title,
+        category: category,
+        city: city,
         description: description,
         budget: budget,
         deadline: deadline,

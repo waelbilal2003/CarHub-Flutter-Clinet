@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../features/addresses/presentation/screens/addresses_screen.dart';
+import '../../features/ai_assistant/presentation/screens/ai_assistant_screen.dart';
 import '../../features/auth/presentation/providers/auth_provider.dart';
 import '../../features/auth/presentation/providers/auth_state.dart';
 import '../../features/auth/presentation/screens/login_screen.dart';
@@ -86,7 +87,14 @@ final routerProvider = Provider<GoRouter>((ref) {
       // المناقصات — ترتيب مهم: create قبل :id حتى لا يبتلعها المسار المتغيّر.
       GoRoute(
         path: AppRoutes.createTender,
-        builder: (_, __) => const CreateTenderScreen(),
+        builder: (_, state) {
+          final q = state.uri.queryParameters;
+          return CreateTenderScreen(
+            initialCategory: q['category'],
+            initialTitle: q['title'],
+            initialCity: q['city'],
+          );
+        },
       ),
       GoRoute(
         path: AppRoutes.tenders,
@@ -118,7 +126,21 @@ final routerProvider = Provider<GoRouter>((ref) {
       // ── السوق والمتجر (المرحلة 3) ──
       GoRoute(
         path: AppRoutes.marketplace,
-        builder: (_, __) => const MarketplaceScreen(),
+        builder: (_, state) {
+          final q = state.uri.queryParameters;
+          return MarketplaceScreen(
+            initialSearch: q['search'],
+            initialCarMake: q['car_make'],
+            initialCarModel: q['car_model'],
+            initialYear: int.tryParse(q['year'] ?? ''),
+          );
+        },
+      ),
+
+      // المساعد الذكي
+      GoRoute(
+        path: AppRoutes.aiAssistant,
+        builder: (_, __) => const AiAssistantScreen(),
       ),
       GoRoute(
         path: AppRoutes.productDetailsPattern,

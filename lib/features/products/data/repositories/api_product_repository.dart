@@ -17,6 +17,9 @@ class ApiProductRepository implements ProductRepository {
     int? brandId,
     double? minPrice,
     double? maxPrice,
+    String? carMake,
+    String? carModel,
+    int? year,
   }) async {
     try {
       return await _remote.list(
@@ -26,6 +29,9 @@ class ApiProductRepository implements ProductRepository {
         brandId: brandId,
         minPrice: minPrice,
         maxPrice: maxPrice,
+        carMake: carMake,
+        carModel: carModel,
+        year: year,
       );
     } catch (e) {
       throw DioClient.mapError(e);

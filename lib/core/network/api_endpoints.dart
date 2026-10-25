@@ -42,9 +42,15 @@ class ApiEndpoints {
   // الفعلي في الـ Backend. المسارات أدناه مأخوذة من ملف المسارات نفسه
   // (مصدر الحقيقة الحقيقي)، لا من المجموعة — وقد تحقّقنا منها بالتشغيل.
 
+  // ── المساعد الذكي ──
+  /// POST { message, conversation_id, context{city} } — Laravel هو البوابة
+  /// الوحيدة إلى خدمة الذكاء (CONTRACTS.md §1). للعميل فقط (role:client).
+  static const String aiAsk = '/ai/ask';
+
   // ── المنتجات (تطبيق العميل) ──
   /// قائمة مصفّحة: data.data[] + data.links + data.meta.
-  /// تدعم الفلترة: search, category_id, brand_id, min_price, max_price.
+  /// تدعم الفلترة: search, category_id, brand_id, min_price, max_price،
+  /// والتوافق: car_make + car_model (+ year اختيارياً).
   /// تعيد المنتجات النشطة فقط (status = active).
   static const String products = '/products';
 

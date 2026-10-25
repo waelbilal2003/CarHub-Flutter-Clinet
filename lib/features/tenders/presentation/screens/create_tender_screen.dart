@@ -11,9 +11,29 @@ import '../../../../shared/widgets/client_scaffold.dart';
 import '../../../../shared/widgets/primary_button.dart';
 import '../providers/tender_provider.dart';
 
+/// فئات المناقصة — مطابقة لـ `App\Enums\TenderCategory` في الـ Backend
+/// (القيمة ← التسمية من label()).
+const tenderCategories = <String, String>{
+  'mechanic': 'ميكانيك',
+  'electric': 'كهرباء وتكييف',
+  'paint_body': 'سمكرة وبوية',
+};
+
 /// إنشاء مناقصة — POST /tenders (multipart).
+///
+/// يقبل قيماً مبدئية (من بطاقة create_tender في المساعد الذكي عبر
+/// [AppRoutes.createTenderPrefilled]): الفئة والعنوان والمدينة.
 class CreateTenderScreen extends ConsumerStatefulWidget {
-  const CreateTenderScreen({super.key});
+  final String? initialCategory;
+  final String? initialTitle;
+  final String? initialCity;
+
+  const CreateTenderScreen({
+    super.key,
+    this.initialCategory,
+    this.initialTitle,
+    this.initialCity,
+  });
 
   @override
   ConsumerState<CreateTenderScreen> createState() => _CreateTenderScreenState();
@@ -21,15 +41,22 @@ class CreateTenderScreen extends ConsumerStatefulWidget {
 
 class _CreateTenderScreenState extends ConsumerState<CreateTenderScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _titleCtrl = TextEditingController();
+  late final _titleCtrl = TextEditingController(text: widget.initialTitle);
+  late final _cityCtrl = TextEditingController(text: widget.initialCity);
   final _descCtrl = TextEditingController();
   final _budgetCtrl = TextEditingController();
+
+  /// مفتاح غير معروف (لا يطابق TenderCategory) يُتجاهل ويختار المستخدم بنفسه.
+  late String? _category = tenderCategories.containsKey(widget.initialCategory)
+      ? widget.initialCategory
+      : null;
 
   DateTime _deadline = DateTime.now().add(const Duration(days: 30));
 
   @override
   void dispose() {
     _titleCtrl.dispose();
+    _cityCtrl.dispose();
     _descCtrl.dispose();
     _budgetCtrl.dispose();
     super.dispose();
@@ -56,6 +83,8 @@ class _CreateTenderScreenState extends ConsumerState<CreateTenderScreen> {
 
     final tender = await ref.read(createTenderProvider.notifier).create(
           title: _titleCtrl.text.trim(),
+          category: _category!,
+          city: _cityCtrl.text.trim(),
           description: _descCtrl.text.trim(),
           budget: double.tryParse(_budgetCtrl.text.trim()) ?? 0,
           deadline: _deadline,
@@ -90,6 +119,28 @@ class _CreateTenderScreenState extends ConsumerState<CreateTenderScreen> {
                   hint: 'مثال: مطلوب إسمنت',
                   controller: _titleCtrl,
                   prefixIcon: Icons.title,
+                  validator: Validators.required,
+                ),
+                const SizedBox(height: AppDimensions.spaceM),
+                DropdownButtonFormField<String>(
+                  initialValue: _category,
+                  decoration: const InputDecoration(
+                    labelText: 'نوع العمل',
+                    prefixIcon: Icon(Icons.build_outlined),
+                  ),
+                  items: [
+                    for (final e in tenderCategories.entries)
+                      DropdownMenuItem(value: e.key, child: Text(e.value)),
+                  ],
+                  onChanged: (v) => setState(() => _category = v),
+                  validator: (v) => v == null ? 'اختر نوع العمل' : null,
+                ),
+                const SizedBox(height: AppDimensions.spaceM),
+                AppTextField(
+                  label: 'المدينة',
+                  hint: 'مثال: الرياض',
+                  controller: _cityCtrl,
+                  prefixIcon: Icons.location_city_outlined,
                   validator: Validators.required,
                 ),
                 const SizedBox(height: AppDimensions.spaceM),

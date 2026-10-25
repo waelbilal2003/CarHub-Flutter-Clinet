@@ -4,7 +4,7 @@ import '../entities/review.dart';
 
 abstract class ProductRepository {
   /// الفلترة تُنفَّذ على الخادم (search / category_id / brand_id /
-  /// min_price / max_price) لا محلياً.
+  /// min_price / max_price / car_make + car_model + year) لا محلياً.
   Future<PaginatedList<Product>> list({
     int page,
     String? search,
@@ -12,6 +12,9 @@ abstract class ProductRepository {
     int? brandId,
     double? minPrice,
     double? maxPrice,
+    String? carMake,
+    String? carModel,
+    int? year,
   });
 
   Future<Product> show(int id);

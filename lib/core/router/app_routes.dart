@@ -16,9 +16,25 @@ class AppRoutes {
   static const String editProfile = '/profile/edit';
   static const String addresses = '/profile/addresses';
 
+  // المساعد الذكي (شاشة كاملة — 23_ai_assistant)
+  static const String aiAssistant = '/assistant';
+
   // المناقصات والعروض
   static const String tenders = '/tenders';
   static const String createTender = '/tenders/create';
+
+  /// نموذج المناقصة معبّأً مسبقاً (من بطاقة create_tender في المساعد).
+  /// [category] مفتاح TenderCategory: mechanic | electric | paint_body.
+  static String createTenderPrefilled({
+    String? category,
+    String? title,
+    String? city,
+  }) =>
+      Uri(path: createTender, queryParameters: {
+        if (category != null && category.isNotEmpty) 'category': category,
+        if (title != null && title.isNotEmpty) 'title': title,
+        if (city != null && city.isNotEmpty) 'city': city,
+      }).toString();
   static String tenderDetails(int id) => '/tenders/$id';
   static const String tenderDetailsPattern = '/tenders/:id';
 
@@ -34,6 +50,21 @@ class AppRoutes {
 
   // ── السوق والمتجر (المرحلة 3) ──
   static const String marketplace = '/market';
+
+  /// السوق مع بحث وفلاتر توافق مسبقة (من بطاقة open_marketplace_search).
+  /// أسماء المعاملات هي أسماء API السوق نفسها: search / car_make / car_model / year.
+  static String marketplaceSearch({
+    String? search,
+    String? carMake,
+    String? carModel,
+    int? year,
+  }) =>
+      Uri(path: marketplace, queryParameters: {
+        if (search != null && search.isNotEmpty) 'search': search,
+        if (carMake != null && carMake.isNotEmpty) 'car_make': carMake,
+        if (carModel != null && carModel.isNotEmpty) 'car_model': carModel,
+        if (year != null) 'year': '$year',
+      }).toString();
   static String productDetails(int id) => '/market/product/$id';
   static const String productDetailsPattern = '/market/product/:id';
 

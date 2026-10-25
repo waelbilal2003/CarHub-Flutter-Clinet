@@ -82,6 +82,8 @@ class CreateTenderController extends StateNotifier<CreateTenderState> {
   /// [deadline] يُرسل بصيغة "yyyy-MM-dd HH:mm:ss" كما في ملف Postman.
   Future<Tender?> create({
     required String title,
+    required String category,
+    required String city,
     required String description,
     required double budget,
     required DateTime deadline,
@@ -90,6 +92,8 @@ class CreateTenderController extends StateNotifier<CreateTenderState> {
     try {
       final tender = await _ref.read(tenderRepositoryProvider).create(
             title: title,
+            category: category,
+            city: city,
             description: description,
             budget: budget,
             deadline: _formatDeadline(deadline),

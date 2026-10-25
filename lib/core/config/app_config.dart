@@ -10,8 +10,14 @@ class AppConfig {
   /// الحالي: نفق ngrok للتطوير عند إسراء (Laravel).
   /// عند النشر يُستبدل بدومين الإنتاج، مثال:
   ///   'https://api.carhub.com/api/v1'
-  static const String apiBaseUrl =
-      'https://carlene-hygroscopic-recollectively.ngrok-free.dev/api/v1';
+  ///
+  /// يمكن تجاوزه وقت البناء دون تعديل الكود (رابط ngrok جديد مثلاً):
+  ///   flutter run --dart-define=API_BASE_URL=https://xxxx.ngrok-free.app/api/v1
+  static const String apiBaseUrl = String.fromEnvironment(
+    'API_BASE_URL',
+    defaultValue:
+        'https://carlene-hygroscopic-recollectively.ngrok-free.dev/api/v1',
+  );
 
   /// هل الخادم خلف نفق ngrok؟
   ///
@@ -31,6 +37,10 @@ class AppConfig {
 
   /// مهلة أطول للإرسال لأنها تشمل رفع الصور (avatar / attachments).
   static const Duration sendTimeout = Duration(seconds: 60);
+
+  /// مهلة انتظار ردّ المساعد الذكي (POST /ai/ask) — النموذج قد يحتاج
+  /// عشرات الثواني، فتُطبَّق على هذا الطلب وحده بدل [receiveTimeout].
+  static const Duration aiReceiveTimeout = Duration(seconds: 120);
 
   // ملاحظة: لم يعد هناك مفتاح useMock ولا أي repository وهمي في المشروع.
   // كل نداء — بما فيه تسجيل الدخول — يمرّ عبر الخادم الحقيقي فعلياً.
