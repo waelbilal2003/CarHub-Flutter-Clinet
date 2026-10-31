@@ -133,8 +133,11 @@ Header: `X-API-Key: <AI_SERVICE_KEY>`
 
 ### `GET /health`
 ```json
-{"status": "ok", "model": "qwen...", "llm_ok": true, "retriever": "fake"}
+{"status": "ok", "model": "claude-haiku-5-5", "llm_ok": true, "retriever": "fake",
+ "provider": "anthropic", "key_configured": true}
 ```
+- **[إضافة v1]** `provider` قيمة `LLM_PROVIDER`. و`key_configured` هل `ANTHROPIC_API_KEY` موجود (`null` لمزوّد `openai_compatible`). لا يُرجع المفتاح نفسه أبداً.
+- `/health` لا يستدعي النموذج (لا كلفة). مع `anthropic`: `llm_ok` = `key_configured`، أي أن المفتاح موجود، لا أنه صحيح.
 
 ---
 

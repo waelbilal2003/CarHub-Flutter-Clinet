@@ -20,25 +20,6 @@
 2. ثم «2018» ← يدمجها مع السؤال السابق ← بطاقات المنتجات المتوافقة + بطاقة `open_product`.
 3. «عندي صوت بالفرامل وبدي أرش المصد» ← نيّتان ← بطاقة `open_marketplace_search` (فحمات فرامل) + بطاقة `create_tender` (دهان وسمكرة، بعنوان مقترح).
 
-## البنية (كلها على جهاز الويندوز الآن)
-```
-Android phone → ngrok → Laravel (:8000, /api/v1/ai/ask)
-             → carhub-ai (FastAPI, :8001, stateless)
-             → FakeAnalyzer/FakeRetriever (Ahmed's contract, verbatim)
-             → LLM server (OpenAI-compatible)
-```
-
-**خادم النموذج:**
-
-| البيئة | الخادم | النموذج | العنوان |
-|---|---|---|---|
-| **الآن، محلياً** | `llama-server` من مجلد llama.cpp الموجود لدى وائل | `Qwen3-0.6B-Q8_0.gguf` الموجود لديه، **للتوصيل فقط**: لا للقياس ولا للعرض | `http://127.0.0.1:8080/v1` |
-| **لاحقاً في جلسة vast.ai** | Ollama عبر نفق SSH | النموذج الكبير | `http://127.0.0.1:11434/v1` |
-
-**التبديل بين الحالتين = تغيير `.env` فقط.**
-
-**الاحتياط:** جهاز ماك موجود، لكنه خارج المسار. لا تستخدمه إلا إذا فشل `llama-server` على الويندوز، وبعد موافقة وائل.
-
 ## البنية (تحديث)
 ```
 Android phone
@@ -90,7 +71,9 @@ LLM_TIMEOUT_S=15                  # per API call
 LLM_MAX_RETRIES=2                 # SDK-level retries only (429/529/5xx/connection)
 LLM_TOTAL_DEADLINE_S=25           # whole /v1/answer budget; must stay < Laravel AI_TIMEOUT_S (30)
 LLM_MAX_TOKENS=600
-LLM_TEMPERATURE=0.2
+LLM_TEMPERATURE=0.2               # openai_compatible only; never sent to the Claude API (400)
+LLM_THINKING_TYPE=disabled        # disabled | between_tools | adaptive | omit (model-specific: Haiku 5.5 disabled, Sonnet 5.5 between_tools, Opus 5.5 omit)
+LLM_CACHE_SYSTEM=false            # prompt caching on `system`; true only if it exceeds the model's documented minimum
 
 # --- Cost estimation (USD per 1M tokens; from official pricing page, with date) ---
 LLM_PRICE_INPUT_PER_MTOK=
@@ -137,11 +120,15 @@ P1 (carhub-ai + سطر في Laravel) → P2 (قياس) → S3-check (Laravel/ngr
 
    | الحالة | المعاملة |
    |---|---|
-   | `stop_reason` = `max_tokens` أو `refusal` | محاولة فاشلة ← المحاولة الثانية (حرارة 0) ← الرد الاحتياطي |
-   | 400 | محاولة فاشلة ← المحاولة الثانية ← الرد الاحتياطي |
-   | 401 / 403 | خلل إعداد: يُسجَّل كـ error (بلا المفتاح) ← 503 `LLM_UNAVAILABLE` |
-   | 429 / 529 / 5xx / timeout بعد استنفاد إعادة SDK | **السلوك الحالي (503 `LLM_UNAVAILABLE`) حتى يُحسم N1**، والتبديل لاحقاً سطر واحد في هذه الدالة |
-   | تجاوز `LLM_TOTAL_DEADLINE_S` | نفس معاملة السطر السابق |
+   | `stop_reason` = `max_tokens` | المحاولة الثانية بضعف `max_tokens` (حد أعلى 1200) ← الرد الاحتياطي |
+   | مخرجات غير صالحة، أو `product_id` خارج المسترجَع | المحاولة الثانية مرة واحدة بنفس الطلب ← الرد الاحتياطي |
+   | `stop_reason` = `refusal` | الرد الاحتياطي مباشرة، بلا محاولة ثانية |
+   | 400 | الرد الاحتياطي مباشرة، بلا محاولة ثانية |
+   | 401 / 403 / 404 / 402 | خلل إعداد: يُسجَّل كـ error (بلا المفتاح) ← 503 `LLM_UNAVAILABLE` |
+   | 429 / 529 / 5xx / اتصال / timeout بعد استنفاد إعادة SDK | **الرد الاحتياطي بالكود** (N1 محسوم)، بلا محاولة ثانية |
+   | تجاوز `LLM_TOTAL_DEADLINE_S` | **الرد الاحتياطي بالكود**، بلا محاولة ثانية |
+
+   في كل حالات الرد الاحتياطي: `trace.fallback_used=true`، والرد 200.
 
 6. **المخطط الثابت (`prompts/v1/output_schema.json`):**
    - ثابت لكل الطلبات.
@@ -228,17 +215,6 @@ P1 (carhub-ai + سطر في Laravel) → P2 (قياس) → S3-check (Laravel/ngr
 - أي AI في تطبيق الأعمال.
 
 ---
-
-## مؤجَّل — لا تبنِه
-- `open_policy`.
-- فرض الحد اليومي و429 مع زر الترقية، وجدولا `ai_usage` و`ai_logs`.
-- صفحات Filament، ومفتاح التشغيل من لوحة الأدمن (يكفي `.env` في v0).
-- البث (Streaming).
-- دمج الأسئلة المتتابعة بالنموذج.
-- التقييم الشامل واختبارات الكسر (W8).
-- docker-compose (W9).
-- التكامل مع carhub-rag الحقيقي (W7).
-- أي AI في تطبيق الأعمال.
 
 ## بروتوكول العمل
 - **خطوة واحدة في كل مرة.** بعد كل خطوة:
