@@ -106,12 +106,23 @@ Header: `X-API-Key: <AI_SERVICE_KEY>`
     "llm_ms": 2400,
     "model": "qwen:8b",
     "index_version": "fake@v0",
-    "fallback_used": false
+    "fallback_used": false,
+    "provider": "anthropic",
+    "input_tokens": 1450,
+    "output_tokens": 120,
+    "cache_read_tokens": 0,
+    "est_cost_usd": 0.0021,
+    "attempts": 1
   }
 }
 ```
 - **[إضافة v0]** `compatibility`: خريطة من id المنتج إلى حالة التوافق، يستخدمها Laravel لملء `products[].compatibility`.
 - **[إضافة v0]** `trace.fallback_used`: هل استُخدم الرد الاحتياطي المبني بالكود.
+- **[إضافة v1]** `trace.provider` و`input_tokens` و`output_tokens` و`cache_read_tokens` و`est_cost_usd` و`attempts`:
+  - `provider` قيمة `LLM_PROVIDER` (`anthropic` | `openai_compatible`).
+  - الـ tokens والكلفة **مجموع كل محاولات** الطلب (1 أو 2).
+  - `est_cost_usd` تقديرية من أسعار `.env`، و`null` إن لم تُضبط الأسعار.
+  - `attempts` عدد استدعاءات النموذج الفعلية (0 إذا لم يُستدعَ).
 - `followup`: نفس شكل البند 1 (`{question, suggestions}`) أو `null`.
 - عند فشل مخرجات النموذج تُرجع الخدمة **200** مع رد احتياطي، لا خطأ.
 
