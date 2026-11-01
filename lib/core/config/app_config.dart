@@ -38,9 +38,10 @@ class AppConfig {
   /// مهلة أطول للإرسال لأنها تشمل رفع الصور (avatar / attachments).
   static const Duration sendTimeout = Duration(seconds: 60);
 
-  /// مهلة انتظار ردّ المساعد الذكي (POST /ai/ask) — النموذج قد يحتاج
-  /// عشرات الثواني، فتُطبَّق على هذا الطلب وحده بدل [receiveTimeout].
-  static const Duration aiReceiveTimeout = Duration(seconds: 120);
+  /// مهلة انتظار ردّ المساعد الذكي (POST /ai/ask)، تُطبَّق على هذا الطلب وحده.
+  /// سلسلة المهل: النموذج 25 ث ← Laravel 30 ث ← التطبيق 40 ث، فيصل الردّ
+  /// الصحيح أو 503 من الخادم قبل أن تنتهي مهلة التطبيق.
+  static const Duration aiReceiveTimeout = Duration(seconds: 40);
 
   // ملاحظة: لم يعد هناك مفتاح useMock ولا أي repository وهمي في المشروع.
   // كل نداء — بما فيه تسجيل الدخول — يمرّ عبر الخادم الحقيقي فعلياً.

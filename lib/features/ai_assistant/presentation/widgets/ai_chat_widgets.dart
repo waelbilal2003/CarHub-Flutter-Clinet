@@ -252,10 +252,13 @@ class AiActionCard extends StatelessWidget {
             child: Icon(icon, color: AppColors.primaryContainer),
           ),
           const SizedBox(height: AppDimensions.spaceS),
-          Text(card.label,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              style: AppTextStyles.labelBold),
+          // Flexible: the card has a fixed height (strip of 196); the label gives way first.
+          Flexible(
+            child: Text(card.label,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: AppTextStyles.labelBold),
+          ),
           const SizedBox(height: AppDimensions.spaceM),
           SizedBox(
             width: double.infinity,
@@ -301,7 +304,13 @@ class _GradientButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(label, style: AppTextStyles.button),
+            // Flexible: a long label or a large system font shrinks with "…" instead of overflowing.
+            Flexible(
+              child: Text(label,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  style: AppTextStyles.button),
+            ),
             const SizedBox(width: 6),
             const Icon(Icons.arrow_back, size: 16),
           ],
