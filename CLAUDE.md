@@ -44,7 +44,7 @@ get_provider()  ← LLM_PROVIDER في .env
 3. **كل `product_id` في الرد ضمن المسترجَع، ويُفرض بالكود في `validate.py`.** هذه الحماية لا تعتمد على مخطط JSON.
 4. **البطاقات تُبنى بالكود** من النوايا ونتائج الاسترجاع.
 5. **لا يُستدعى النموذج إلا عبر `get_provider()`.** تبديل المزوّد أو النموذج أو الحساب = تغيير `.env` ثم إعادة تشغيل، بلا تعديل كود.
-6. **المزوّد المعتمد للعرض: Gemma 4 26B عبر Google AI Studio بواجهة متوافقة مع OpenAI** (`OpenAICompatibleProvider`). **للإنتاج:** يُقرَّر لاحقاً (المرشح DeepInfra بطبقة مدفوعة). **Claude API** (`AnthropicProvider`) يبقى بديلاً جاهزاً. **أي مزوّد آخر بموافقة وائل.**
+6. **المعتمد (رسمياً من الزبون): Gemma 4 26B عبر مزوّد API** بواجهة متوافقة مع OpenAI (`OpenAICompatibleProvider`): **Google AI Studio للتطوير، ومزوّد مدفوع للإنتاج.** **Claude API** (`AnthropicProvider`) يبقى بديلاً جاهزاً. **أي مزوّد آخر بموافقة وائل.**
    - **ممنوع:** Fine-tuning، وAI للتاجر أو الورشة أو الإدارة.
 7. **`ANTHROPIC_API_KEY` و`GEMINI_API_KEY` (وأي متغير يسمّيه `LLM_API_KEY_ENV`) في `carhub-ai/.env` فقط.**
    - لا يوجد في Laravel، ولا في Flutter، ولا في git.
