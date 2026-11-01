@@ -129,7 +129,7 @@ Header: `X-API-Key: <AI_SERVICE_KEY>`
 ### Errors
 - `401`: مفتاح خاطئ.
 - `422`: طلب غير صالح.
-- `503 {"detail": "LLM_UNAVAILABLE"}`: خادم النموذج لا يستجيب. يحوّله Laravel إلى 503 `AI_UNAVAILABLE`.
+- `503 {"detail": "LLM_UNAVAILABLE"}`: خلل في إعداد المزوّد (مفتاح أو نموذج أو فوترة). الانقطاع المؤقت يعطي 200 برد احتياطي. يحوّله Laravel إلى 503 `AI_UNAVAILABLE`.
 
 ### `GET /health`
 ```json

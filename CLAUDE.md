@@ -44,10 +44,9 @@ get_provider()  ← LLM_PROVIDER في .env
 3. **كل `product_id` في الرد ضمن المسترجَع، ويُفرض بالكود في `validate.py`.** هذه الحماية لا تعتمد على مخطط JSON.
 4. **البطاقات تُبنى بالكود** من النوايا ونتائج الاسترجاع.
 5. **لا يُستدعى النموذج إلا عبر `get_provider()`.** تبديل المزوّد أو النموذج أو الحساب = تغيير `.env` ثم إعادة تشغيل، بلا تعديل كود.
-6. **المزوّد المعتمد: Claude API عبر `AnthropicProvider`.**
+6. **المزوّد المعتمد للعرض: Gemma 4 26B عبر Google AI Studio بواجهة متوافقة مع OpenAI** (`OpenAICompatibleProvider`). **للإنتاج:** يُقرَّر لاحقاً (المرشح DeepInfra بطبقة مدفوعة). **Claude API** (`AnthropicProvider`) يبقى بديلاً جاهزاً. **أي مزوّد آخر بموافقة وائل.**
    - **ممنوع:** Fine-tuning، وAI للتاجر أو الورشة أو الإدارة.
-   - **ممنوع أيضاً:** أي مزوّد مدفوع آخر دون موافقة وائل.
-7. **`ANTHROPIC_API_KEY` في `carhub-ai/.env` فقط.**
+7. **`ANTHROPIC_API_KEY` و`GEMINI_API_KEY` (وأي متغير يسمّيه `LLM_API_KEY_ENV`) في `carhub-ai/.env` فقط.**
    - لا يوجد في Laravel، ولا في Flutter، ولا في git.
    - لا يظهر في أي log، أو تقرير، أو رسالة خطأ، أو `/health`، أو `trace`.
    - في `.env.example` يبقى فارغاً.
@@ -81,8 +80,13 @@ LLM_PRICE_OUTPUT_PER_MTOK=
 LLM_PRICE_CACHE_READ_PER_MTOK=
 LLM_PRICE_CACHE_WRITE_PER_MTOK=
 
-# --- openai_compatible only (fallback provider) ---
-LLM_BASE_URL=
+# --- openai_compatible only (demo: Gemma 4 on Google AI Studio) ---
+LLM_BASE_URL=                     # https://generativelanguage.googleapis.com/v1beta/openai/
+LLM_API_KEY_ENV=                  # NAME of the key variable, e.g. GEMINI_API_KEY
+GEMINI_API_KEY=                   # set by Wael in .env only — never printed
+LLM_RESPONSE_FORMAT=json_schema   # json_schema | json_object
+LLM_EXTRA_BODY=                   # JSON merged into each request, e.g. {"reasoning_effort":"minimal"}
+LLM_DISABLE_THINKING=false        # true only for llama.cpp/vLLM Qwen3 (sends chat_template_kwargs; Google: 400)
 
 # --- Retrieval & pipeline ---
 RETRIEVER=fake
@@ -93,7 +97,7 @@ INTENT_POLICY=model               # model | analyzer | union
 HOST=127.0.0.1
 PORT=8001
 ```
-**حُذف:** `LLM_DISABLE_THINKING` و`LLAMA_*`.
+**حُذف:** `LLAMA_*`. (`LLM_DISABLE_THINKING` عاد اختيارياً، وافتراضيه `false`.)
 
 **`LLM_DAILY_TOKEN_BUDGET` مؤجّل:** مكانه قرار مفتوح (N5)، لأن carhub-ai بلا حالة.
 
