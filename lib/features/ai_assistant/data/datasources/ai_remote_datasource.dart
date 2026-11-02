@@ -23,8 +23,13 @@ class AiRemoteDataSource {
       'المساعد الذكي متاح لحسابات العملاء فقط.';
   static const tooManyMessage =
       'أرسلت رسائل كثيرة في وقت قصير. انتظر قليلاً ثم أعد المحاولة.';
+  static const tooFastMessage = 'انتظر لحظة قبل سؤالك التالي.';
+  static const dailyLimitMessage =
+      'وصلت للحد اليومي للمساعد. يتجدد رصيدك غداً.';
+  static const monthlyLimitMessage =
+      'وصلت للحد الشهري للمساعد. يتجدد رصيدك أول الشهر القادم.';
   static const invalidMessageText =
-      'الرسالة يجب أن تكون بين 1 و500 حرف.';
+      'الرسالة يجب أن تكون بين 1 و300 حرف.';
   static const conversationGoneMessage =
       'تعذّر متابعة هذه المحادثة. ابدأ محادثة جديدة.';
   static const invalidRequestMessage =
@@ -49,8 +54,32 @@ class AiRemoteDataSource {
       final envelope = ApiEnvelope.from(res.data);
       return AiReply.fromJson(envelope.object);
     } on DioException catch (e) {
-      throw mapAiError(e);
+      throw limitReached(e) ?? mapAiError(e);
     }
+  }
+
+  /// 429 AI_LIMIT_REACHED -> [AiLimitReached] مع خيار الإعلان، وإلا null.
+  static AiLimitReached? limitReached(DioException e) {
+    if (e.response?.statusCode != 429 || _code(e) != 'AI_LIMIT_REACHED') return null;
+    final raw = e.response?.data;
+    final data = raw is Map && raw['data'] is Map
+        ? Map<String, dynamic>.from(raw['data'] as Map)
+        : const <String, dynamic>{};
+    final limit = data['limit'] == 'monthly' ? 'monthly' : 'daily';
+    final ads = data['ads_remaining_today'];
+    return AiLimitReached(
+      limit == 'monthly' ? monthlyLimitMessage : dailyLimitMessage,
+      limit: limit,
+      canWatchAd: data['can_watch_ad'] == true,
+      adsRemainingToday: ads is int ? ads : 0,
+    );
+  }
+
+  static String? _code(DioException e) {
+    final data = e.response?.data;
+    final errors = data is Map ? data['errors'] : null;
+    final codes = errors is Map ? errors['code'] : null;
+    return codes is List && codes.isNotEmpty ? codes.first?.toString() : null;
   }
 
   /// حالات خاصة بالمساعد، برسائل ثابتة من التطبيق لا من نص الخادم: رسائل
@@ -66,7 +95,10 @@ class AiRemoteDataSource {
       case 403:
         return const AuthFailure(clientsOnlyMessage);
       case 429:
-        return const ValidationFailure(tooManyMessage);
+        // AI_TOO_FAST (ثانيتان بين سؤالين) أو throttle:api العام. AI_LIMIT_REACHED في [limitReached].
+        return _code(e) == 'AI_TOO_FAST'
+            ? const ValidationFailure(tooFastMessage)
+            : const ValidationFailure(tooManyMessage);
       case 422:
         final data = e.response?.data;
         final errors = data is Map ? data['errors'] : null;

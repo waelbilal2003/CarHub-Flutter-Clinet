@@ -190,6 +190,27 @@ void main() {
       expect(f.message, AiRemoteDataSource.tooManyMessage);
     });
 
+    test('429 AI_TOO_FAST -> "wait a moment" (not counted, not the limit)', () {
+      final f = AiRemoteDataSource.mapAiError(_dio(status: 429, data: {
+        'success': false, 'message': 'انتظر لحظة', 'errors': {'code': ['AI_TOO_FAST']}, 'data': {'retry_after_s': 2},
+      }));
+      expect(f, isA<ValidationFailure>());
+      expect(f.message, AiRemoteDataSource.tooFastMessage);
+      expect(AiRemoteDataSource.limitReached(_dio(status: 429, data: {'errors': {'code': ['AI_TOO_FAST']}})), isNull);
+    });
+
+    test('429 AI_LIMIT_REACHED daily / monthly -> limit with ad option', () {
+      AiLimitReached? limit(Map<String, dynamic> data) => AiRemoteDataSource.limitReached(_dio(status: 429, data: {
+            'success': false, 'message': 'x', 'errors': {'code': ['AI_LIMIT_REACHED']}, 'data': data,
+          }));
+      final daily = limit({'limit': 'daily', 'can_watch_ad': true, 'ads_remaining_today': 4})!;
+      expect((daily.limit, daily.canWatchAd, daily.adsRemainingToday, daily.message),
+          ('daily', true, 4, AiRemoteDataSource.dailyLimitMessage));
+      final monthly = limit({'limit': 'monthly', 'can_watch_ad': false, 'ads_remaining_today': 5})!;
+      expect((monthly.limit, monthly.canWatchAd, monthly.message), ('monthly', false, AiRemoteDataSource.monthlyLimitMessage));
+      expect(AiRemoteDataSource.limitReached(_dio(status: 503, data: {})), isNull);
+    });
+
     test('receive timeout -> timeout message', () {
       final f = AiRemoteDataSource.mapAiError(_dio(type: DioExceptionType.receiveTimeout));
       expect(f, isA<NetworkFailure>());
@@ -218,6 +239,31 @@ void main() {
         expectError(t, const AuthFailure(AiRemoteDataSource.clientsOnlyMessage), retry: false));
     testWidgets('422 -> message, no retry', (t) =>
         expectError(t, const ValidationFailure(AiRemoteDataSource.invalidMessageText), retry: false));
+    testWidgets('daily limit with ad option -> disabled "watch an ad" button, no retry', (t) async {
+      await _pumpAfter(t, const AiLimitReached(AiRemoteDataSource.dailyLimitMessage,
+          limit: 'daily', canWatchAd: true, adsRemainingToday: 5));
+      expect(find.text(AiRemoteDataSource.dailyLimitMessage), findsOneWidget);
+      final ad = find.widgetWithText(TextButton, 'شاهد إعلاناً واحصل على 3 أسئلة (قريباً)');
+      expect(ad, findsOneWidget);
+      expect(t.widget<TextButton>(ad).onPressed, isNull);         // until the client's AdMob ids arrive
+      expect(find.text('إعادة المحاولة'), findsNothing);
+    });
+
+    testWidgets('monthly limit without ad option -> message only', (t) async {
+      await _pumpAfter(t, const AiLimitReached(AiRemoteDataSource.monthlyLimitMessage, limit: 'monthly'));
+      expect(find.text(AiRemoteDataSource.monthlyLimitMessage), findsOneWidget);
+      expect(find.textContaining('شاهد إعلاناً'), findsNothing);
+    });
+
+    testWidgets('too fast -> message, no retry', (t) =>
+        expectError(t, const ValidationFailure(AiRemoteDataSource.tooFastMessage), retry: false));
+
+    testWidgets('input shows a 300-character counter and is disabled while sending', (t) async {
+      await _pumpAfter(t, AiReply.fromJson(contractReply()));
+      expect(find.text('0/300'), findsOneWidget);
+      expect(t.widget<TextField>(find.byType(TextField)).maxLength, 300);
+    });
+
     testWidgets('429 -> message only, no retry, no upgrade button', (t) async {
       await expectError(t, const ValidationFailure(AiRemoteDataSource.tooManyMessage), retry: false);
       expect(find.textContaining('ترقية'), findsNothing);

@@ -233,7 +233,7 @@ class _AiAssistantScreenState extends ConsumerState<AiAssistantScreen> {
       AssistantEntry(:final text, :final reply) => _AssistantRow(
           child: _assistantContent(text, reply, isLatestAssistant),
         ),
-      ErrorEntry(:final message, :final retryable) => _AssistantRow(
+      ErrorEntry(:final message, :final retryable, :final canWatchAd) => _AssistantRow(
           child: AssistantTextBubble(
             text: message,
             background: AppColors.errorContainer.withValues(alpha: 0.4),
@@ -244,7 +244,14 @@ class _AiAssistantScreenState extends ConsumerState<AiAssistantScreen> {
                     icon: const Icon(Icons.refresh, size: 18),
                     label: const Text('إعادة المحاولة'),
                   )
-                : null,
+                : canWatchAd
+                    // إعلانات المكافآت: الباك إند جاهز (AdMob SSV). العرض الفعلي ينتظر
+                    // حساب AdMob ومعرّفات الوحدات الإعلانية من الزبون، فالزر معطّل.
+                    ? const TextButton(
+                        onPressed: null,
+                        child: Text('شاهد إعلاناً واحصل على 3 أسئلة (قريباً)'),
+                      )
+                    : null,
           ),
         ),
     };
@@ -398,7 +405,6 @@ class _InputBar extends StatelessWidget {
                 style: AppTextStyles.bodyMd,
                 decoration: InputDecoration(
                   hintText: 'اكتب رسالتك هنا...',
-                  counterText: '',
                   filled: true,
                   fillColor: AppColors.surfaceContainerLow,
                   contentPadding: const EdgeInsets.symmetric(

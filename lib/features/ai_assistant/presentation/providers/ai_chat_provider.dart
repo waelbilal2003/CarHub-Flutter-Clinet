@@ -31,8 +31,13 @@ class ErrorEntry extends ChatEntry {
   final String message;
   final bool retryable;
   final String pendingMessage;
+
+  /// 429 AI_LIMIT_REACHED مع can_watch_ad: يظهر زر «شاهد إعلاناً» (معطّل حتى معرّفات AdMob).
+  final bool canWatchAd;
   const ErrorEntry(this.message,
-      {required this.retryable, required this.pendingMessage});
+      {required this.retryable,
+      required this.pendingMessage,
+      this.canWatchAd = false});
 }
 
 class AiChatState {
@@ -62,7 +67,8 @@ const aiWelcomeMessage =
     'أهلاً! أنا مساعد CarHub. اسألني عن أي قطعة لسيارتك، أو احكيلي عن '
     'العطل، وبساعدك تلاقي القطعة أو تطلب عروض من الورش.';
 
-const int aiMaxMessageLength = 500;
+/// CONTRACTS.md §1 (v1): 300 حرف (AI_MESSAGE_MAX_CHARS في Laravel).
+const int aiMaxMessageLength = 300;
 
 /// المحادثة مع المساعد. ليست autoDispose: تبقى المحادثة و[conversationId]
 /// محفوظتين إذا أُغلقت الشاشة وفُتحت من جديد خلال نفس الجلسة.
@@ -117,6 +123,15 @@ class AiChatController extends StateNotifier<AiChatState> {
         conversationId: reply.conversationId.isEmpty
             ? state.conversationId
             : reply.conversationId,
+      );
+    } on AiLimitReached catch (l) {
+      state = state.copyWith(
+        isSending: false,
+        entries: [
+          ...state.entries,
+          ErrorEntry(l.message,
+              retryable: false, pendingMessage: message, canWatchAd: l.canWatchAd),
+        ],
       );
     } on Failure catch (f) {
       state = state.copyWith(

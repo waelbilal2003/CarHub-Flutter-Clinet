@@ -18,7 +18,7 @@ Header: `Authorization: Bearer <sanctum token>`
   "context": {"city": "الرياض"}
 }
 ```
-- `message`: نص، من 1 إلى 500 حرف.
+- `message`: نص، من 1 إلى 300 حرف (**[تعديل v1]** كان 500؛ `AI_MESSAGE_MAX_CHARS`).
 - `conversation_id`: `null` لبدء محادثة جديدة.
 - `context.city`: اختياري.
 
@@ -37,21 +37,45 @@ Header: `Authorization: Bearer <sanctum token>`
                   "city": "الرياض", "compatibility": "exact"}],
     "cards": [{"type": "open_product", "label": "عرض المصابيح المتوافقة",
                "payload": {"product_ids": [152, 160]}}],
-    "usage": {"used_today": 3, "daily_limit": 10}
+    "usage": {"used_today": 3, "daily_limit": 15, "used_month": 41, "monthly_limit": 200,
+              "bonus_remaining": 0}
   }
 }
 ```
 - `followup`: كائن أو `null`.
 - `products`: يملؤها Laravel من قاعدة البيانات فقط. لا يأتي أي سعر من خدمة الذكاء.
 - `compatibility`: `exact` | `partial`.
+- **[إضافة v1]** `usage`:
+  - `used_today` و`used_month`: الأسئلة المُجابة، اليوم والشهر التقويمي بتوقيت `AI_LIMIT_TIMEZONE`.
+  - `daily_limit` و`monthly_limit`: `null` = بلا حد.
+  - `bonus_remaining`: أسئلة إضافية من الإعلانات متبقية **لليوم فقط**، تُستهلك بعد نفاد الحد اليومي.
+  - `used_month` لا يحسب أسئلة الإعلانات إن كان `AI_AD_COUNTS_TOWARD_MONTHLY=false`.
 
 ### Errors
 ```json
-429 {"success": false, "message": "وصلت للحد اليومي للمساعد", "errors": {"code": ["AI_LIMIT_REACHED"]}}
+429 {"success": false, "message": "وصلت للحد اليومي للمساعد", "errors": {"code": ["AI_LIMIT_REACHED"]},
+     "data": {"limit": "daily", "can_watch_ad": true, "ads_remaining_today": 5,
+              "usage": {"used_today": 15, "daily_limit": 15, "used_month": 41, "monthly_limit": 200, "bonus_remaining": 0}}}
+429 {"success": false, "message": "انتظر لحظة قبل سؤالك التالي", "errors": {"code": ["AI_TOO_FAST"]},
+     "data": {"retry_after_s": 2}}
 503 {"success": false, "message": "المساعد غير متاح حالياً", "errors": {"code": ["AI_UNAVAILABLE"]}}
 422 validation (empty / too long message)
 ```
-في الهيكل v0 لا يُفعَّل 429. يُرجَع `usage` بنفس الشكل دون فرض الحد (يأتي في W5).
+- **[إضافة v1] `AI_LIMIT_REACHED`:**
+  - `data.limit` يكون `daily` أو `monthly`. الرسالة: «وصلت للحد الشهري للمساعد» للشهري.
+  - `can_watch_ad=true` يعني أن مشاهدة إعلان تفتح أسئلة. يكون `false` في الشهري ما دامت أسئلة الإعلانات تُحسب ضمنه، أو بعد 5 إعلانات اليوم، أو لغير الباقة المجانية.
+  - السؤال المحجوب لا يصل إلى carhub-ai ولا يُحسب.
+- **[إضافة v1] `AI_TOO_FAST`:**
+  - أقل من `AI_MIN_SECONDS_BETWEEN` (ثانيتان) منذ سؤال المستخدم السابق، مع header `Retry-After`.
+  - لا يُحسب من الحد. التطبيق يعرض «انتظر لحظة».
+- قد يصل **429 آخر من `throttle:api`** بشكل Laravel الافتراضي (`{"message": "Too Many Attempts."}`)، بلا `errors.code`. يُعامل كرسالة عامة.
+
+### [إضافة v1] إعلانات المكافآت: `GET /api/v1/ai/ads/reward`
+- **callback** التحقق من جهة الخادم (SSV) من Google AdMob، لا يستدعيه التطبيق.
+- **بلا توكن:** توقيع ECDSA من Google هو المصادقة. التوقيع غير الصالح يعطي 403 `AI_AD_SIGNATURE_INVALID`، ولا يُحفظ شيء.
+- **ربط المستخدم:** معامل `user_id` في الـ callback = `users.id`، ويضبطه التطبيق عبر `ServerSideVerificationOptions.userId`.
+- **المكافأة:** إعلان مكتمل = `AI_AD_REWARD_QUESTIONS` (3) أسئلة لليوم نفسه، بحد `AI_AD_DAILY_MAX` (5) إعلانات في اليوم.
+- **عدم التكرار:** `transaction_id` فريد، فلا يُحسب مرتين.
 
 ---
 
@@ -84,10 +108,16 @@ Header: `X-API-Key: <AI_SERVICE_KEY>`
     {"role": "user", "content": "بدي ضو لكيا سبورتاج"},
     {"role": "assistant", "content": "أكيد! شو سنة صنع سيارتك؟"}
   ],
-  "context": {"city": "الرياض"}
+  "context": {"city": "الرياض"},
+  "llm_enabled": true
 }
 ```
 `history`: آخر 6 أدوار، الأقدم أولاً، ولا يتضمن الرسالة الحالية.
+
+**[إضافة v1]** `llm_enabled`:
+- اختياري، والافتراضي `true`.
+- يرسله Laravel بقيمة `false` عند بلوغ حد الكلفة (`AI_MONTHLY_COST_LIMIT_USD` أو `AI_DAILY_COST_LIMIT_USD`).
+- عندها تجيب الخدمة بلا استدعاء النموذج: الاسترجاع + الرد الاحتياطي، و`trace.attempts=0` و`fallback_used=true`.
 
 ### Response 200
 ```json

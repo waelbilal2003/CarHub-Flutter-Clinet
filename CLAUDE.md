@@ -69,7 +69,7 @@ LLM_MODEL=                        # chosen in P2
 LLM_TIMEOUT_S=15                  # per API call
 LLM_MAX_RETRIES=2                 # SDK-level retries only (429/529/5xx/connection)
 LLM_TOTAL_DEADLINE_S=25           # whole /v1/answer budget; must stay < Laravel AI_TIMEOUT_S (30)
-LLM_MAX_TOKENS=600
+LLM_MAX_TOKENS=300                # client cap (2026-11-02); max_tokens -> code fallback, no retry
 LLM_TEMPERATURE=0.2               # openai_compatible only; never sent to the Claude API (400)
 LLM_THINKING_TYPE=disabled        # disabled | between_tools | adaptive | omit (model-specific: Haiku 5.5 disabled, Sonnet 5.5 between_tools, Opus 5.5 omit)
 LLM_CACHE_SYSTEM=false            # prompt caching on `system`; true only if it exceeds the model's documented minimum
@@ -204,14 +204,13 @@ P1 (carhub-ai + سطر في Laravel) → P2 (قياس) → S3-check (Laravel/ngr
 ### العرض
 يعمل من اللابتوب مباشرة. يحتاج إنترنت، وLaragon، وcarhub-ai، وLaravel، وngrok. ولا يحتاج أي GPU.
 
+**[2026-11-02] بُني بطلب الزبون:** الحد اليومي والشهري، و429 (`AI_LIMIT_REACHED`)، و`AI_TOO_FAST`، و`ai_usage` و`ai_logs`، وإعلانات المكافآت (الباك إند فقط)، وحد الكلفة (N5، `llm_enabled`). كل الأرقام في `config/ai.php` من `.env`.
+
 ## مؤجَّل — لا تبنِه (v1)
 - `open_policy`.
-- فرض الحد في Laravel و429.
-- `ai_usage` و`ai_logs`.
 - صفحات Filament، ومفتاح التشغيل من لوحة الأدمن.
 - البث (يُقرَّر في P2).
 - إرسال `history` للنموذج (N2).
-- حد التوكنات اليومي (N5).
 - إخفاء البيانات الشخصية من نص الرسالة (N6).
 - دمج المتابعة بالنموذج.
 - W8 وW9.

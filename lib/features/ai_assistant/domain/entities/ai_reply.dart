@@ -179,15 +179,44 @@ class CreateTenderCard extends AiCard {
 class AiUsage {
   final int usedToday;
 
-  /// null = غير محدود (أو غير محدد). لا يُفرض الحد في v0.
+  /// null = غير محدود.
   final int? dailyLimit;
 
-  const AiUsage({required this.usedToday, required this.dailyLimit});
+  /// [v1] أسئلة الشهر التقويمي، والحد الشهري (null = بلا حد).
+  final int usedMonth;
+  final int? monthlyLimit;
+
+  /// [v1] أسئلة إضافية من الإعلانات متبقية لليوم فقط.
+  final int bonusRemaining;
+
+  const AiUsage({
+    required this.usedToday,
+    required this.dailyLimit,
+    this.usedMonth = 0,
+    this.monthlyLimit,
+    this.bonusRemaining = 0,
+  });
 
   factory AiUsage.fromJson(Map<String, dynamic> json) => AiUsage(
         usedToday: _toInt(json['used_today']) ?? 0,
         dailyLimit: _toInt(json['daily_limit']),
+        usedMonth: _toInt(json['used_month']) ?? 0,
+        monthlyLimit: _toInt(json['monthly_limit']),
+        bonusRemaining: _toInt(json['bonus_remaining']) ?? 0,
       );
+}
+
+/// 429 AI_LIMIT_REACHED (CONTRACTS.md §1). ليس [Failure] لأن Failure مختومة (sealed) في core.
+class AiLimitReached implements Exception {
+  final String message;
+
+  /// daily | monthly
+  final String limit;
+  final bool canWatchAd;
+  final int adsRemainingToday;
+
+  const AiLimitReached(this.message,
+      {required this.limit, this.canWatchAd = false, this.adsRemainingToday = 0});
 }
 
 List<T> _list<T>(dynamic raw, T Function(Map<String, dynamic>) parse) =>

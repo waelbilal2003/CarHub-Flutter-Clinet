@@ -41,7 +41,7 @@ Map<String, dynamic> contractReply({String conversationId = 'c_8f2a91'}) => {
         },
         {'type': 'open_policy', 'label': 'سياسة', 'payload': {}},
       ],
-      'usage': {'used_today': 3, 'daily_limit': null},
+      'usage': {'used_today': 3, 'daily_limit': null, 'used_month': 41, 'monthly_limit': 200, 'bonus_remaining': 2},
     };
 
 class FakeAiRemote extends AiRemoteDataSource {
@@ -54,7 +54,7 @@ class FakeAiRemote extends AiRemoteDataSource {
   Future<AiReply> ask({required String message, String? conversationId, String? city}) async {
     calls.add((message, conversationId));
     final r = results.removeAt(0);
-    if (r is Failure) throw r;
+    if (r is Exception) throw r;   // Failure or AiLimitReached
     return r as AiReply;
   }
 }
@@ -69,6 +69,7 @@ void main() {
       expect(r.products.single.price, '350.00');
       expect(r.products.single.compatibility, AiCompatibility.exact);
       expect(r.usage.dailyLimit, isNull);
+      expect((r.usage.usedMonth, r.usage.monthlyLimit, r.usage.bonusRemaining), (41, 200, 2));
 
       // open_policy مؤجّلة: تُتجاهل بأمان.
       expect(r.cards, hasLength(3));
