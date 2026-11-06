@@ -171,6 +171,30 @@ Header: `X-API-Key: <AI_SERVICE_KEY>`
 
 ---
 
+## 3b. [إضافة R4] Laravel ← carhub-ai: فهرس المنتجات
+
+Header: `X-API-Key: <AI_SERVICE_KEY>` على كل المسارات. بلا مفتاح صحيح: `401`.
+
+| المسار | الطلب | يفعل |
+|---|---|---|
+| `POST /v1/index/upsert` | `{"products": [<وثيقة §6>]}`، حتى 1000 لكل طلب | يضيف أو يستبدل المنتجات بنفس `id` |
+| `POST /v1/index/delete` | `{"ids": [152, 160]}` | يحذفها من الفهرس |
+| `POST /v1/index/sync` | `{"ids": [<كل المعرّفات النشطة>]}` | يحذف من الفهرس **كل ما سواها**، ومنه الصفوف المحذوفة من القاعدة |
+| `GET /v1/index/status` | — | الحالة فقط |
+
+### Response 200
+```json
+{"upserted": 2, "products": 35, "pending": true, "built_at": "2026-11-06T14:40:48+00:00",
+ "last_build_s": 0.01, "last_error": null, "index_version": "local@r2c", "retriever": "local"}
+```
+- المفتاح الأول حسب المسار: `upserted` أو `deleted` أو `removed`. و`GET /v1/index/status` بلا مفتاح أول.
+- `pending: true`: التغيير محفوظ ولم يدخل البحث بعد. يدخله خلال `INDEX_REBUILD_DELAY_S` (ثانيتان افتراضياً).
+- `last_error` غير `null`: فشلت إعادة البناء، والبحث مستمر بالفهرس السابق.
+- **`422`:** طلب غير صالح، ومنه أي حقل في `metadata` غير المذكورة في §6 (`price` مثلاً). **لا سعر في أي حقل** (القاعدة 2)، وأنماط الأسعار في `title` و`text` تُحذف.
+- Laravel يرسل عبر `php artisan ai:index-catalog`: `--since=5` كل دقيقة، ومزامنة كاملة (`upsert` + `sync`) كل ليلة.
+
+---
+
 ## 4. عقد أحمد (طبقة RAG) — يُطبّقه FakeRetriever حرفياً
 
 ```
@@ -210,6 +234,9 @@ retrieve(text, filters={city, category_id, doc_types, in_stock}, k=8)
                "category_key": "lighting",
                "keywords": ["ضو", "ضوء", "مصباح", "فانوس", "سبورتاج", "كيا"]}}]
 ```
+- **[إضافة R4]** نفس الوثيقة تُرسل إلى §3b، ومعها في `metadata`: `oe_number` (نص أو `null`) و`in_stock` (bool). ويُقبل `city` (نص أو `null`).
+- `metadata` لا تقبل غير هذه الحقول: `make`، و`model`، و`years`، و`category_key`، و`keywords`، و`oe_number`، و`city`، و`in_stock`.
+- تُفهرس المنتجات بحالة `active` فقط.
 
 ### `tender_categories.json`
 ```json
