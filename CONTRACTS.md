@@ -237,7 +237,19 @@ retrieve(text, filters={city, category_id, doc_types, in_stock}, k=8)
                "keywords": ["ضو", "ضوء", "مصباح", "فانوس", "سبورتاج", "كيا"]}}]
 ```
 - **[إضافة R4]** نفس الوثيقة تُرسل إلى §3b، ومعها في `metadata`: `oe_number` (نص أو `null`) و`in_stock` (bool). ويُقبل `city` (نص أو `null`).
-- `metadata` لا تقبل غير هذه الحقول: `make`، و`model`، و`years`، و`category_key`، و`keywords`، و`oe_number`، و`city`، و`in_stock`.
+- **[إضافة، وافق وائل 2026-11-06] `cars`: قائمة السيارات التي تناسبها القطعة** (قطعة واحدة تناسب عدة سيارات):
+  ```json
+  "cars": [{"make": "Kia", "model": "Rio", "generation": "3", "years": [2012, 2013]},
+           {"make": "Hyundai", "model": "Verna", "generation": null, "years": []}]
+  ```
+  - `model: null` = كل موديلات الماركة. و`years: []` = كل السنوات. و`generation` اختياري (نص كما يكتبه السوق: "3"، "NF").
+  - إن وُجدت `cars` تتقدّم على `make`/`model`/`years`. وتبقى الحقول الثلاثة للتوافق مع المصدّرين القدامى.
+  - **بلا `cars` ولا `make`:**
+    - إن كان للمنتج `category_key` أو `keywords`: قطعة عامة تناسب كل السيارات (بطارية).
+    - وإلا يقرأ carhub-ai السيارات من العنوان (قوائم الأسعار). وإن لم يجد سيارة معروفة، فالتوافق «غير معروف»: يظهر المنتج حين لا يُسأل عن سيارة، ولا يظهر لسيارة محددة.
+  - الأسماء كما يكتبها السوق (`Verna` تبقى `Verna`). **لا مكافئات بين الموديلات.**
+- `metadata` لا تقبل غير هذه الحقول: `make`، و`model`، و`years`، و`cars`، و`category_key`، و`keywords`، و`oe_number`، و`city`، و`in_stock`.
+- **[إضافة R4b]** `oe_number`: يُبحث بالرقم كاملاً، وبكل قطعة طويلة منه. مثلاً `2431226000-105 RU 22-MK` يُعثر عليه بـ `2431226000` أو `24312-26000`.
 - تُفهرس المنتجات بحالة `active` فقط.
 
 ### `tender_categories.json`
