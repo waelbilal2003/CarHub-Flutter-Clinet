@@ -91,6 +91,8 @@ Header: `Authorization: Bearer <sanctum token>`
 - البطاقات تُبنى **بالكود** في carhub-ai، لا من نص حر يكتبه النموذج.
 - مفاتيح `filters` في `open_marketplace_search` هي أسماء معاملات API السوق نفسها: `car_make` و`car_model` و`year`. يكتبها carhub-ai بهذه الأسماء، ويُحذف أي مفتاح غير معروف القيمة. `filters` قد يكون `{}`.
 - `category` في `create_tender` مفتاح من `App\Enums\TenderCategory`. يتحقق Laravel فقط من أن المفتاح ضمن هذه القائمة.
+- **[إضافة VIN]** `create_tender.payload.description` اختياري: نص معبّأ مسبقاً بالسيارة ورقم الشاسيه (VIN) ونص سؤال العميل، أسطر مفصولة بـ `
+`. يظهر فقط إذا عُرفت السيارة أو رقم الشاسيه. التطبيق يضعه في حقل الوصف، والعميل يعدّله ويكمله. Laravel يمرّره كما هو.
 
 ---
 

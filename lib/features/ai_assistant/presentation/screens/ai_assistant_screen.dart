@@ -78,11 +78,17 @@ class _AiAssistantScreenState extends ConsumerState<AiAssistantScreen> {
           carModel: carModel,
           year: year,
         ));
-      case CreateTenderCard(:final category, :final title, :final city):
+      case CreateTenderCard(
+          :final category,
+          :final title,
+          :final city,
+          :final description,
+        ):
         context.push(AppRoutes.createTenderPrefilled(
           category: category,
           title: title,
           city: city,
+          description: description,
         ));
     }
   }

@@ -27,12 +27,14 @@ class CreateTenderScreen extends ConsumerStatefulWidget {
   final String? initialCategory;
   final String? initialTitle;
   final String? initialCity;
+  final String? initialDescription;
 
   const CreateTenderScreen({
     super.key,
     this.initialCategory,
     this.initialTitle,
     this.initialCity,
+    this.initialDescription,
   });
 
   @override
@@ -43,7 +45,7 @@ class _CreateTenderScreenState extends ConsumerState<CreateTenderScreen> {
   final _formKey = GlobalKey<FormState>();
   late final _titleCtrl = TextEditingController(text: widget.initialTitle);
   late final _cityCtrl = TextEditingController(text: widget.initialCity);
-  final _descCtrl = TextEditingController();
+  late final _descCtrl = TextEditingController(text: widget.initialDescription);
   final _budgetCtrl = TextEditingController();
 
   /// مفتاح غير معروف (لا يطابق TenderCategory) يُتجاهل ويختار المستخدم بنفسه.

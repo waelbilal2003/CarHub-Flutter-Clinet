@@ -133,6 +133,7 @@ sealed class AiCard {
           category: category,
           title: payload['title']?.toString() ?? '',
           city: payload['city']?.toString(),
+          description: payload['description']?.toString(),
         );
       default:
         return null;
@@ -168,11 +169,15 @@ class CreateTenderCard extends AiCard {
   final String title;
   final String? city;
 
+  /// السيارة ورقم الشاسيه ونص السؤال، معبّأة مسبقاً؛ العميل يكمل الوصف.
+  final String? description;
+
   const CreateTenderCard(
     super.label, {
     required this.category,
     required this.title,
     this.city,
+    this.description,
   });
 }
 

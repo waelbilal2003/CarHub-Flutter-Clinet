@@ -144,6 +144,22 @@ void main() {
       expect(uri.queryParameters, {'category': 'paint_body', 'title': 'رش المصد', 'city': 'الرياض'});
     });
 
+    testWidgets('create_tender with the car and VIN prefills the description too', (tester) async {
+      const desc = 'السيارة: كيا سبورتاج 2019\nرقم الشاسيه (VIN): KNAPB81ABK7123456\nوصف المشكلة: بدي ارش المصد';
+      await _pumpAfter(tester, _replyWithCards([
+        {
+          'type': 'create_tender',
+          'label': 'اطلب عروض',
+          'payload': {'category': 'paint_body', 'title': 'رش المصد', 'city': 'برلين', 'description': desc},
+        },
+      ]));
+
+      await tester.tap(find.text('اطلب عروض أسعار'));
+      await tester.pumpAndSettle();
+      final uri = _opened(tester, 'TENDER');
+      expect(uri.queryParameters['description'], desc);              // line breaks survive the route
+    });
+
     testWidgets('open_policy and unknown card types are ignored safely', (tester) async {
       await _pumpAfter(tester, _replyWithCards([
         {'type': 'open_policy', 'label': 'سياسة الإرجاع', 'payload': {}},

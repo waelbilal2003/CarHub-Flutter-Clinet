@@ -29,11 +29,13 @@ class AppRoutes {
     String? category,
     String? title,
     String? city,
+    String? description,
   }) =>
       Uri(path: createTender, queryParameters: {
         if (category != null && category.isNotEmpty) 'category': category,
         if (title != null && title.isNotEmpty) 'title': title,
         if (city != null && city.isNotEmpty) 'city': city,
+        if (description != null && description.isNotEmpty) 'description': description,
       }).toString();
   static String tenderDetails(int id) => '/tenders/$id';
   static const String tenderDetailsPattern = '/tenders/:id';

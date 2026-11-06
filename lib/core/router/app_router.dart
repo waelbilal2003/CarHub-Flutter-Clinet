@@ -93,6 +93,7 @@ final routerProvider = Provider<GoRouter>((ref) {
             initialCategory: q['category'],
             initialTitle: q['title'],
             initialCity: q['city'],
+            initialDescription: q['description'],
           );
         },
       ),
