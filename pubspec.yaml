@@ -30,6 +30,10 @@ dependencies:
   # أدوات مساعدة
   intl: any                 # للتنسيق والترجمة
   cupertino_icons: ^1.0.8
+  # قراءة رقم الشاسيه من صورة على الهاتف نفسه (ML Kit، بلا إنترنت).
+  # مثبّتة على 0.15.0 عمداً: النسخة 1.x (و commons 1.x) تعتمد Kotlin المدمج في AGP 9
+  # (kotlin {} بلا kotlin-android) فتفشل مع AGP 8.9.2 في هذا المشروع.
+  google_mlkit_text_recognition: 0.15.0
 
 dev_dependencies:
   flutter_test:

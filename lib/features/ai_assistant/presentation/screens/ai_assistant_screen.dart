@@ -6,7 +6,9 @@ import '../../../../core/router/app_routes.dart';
 import '../../../../core/theme/app_colors.dart';
 import '../../../../core/theme/app_dimensions.dart';
 import '../../../../core/theme/app_text_styles.dart';
+import '../../data/vin_scanner.dart';
 import '../../domain/entities/ai_reply.dart';
+import '../../domain/vin_extract.dart';
 import '../providers/ai_chat_provider.dart';
 import '../widgets/ai_chat_widgets.dart';
 
@@ -52,6 +54,60 @@ class _AiAssistantScreenState extends ConsumerState<AiAssistantScreen> {
     if (text == null) _input.clear();
     FocusScope.of(context).unfocus();
     await ref.read(aiChatProvider.notifier).send(message);
+  }
+
+  /// تصوير رقم الشاسيه: يُقرأ على الهاتف، ويُعرض للتأكيد والتعديل، ثم يوضع في خانة الكتابة.
+  /// لا يُرسل شيء قبل أن يضغط العميل «إرسال».
+  Future<void> _scanVin() async {
+    final source = await showModalBottomSheet<VinImageSource>(
+      context: context,
+      showDragHandle: true,
+      builder: (ctx) => SafeArea(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ListTile(
+              leading: const Icon(Icons.photo_camera_outlined),
+              title: const Text('التقط صورة لرقم الشاسيه'),
+              onTap: () => Navigator.pop(ctx, VinImageSource.camera),
+            ),
+            ListTile(
+              leading: const Icon(Icons.photo_library_outlined),
+              title: const Text('اختر صورة من المعرض'),
+              onTap: () => Navigator.pop(ctx, VinImageSource.gallery),
+            ),
+          ],
+        ),
+      ),
+    );
+    if (source == null || !mounted) return;
+
+    List<String>? vins;
+    try {
+      vins = await ref.read(vinScannerProvider).scan(source);
+    } catch (_) {
+      _snack('تعذّرت قراءة الصورة. جرّب مرة أخرى أو اكتب الرقم بيدك.');
+      return;
+    }
+    if (vins == null || !mounted) return; // ألغى العميل
+    if (vins.isEmpty) {
+      _snack('ما قدرت أقرأ رقم شاسيه واضح. جرّب صورة أقرب وبإضاءة أفضل، أو اكتبه بيدك.');
+      return;
+    }
+
+    final vin = await showDialog<String>(
+      context: context,
+      builder: (_) => _VinConfirmDialog(candidates: vins!),
+    );
+    if (vin == null || !mounted) return;
+    final current = _input.text.trim();
+    _input.text = current.isEmpty ? 'رقم الشاسيه: $vin' : '$current رقم الشاسيه: $vin';
+    _input.selection = TextSelection.collapsed(offset: _input.text.length);
+  }
+
+  void _snack(String message) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
   }
 
   // ───────────── بطاقات الإجراء ─────────────
@@ -165,6 +221,7 @@ class _AiAssistantScreenState extends ConsumerState<AiAssistantScreen> {
             controller: _input,
             enabled: !chat.isSending,
             onSend: () => _send(),
+            onScanVin: _scanVin,
           ),
         ],
       ),
@@ -379,11 +436,13 @@ class _InputBar extends StatelessWidget {
   final TextEditingController controller;
   final bool enabled;
   final VoidCallback onSend;
+  final VoidCallback onScanVin;
 
   const _InputBar({
     required this.controller,
     required this.enabled,
     required this.onSend,
+    required this.onScanVin,
   });
 
   @override
@@ -399,6 +458,13 @@ class _InputBar extends StatelessWidget {
         top: false,
         child: Row(
           children: [
+            IconButton(
+              key: const Key('scanVinButton'),
+              tooltip: 'صوّر رقم الشاسيه',
+              onPressed: enabled ? onScanVin : null,
+              icon: const Icon(Icons.document_scanner_outlined),
+              color: AppColors.primary,
+            ),
             Expanded(
               child: TextField(
                 controller: controller,
@@ -455,6 +521,73 @@ class _InputBar extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// تأكيد رقم الشاسيه المقروء: قد تخطئ الكاميرا في خانة، فالعميل يراه ويعدّله قبل استعماله.
+class _VinConfirmDialog extends StatefulWidget {
+  final List<String> candidates;
+
+  const _VinConfirmDialog({required this.candidates});
+
+  @override
+  State<_VinConfirmDialog> createState() => _VinConfirmDialogState();
+}
+
+class _VinConfirmDialogState extends State<_VinConfirmDialog> {
+  late final _controller = TextEditingController(text: widget.candidates.first);
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  String? get _valid {
+    final found = extractVins(_controller.text);
+    return found.isNotEmpty && found.first.length == _controller.text.trim().length ? found.first : null;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('رقم الشاسيه'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text('تأكد أن الرقم مطابق للوحة الشاسيه، وصحّحه إن لزم:'),
+          const SizedBox(height: AppDimensions.spaceS),
+          TextField(
+            key: const Key('vinField'),
+            controller: _controller,
+            maxLength: 17,
+            textCapitalization: TextCapitalization.characters,
+            textDirection: TextDirection.ltr,
+            style: AppTextStyles.bodyMd.copyWith(letterSpacing: 1.5),
+            onChanged: (_) => setState(() {}),
+          ),
+          if (widget.candidates.length > 1)
+            Wrap(
+              spacing: AppDimensions.spaceS,
+              children: [
+                for (final v in widget.candidates)
+                  ActionChip(
+                    label: Text(v, textDirection: TextDirection.ltr),
+                    onPressed: () => setState(() => _controller.text = v),
+                  ),
+              ],
+            ),
+        ],
+      ),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(context), child: const Text('إلغاء')),
+        FilledButton(
+          onPressed: _valid == null ? null : () => Navigator.pop(context, _valid),
+          child: const Text('استخدم الرقم'),
+        ),
+      ],
     );
   }
 }
