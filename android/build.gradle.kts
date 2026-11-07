@@ -1,5 +1,11 @@
 allprojects {
     repositories {
+        // ML Kit's bundled text model (18 MB aar) times out from slow networks; it can be fetched
+        // with a resumable download into ~/.m2. Only com.google.mlkit is looked up here; anything
+        // missing falls through to google() as usual.
+        mavenLocal {
+            content { includeGroup("com.google.mlkit") }
+        }
         google()
         mavenCentral()
     }
