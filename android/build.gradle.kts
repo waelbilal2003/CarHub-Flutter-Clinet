@@ -12,6 +12,18 @@ val newBuildDir: Directory =
 rootProject.layout.buildDirectory.value(newBuildDir)
 
 subprojects {
+    // Some plugins (google_mlkit_text_recognition 0.15.0 -> AGP 8.7.0, google_mlkit_commons -> 8.13.0)
+    // put their own AGP on their buildscript classpath. That AGP is never used (the project's 8.9.2 is
+    // already loaded) but Gradle still downloads it (tens of MB from dl.google.com). Pin it to ours.
+    buildscript.configurations.configureEach {
+        resolutionStrategy.eachDependency {
+            if (requested.group == "com.android.tools.build" && requested.name == "gradle") {
+                useVersion("8.9.2")
+                because("use the project's AGP; avoids downloading the plugin's own AGP")
+            }
+        }
+    }
+
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 
